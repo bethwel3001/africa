@@ -30,17 +30,26 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Prevent body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+  }, [isOpen])
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b" : "bg-transparent py-6"
+        scrolled || isOpen ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b" : "bg-transparent py-6"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           {logo && (
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-primary/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-primary shadow-sm transition-transform duration-300 group-hover:scale-105">
               <Image
                 src={logo.imageUrl}
                 alt="Conference Logo"
@@ -67,7 +76,7 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-6 border-l pl-6 border-primary/10">
-            <LanguageSwitcher light={false} />
+            <LanguageSwitcher />
             <Button 
               size="sm" 
               asChild 
@@ -78,7 +87,7 @@ export function Navigation() {
           </div>
         </nav>
 
-        {/* Mobile Menu Trigger - NO REGISTER BUTTON IN HEADER */}
+        {/* Mobile Menu Trigger */}
         <div className="flex items-center gap-4 md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -93,13 +102,13 @@ export function Navigation() {
       {/* Mobile Overlay Navigation */}
       <div 
         className={cn(
-          "fixed inset-0 bg-white z-[60] transition-all duration-500 flex flex-col md:hidden transform",
+          "fixed inset-0 bg-white z-[60] transition-all duration-300 flex flex-col md:hidden transform",
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         )}
       >
         <div className="flex justify-between items-center p-6 border-b border-black/5">
            {logo && (
-            <div className="relative h-12 w-12 rounded-full overflow-hidden border border-primary/10">
+            <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-primary shadow-sm">
               <Image src={logo.imageUrl} alt="Logo" fill className="object-cover" />
             </div>
           )}
@@ -121,8 +130,8 @@ export function Navigation() {
           ))}
           <div className="w-24 h-1 bg-secondary rounded-full my-4" />
           <div className="text-center space-y-4">
-             <LanguageSwitcher light={false} />
-             <p className="text-muted-foreground text-sm font-bold uppercase tracking-widest pt-4">October 2026 • Nairobi</p>
+             <LanguageSwitcher />
+             <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest pt-4">October 2026 • Nairobi</p>
           </div>
         </div>
       </div>

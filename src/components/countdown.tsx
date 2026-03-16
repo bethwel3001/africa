@@ -56,8 +56,8 @@ export function Countdown() {
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center flex-1">
-      <div className="bg-primary/5 rounded-2xl w-full aspect-square flex items-center justify-center border border-primary/10 shadow-sm">
-        <span className="text-xl sm:text-4xl font-black text-primary">{value.toString().padStart(2, "0")}</span>
+      <div className="bg-white/50 backdrop-blur-sm rounded-2xl w-full aspect-square flex items-center justify-center border border-primary/10 shadow-sm">
+        <span className="text-2xl sm:text-4xl font-black text-primary">{value.toString().padStart(2, "0")}</span>
       </div>
       <span className="text-[10px] font-black mt-3 uppercase tracking-widest text-primary/60">{label}</span>
     </div>
