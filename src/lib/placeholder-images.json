@@ -7,10 +7,46 @@
       "imageHint": "conference logo"
     },
     {
-      "id": "hero-bg",
-      "description": "Vibrant African youth gathering",
-      "imageUrl": "https://picsum.photos/seed/2/1920/1080",
-      "imageHint": "african youth"
+      "id": "hero-1",
+      "description": "Conference Highlight 47",
+      "imageUrl": "/GALLERY/47.jpeg",
+      "imageHint": "conference crowd"
+    },
+    {
+      "id": "hero-2",
+      "description": "Conference Highlight 66",
+      "imageUrl": "/GALLERY/66.jpeg",
+      "imageHint": "youth leaders"
+    },
+    {
+      "id": "hero-3",
+      "description": "Conference Highlight 83",
+      "imageUrl": "/GALLERY/83.jpeg",
+      "imageHint": "african speakers"
+    },
+    {
+      "id": "hero-4",
+      "description": "Conference Highlight 91",
+      "imageUrl": "/GALLERY/91.jpeg",
+      "imageHint": "youth engagement"
+    },
+    {
+      "id": "hero-5",
+      "description": "Conference Highlight 92",
+      "imageUrl": "/GALLERY/92.jpeg",
+      "imageHint": "digital innovation"
+    },
+    {
+      "id": "hero-6",
+      "description": "Conference Highlight 93",
+      "imageUrl": "/GALLERY/93.jpeg",
+      "imageHint": "pan african unity"
+    },
+    {
+      "id": "hero-7",
+      "description": "Conference Highlight 94",
+      "imageUrl": "/GALLERY/94.jpeg",
+      "imageHint": "sustainable future"
     },
     {
       "id": "pillar-1",
@@ -47,72 +83,6 @@
       "description": "AUSP delegation meeting",
       "imageUrl": "https://picsum.photos/seed/8/600/400",
       "imageHint": "african meeting"
-    },
-    {
-      "id": "africa-map",
-      "description": "Abstract map of Africa",
-      "imageUrl": "https://picsum.photos/seed/9/800/800",
-      "imageHint": "africa map"
-    },
-    {
-      "id": "gallery-1",
-      "description": "Gallery image 1",
-      "imageUrl": "https://picsum.photos/seed/10/600/400",
-      "imageHint": "african landscape"
-    },
-    {
-      "id": "gallery-2",
-      "description": "Gallery image 2",
-      "imageUrl": "https://picsum.photos/seed/11/600/400",
-      "imageHint": "youth smiling"
-    },
-    {
-      "id": "gallery-3",
-      "description": "Gallery image 3",
-      "imageUrl": "https://picsum.photos/seed/12/600/400",
-      "imageHint": "conference hall"
-    },
-    {
-      "id": "gallery-4",
-      "description": "Gallery image 4",
-      "imageUrl": "https://picsum.photos/seed/13/600/400",
-      "imageHint": "digital innovation"
-    },
-    {
-      "id": "gallery-5",
-      "description": "Gallery image 5",
-      "imageUrl": "https://picsum.photos/seed/14/600/400",
-      "imageHint": "students collaborating"
-    },
-    {
-      "id": "gallery-6",
-      "description": "Gallery image 6",
-      "imageUrl": "https://picsum.photos/seed/15/600/400",
-      "imageHint": "african sunset"
-    },
-    {
-      "id": "gallery-7",
-      "description": "Gallery image 7",
-      "imageUrl": "https://picsum.photos/seed/16/600/400",
-      "imageHint": "tech workshop"
-    },
-    {
-      "id": "gallery-8",
-      "description": "Gallery image 8",
-      "imageUrl": "https://picsum.photos/seed/17/600/400",
-      "imageHint": "cultural dance"
-    },
-    {
-      "id": "gallery-9",
-      "description": "Gallery image 9",
-      "imageUrl": "https://picsum.photos/seed/18/600/400",
-      "imageHint": "urban africa"
-    },
-    {
-      "id": "gallery-10",
-      "description": "Gallery image 10",
-      "imageUrl": "https://picsum.photos/seed/19/600/400",
-      "imageHint": "african art"
     }
   ]
 }
