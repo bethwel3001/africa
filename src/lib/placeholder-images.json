@@ -8,44 +8,38 @@
     },
     {
       "id": "hero-1",
-      "description": "Conference Highlight 47",
-      "imageUrl": "/GALLERY/47.jpeg",
-      "imageHint": "conference crowd"
-    },
-    {
-      "id": "hero-2",
       "description": "Conference Highlight 66",
       "imageUrl": "/GALLERY/66.jpeg",
       "imageHint": "youth leaders"
     },
     {
-      "id": "hero-3",
+      "id": "hero-2",
       "description": "Conference Highlight 83",
       "imageUrl": "/GALLERY/83.jpeg",
       "imageHint": "african speakers"
     },
     {
-      "id": "hero-4",
-      "description": "Conference Highlight 91",
-      "imageUrl": "/GALLERY/91.jpeg",
+      "id": "hero-3",
+      "description": "Conference Highlight 29",
+      "imageUrl": "/GALLERY/29.jpeg",
       "imageHint": "youth engagement"
     },
     {
-      "id": "hero-5",
+      "id": "hero-4",
       "description": "Conference Highlight 92",
       "imageUrl": "/GALLERY/92.jpeg",
       "imageHint": "digital innovation"
     },
     {
-      "id": "hero-6",
-      "description": "Conference Highlight 93",
-      "imageUrl": "/GALLERY/93.jpeg",
+      "id": "hero-5",
+      "description": "Conference Highlight 14",
+      "imageUrl": "/GALLERY/14.jpeg",
       "imageHint": "pan african unity"
     },
     {
-      "id": "hero-7",
-      "description": "Conference Highlight 94",
-      "imageUrl": "/GALLERY/94.jpeg",
+      "id": "hero-6",
+      "description": "Conference Highlight 38",
+      "imageUrl": "/GALLERY/38.jpeg",
       "imageHint": "sustainable future"
     },
     {

@@ -12,10 +12,10 @@ import { cn } from "@/lib/utils"
 const heroImages = [
   "/GALLERY/66.jpeg",
   "/GALLERY/83.jpeg",
-  "/GALLERY/91.jpeg",
+  "/GALLERY/29.jpeg", // Substituted 3rd image
   "/GALLERY/92.jpeg",
-  "/GALLERY/93.jpeg",
-  "/GALLERY/94.jpeg"
+  "/GALLERY/14.jpeg", // Substituted 5th image
+  "/GALLERY/38.jpeg"  // Substituted last image
 ]
 
 export function HeroSection() {
