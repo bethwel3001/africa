@@ -21,7 +21,23 @@ const languages = [
 ]
 
 export function LanguageSwitcher() {
+  const [mounted, setMounted] = React.useState(false)
   const [currentLang, setCurrentLang] = React.useState(languages[0])
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // If not mounted, render a visual placeholder that matches the server-side structure
+  // without the Radix DropdownMenu trigger logic that generates dynamic IDs.
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="sm" className="flex items-center gap-2">
+        <Globe className="h-4 w-4" />
+        <span className="hidden md:inline">{currentLang.name}</span>
+      </Button>
+    )
+  }
 
   return (
     <DropdownMenu>
