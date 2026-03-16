@@ -12,10 +12,10 @@ import { cn } from "@/lib/utils"
 const heroImages = [
   "/GALLERY/66.jpeg",
   "/GALLERY/83.jpeg",
-  "/GALLERY/29.jpeg", // Substituted 3rd image
+  "/GALLERY/33.jpeg", // Updated 3rd image
   "/GALLERY/92.jpeg",
-  "/GALLERY/14.jpeg", // Substituted 5th image
-  "/GALLERY/38.jpeg"  // Substituted last image
+  "/GALLERY/14.jpeg",
+  "/GALLERY/38.jpeg"
 ]
 
 export function HeroSection() {
@@ -58,7 +58,7 @@ export function HeroSection() {
             />
           </div>
         ))}
-        {/* Subtle dark overlay to ensure text legibility while maintaining image vibrancy */}
+        {/* Subtle dark overlay for legibility */}
         <div className="absolute inset-0 bg-black/40 z-[1]" />
       </div>
 
@@ -88,7 +88,7 @@ export function HeroSection() {
                   Register Now <ArrowRight className="ml-2 h-3 w-3 hidden sm:inline" />
                 </Link>
               </Button>
-              <Button size="lg" className="bg-black text-white hover:bg-black/80 px-6 sm:px-8 h-12 rounded-full font-bold shadow-lg transition-transform hover:scale-105 whitespace-nowrap text-xs" asChild>
+              <Button size="lg" className="bg-black text-white hover:bg-black/80 px-6 sm:px-8 h-12 rounded-full font-bold shadow-lg transition-transform hover:scale-105 whitespace-nowrap text-xs border-none" asChild>
                 <Link href="/register">
                   Tickets & Plans
                 </Link>

@@ -27,7 +27,6 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Prevent body scroll when mobile menu is open
   React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
@@ -45,12 +44,12 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
-          <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-primary shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-12 w-12 transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/LOGO/logo.jpeg"
               alt="Conference Logo"
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
@@ -86,6 +85,7 @@ export function Navigation() {
 
         {/* Mobile Menu Trigger */}
         <div className="flex items-center gap-4 md:hidden">
+          <LanguageSwitcher light={!scrolled && !isOpen} />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
@@ -107,8 +107,8 @@ export function Navigation() {
         )}
       >
         <div className="flex justify-between items-center p-6 border-b border-black/5 bg-white">
-          <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-primary shadow-sm">
-            <Image src="/LOGO/logo.jpeg" alt="Logo" fill className="object-cover" />
+          <div className="relative h-12 w-12">
+            <Image src="/LOGO/logo.jpeg" alt="Logo" fill className="object-contain" />
           </div>
           <button onClick={() => setIsOpen(false)} className="p-2 text-primary bg-primary/5 rounded-full">
             <X size={24} />
@@ -127,10 +127,7 @@ export function Navigation() {
             </Link>
           ))}
           <div className="w-24 h-1 bg-secondary rounded-full my-4" />
-          <div className="text-center space-y-6">
-             <LanguageSwitcher />
-             <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest pt-4">October 2026 • Nairobi</p>
-          </div>
+          <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest pt-4">October 2026 • Nairobi</p>
         </div>
       </div>
     </header>
