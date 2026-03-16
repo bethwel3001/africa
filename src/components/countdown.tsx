@@ -37,24 +37,24 @@ export function Countdown() {
   if (!mounted) return null
 
   return (
-    <div className="flex gap-2 sm:gap-4 justify-center items-center">
+    <div className="flex gap-4 sm:gap-8 justify-center items-center">
       <TimeUnit value={timeLeft.days} label="Days" />
       <TimeUnit value={timeLeft.hours} label="Hours" />
-      <TimeUnit value={timeLeft.minutes} label="Min" />
-      <TimeUnit value={timeLeft.seconds} label="Sec" />
+      <TimeUnit value={timeLeft.minutes} label="Minutes" />
+      <TimeUnit value={timeLeft.seconds} label="Seconds" />
     </div>
   )
 }
 
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col items-center flex-1">
-      <div className="w-full aspect-square flex items-center justify-center">
-        <span className="text-2xl sm:text-5xl font-black text-white drop-shadow-lg">
+    <div className="flex flex-col items-center">
+      <div className="flex items-center justify-center">
+        <span className="text-3xl sm:text-6xl font-black text-white tabular-nums tracking-tighter drop-shadow-2xl">
           {value.toString().padStart(2, "0")}
         </span>
       </div>
-      <span className="text-[10px] font-black mt-1 uppercase tracking-widest text-secondary shadow-black/20 drop-shadow-sm">
+      <span className="text-[10px] font-black mt-2 uppercase tracking-[0.2em] text-secondary drop-shadow-md">
         {label}
       </span>
     </div>

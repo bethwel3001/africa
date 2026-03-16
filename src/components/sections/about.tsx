@@ -42,28 +42,28 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl">
+          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl bg-muted">
             <Image
               src="/SDgs/4.jpeg"
-              alt="The Vision - Education"
+              alt="The Vision - Quality Education"
               fill
               className="object-cover"
               priority
+              quality={90}
             />
-            <div className="absolute inset-0 bg-primary/5" />
           </div>
         </div>
 
         {/* Our Role Section */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl order-2 lg:order-1">
+          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl bg-muted order-2 lg:order-1">
             <Image
               src="/SDgs/5.jpeg"
-              alt="Our Role - Empowerment"
+              alt="Our Role - Gender Equality"
               fill
               className="object-cover"
+              quality={90}
             />
-            <div className="absolute inset-0 bg-primary/5" />
           </div>
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-2">
