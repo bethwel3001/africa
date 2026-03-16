@@ -1,3 +1,118 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "logo",
+      "description": "PAYC and AUSP Conference Logo",
+      "imageUrl": "https://picsum.photos/seed/1/200/200",
+      "imageHint": "conference logo"
+    },
+    {
+      "id": "hero-bg",
+      "description": "Vibrant African youth gathering",
+      "imageUrl": "https://picsum.photos/seed/2/1920/1080",
+      "imageHint": "african youth"
+    },
+    {
+      "id": "pillar-1",
+      "description": "Pan-Africanism Reawakened icon",
+      "imageUrl": "https://picsum.photos/seed/3/400/300",
+      "imageHint": "african culture"
+    },
+    {
+      "id": "pillar-2",
+      "description": "Ethical Leadership icon",
+      "imageUrl": "https://picsum.photos/seed/4/400/300",
+      "imageHint": "leadership ethics"
+    },
+    {
+      "id": "pillar-3",
+      "description": "Peace and Security icon",
+      "imageUrl": "https://picsum.photos/seed/5/400/300",
+      "imageHint": "peace harmony"
+    },
+    {
+      "id": "pillar-4",
+      "description": "Inclusive Growth icon",
+      "imageUrl": "https://picsum.photos/seed/6/400/300",
+      "imageHint": "social inclusion"
+    },
+    {
+      "id": "pillar-5",
+      "description": "Trade and Innovation icon",
+      "imageUrl": "https://picsum.photos/seed/7/400/300",
+      "imageHint": "technology trade"
+    },
+    {
+      "id": "about-ausp",
+      "description": "AUSP delegation meeting",
+      "imageUrl": "https://picsum.photos/seed/8/600/400",
+      "imageHint": "african meeting"
+    },
+    {
+      "id": "africa-map",
+      "description": "Abstract map of Africa",
+      "imageUrl": "https://picsum.photos/seed/9/800/800",
+      "imageHint": "africa map"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Gallery image 1",
+      "imageUrl": "https://picsum.photos/seed/10/600/400",
+      "imageHint": "african landscape"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Gallery image 2",
+      "imageUrl": "https://picsum.photos/seed/11/600/400",
+      "imageHint": "youth smiling"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Gallery image 3",
+      "imageUrl": "https://picsum.photos/seed/12/600/400",
+      "imageHint": "conference hall"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Gallery image 4",
+      "imageUrl": "https://picsum.photos/seed/13/600/400",
+      "imageHint": "digital innovation"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Gallery image 5",
+      "imageUrl": "https://picsum.photos/seed/14/600/400",
+      "imageHint": "students collaborating"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Gallery image 6",
+      "imageUrl": "https://picsum.photos/seed/15/600/400",
+      "imageHint": "african sunset"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Gallery image 7",
+      "imageUrl": "https://picsum.photos/seed/16/600/400",
+      "imageHint": "tech workshop"
+    },
+    {
+      "id": "gallery-8",
+      "description": "Gallery image 8",
+      "imageUrl": "https://picsum.photos/seed/17/600/400",
+      "imageHint": "cultural dance"
+    },
+    {
+      "id": "gallery-9",
+      "description": "Gallery image 9",
+      "imageUrl": "https://picsum.photos/seed/18/600/400",
+      "imageHint": "urban africa"
+    },
+    {
+      "id": "gallery-10",
+      "description": "Gallery image 10",
+      "imageUrl": "https://picsum.photos/seed/19/600/400",
+      "imageHint": "african art"
+    }
+  ]
 }
