@@ -30,7 +30,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-20">
       {/* Sliding Background */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((src, index) => (
@@ -38,7 +38,7 @@ export function HeroSection() {
             key={src}
             className={cn(
               "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-              index === currentImageIndex ? "opacity-30" : "opacity-0"
+              index === currentImageIndex ? "opacity-40" : "opacity-0"
             )}
           >
             <Image
@@ -50,9 +50,9 @@ export function HeroSection() {
             />
           </div>
         ))}
-        {/* Gradients to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent hidden lg:block" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background/90 lg:hidden" />
+        {/* Subtle light gradient to ensure text readability without blocking images */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent hidden lg:block" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/20 to-white/95 lg:hidden" />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto py-12">
