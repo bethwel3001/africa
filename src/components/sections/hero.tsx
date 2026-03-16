@@ -12,14 +12,7 @@ import { cn } from "@/lib/utils"
 const heroImages = [
   "/GALLERY/66.jpeg",
   "/GALLERY/83.jpeg",
-  "/GALLERY/33.jpeg",
-  "/GALLERY/29.jpeg",
-  "/GALLERY/14.jpeg",
-  "/GALLERY/38.jpeg",
-  "/GALLERY/91.jpeg",
-  "/GALLERY/92.jpeg",
-  "/GALLERY/93.jpeg",
-  "/GALLERY/94.jpeg"
+  "/GALLERY/14.jpeg"
 ]
 
 export function HeroSection() {
@@ -40,7 +33,7 @@ export function HeroSection() {
   const isFallbackVisible = failedImages.has(currentImageIndex) || heroImages.length === 0
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-4">
       {/* Infinite Sliding Background */}
       <div className="absolute inset-0 z-0 bg-white">
         {heroImages.map((src, index) => (
@@ -67,61 +60,54 @@ export function HeroSection() {
         {isFallbackVisible && (
           <div className="absolute inset-0 bg-white" />
         )}
-        {/* Subtle dark overlay for legibility against photos */}
-        <div className="absolute inset-0 bg-black/20 z-[1]" />
+        {/* Stronger dark overlay for legibility against photos */}
+        <div className="absolute inset-0 bg-black/50 z-[1]" />
       </div>
 
-      <div className="container relative z-10 px-4 mx-auto py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          
-          {/* Left Content */}
-          <div className="space-y-6 animate-fade-in-up text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-bold text-[10px] tracking-widest uppercase backdrop-blur-sm">
-              21st – 23rd October 2026 • Nairobi
-            </div>
-            
-            <div className="space-y-4">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase">
-                REIMAGINING <br />
-                <span className="text-secondary">AFRICA'S</span> FUTURE
-              </h1>
-              
-              <p className="text-sm md:text-lg font-medium text-white max-w-xl leading-relaxed">
-                Uniting Pan-African youth for a just, inclusive, and sustainable continent. Together towards 2063.
-              </p>
-            </div>
-
-            <div className="flex flex-row items-center gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-6 sm:px-10 h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wider" asChild>
-                <Link href="/register">
-                  Register Now <ArrowRight className="ml-2 h-4 w-4 hidden sm:inline" />
-                </Link>
-              </Button>
-              <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-6 sm:px-10 h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm border-none uppercase tracking-wider" asChild>
-                <Link href="/register">
-                  Tickets & Plans
-                </Link>
-              </Button>
+      <div className="container relative z-10 px-2 sm:px-4 mx-auto py-2 flex flex-col lg:flex-row items-center justify-between min-h-[60vh] gap-8 lg:gap-0">
+        {/* Left Content */}
+        <div className="flex-1 w-full max-w-2xl animate-fade-in-up flex flex-col justify-center items-start text-left gap-4">
+          <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground font-bold text-[8px] sm:text-[9px] md:text-[10px] tracking-widest uppercase backdrop-blur-sm shadow">
+            21st – 23rd October 2026 • Nairobi
+          </div>
+          <h1 className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
+            REIMAGINING <br />
+            <span className="text-secondary">AFRICA'S</span> FUTURE
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg font-medium text-white max-w-lg leading-relaxed drop-shadow">
+            Uniting Pan-African youth for a just, inclusive, and sustainable continent. Together towards 2063.
+          </p>
+          {/* Buttons row for small screens, left-aligned */}
+          <div className="flex flex-row gap-2 pt-2 w-full">
+            <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-4 sm:px-8 h-11 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wider w-full max-w-[180px]" asChild>
+              <Link href="/register">
+                Register Now <ArrowRight className="ml-2 h-4 w-4 hidden sm:inline" />
+              </Link>
+            </Button>
+            <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-4 sm:px-8 h-11 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm border-none uppercase tracking-wider w-full max-w-[180px]" asChild>
+              <Link href="/register">
+                Tickets & Plans
+              </Link>
+            </Button>
+          </div>
+        </div>
+        {/* Right Content - Countdown (Desktop) */}
+        <div className="hidden lg:flex flex-col items-end justify-end flex-1 min-w-[340px] max-w-md">
+          <div className="p-10 space-y-8 bg-white rounded-3xl shadow-2xl border border-primary/10 w-full flex flex-col items-center">
+            <h3 className="text-center font-bold uppercase tracking-[0.4em] text-[20px] text-primary mb-4 whitespace-pre-line">Countdown to Nairobi</h3>
+            <div className="w-full flex justify-center">
+              <Countdown />
             </div>
           </div>
-
-          {/* Right Content - Countdown (Desktop) */}
-          <div className="hidden lg:block">
-            <div className="p-8 space-y-8">
-               <h3 className="text-center font-bold uppercase tracking-[0.4em] text-[10px] text-secondary">Countdown to Nairobi</h3>
-               <Countdown />
-            </div>
-          </div>
-
-          {/* Small Screen Countdown */}
-          <div className="lg:hidden w-full mt-12 pt-8 border-t border-white/20">
-            <p className="text-center font-bold text-[10px] uppercase tracking-[0.3em] text-secondary mb-8">Starts In</p>
+        </div>
+        {/* Small Screen Countdown */}
+        <div className="lg:hidden w-full mt-4 flex justify-center">
+          <div className="bg-white rounded-2xl shadow-2xl border border-primary/10 p-4 w-full max-w-xs flex flex-col items-center">
+            <p className="text-center font-bold text-[16px] uppercase tracking-[0.3em] text-primary mb-2">Starts In</p>
             <Countdown />
           </div>
-
         </div>
       </div>
-
       {/* Image Indicators */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {heroImages.map((_, index) => (
@@ -137,5 +123,5 @@ export function HeroSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }

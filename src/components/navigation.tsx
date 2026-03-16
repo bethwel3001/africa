@@ -17,11 +17,18 @@ const navLinks = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
-  const [scrolled, setScrolled] = React.useState(false)
+  const [showNav, setShowNav] = React.useState(true)
+  const lastScroll = React.useRef(0)
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const current = window.scrollY
+      if (current > lastScroll.current && current > 60) {
+        setShowNav(false)
+      } else {
+        setShowNav(true)
+      }
+      lastScroll.current = current
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -38,14 +45,13 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-300",
-        scrolled || isOpen ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b" : "bg-transparent py-6"
+        "relative z-[100] transition-all duration-300 bg-white/95 backdrop-blur-md py-3 shadow-sm border-b rounded-b-2xl",
+        showNav ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
-          {/* Original rectangular shape restored */}
-          <div className="relative h-12 w-28 transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-16 w-40 transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/LOGO/logo.jpeg"
               alt="Conference Logo"
@@ -63,10 +69,7 @@ export function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={cn(
-                  "text-sm font-bold tracking-tight transition-colors hover:text-primary uppercase",
-                  scrolled ? "text-foreground" : "text-white"
-                )}
+                className="text-sm font-bold tracking-tight transition-colors hover:text-primary uppercase text-foreground"
               >
                 {link.name}
               </Link>
@@ -74,7 +77,7 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-6 border-l pl-6 border-primary/10">
-            <LanguageSwitcher light={!scrolled && !isOpen} />
+            <LanguageSwitcher light={showNav && !isOpen} />
             <Link 
               href="/register"
               className="bg-primary text-white hover:bg-primary/90 font-bold px-8 py-2 text-xs rounded-full transition-all shadow-md uppercase tracking-wider"
@@ -86,12 +89,12 @@ export function Navigation() {
 
         {/* Mobile Menu Trigger */}
         <div className="flex items-center gap-4 md:hidden">
-          <LanguageSwitcher light={!scrolled && !isOpen} />
+          <LanguageSwitcher light={showNav && !isOpen} />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
               "p-2 rounded-full transition-all",
-              scrolled || isOpen ? "text-primary bg-primary/5" : "text-white bg-white/10 backdrop-blur-sm"
+              showNav || isOpen ? "text-primary bg-primary/5" : "text-white bg-white/10 backdrop-blur-sm"
             )}
             aria-label="Toggle Menu"
           >
@@ -103,12 +106,12 @@ export function Navigation() {
       {/* Mobile Overlay Navigation - No Register Button */}
       <div 
         className={cn(
-          "fixed inset-0 bg-white z-[110] transition-all duration-300 flex flex-col md:hidden transform",
+          "fixed inset-0 bg-white z-[110] transition-all duration-300 flex flex-col md:hidden transform overscroll-none",
           isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         )}
       >
         <div className="flex justify-between items-center p-6 border-b border-black/5 bg-white">
-          <div className="relative h-12 w-24">
+          <div className="relative h-16 w-40">
             <Image src="/LOGO/logo.jpeg" alt="Logo" fill className="object-contain" />
           </div>
           <button onClick={() => setIsOpen(false)} className="p-2 text-primary bg-primary/5 rounded-full">
@@ -116,19 +119,19 @@ export function Navigation() {
           </button>
         </div>
         
-        <div className="flex-1 flex flex-col justify-center items-center gap-8 p-8 bg-white">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-3xl font-black text-primary hover:text-secondary transition-all uppercase"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <div className="w-24 h-1 bg-secondary rounded-full my-4" />
-          <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest pt-4">October 2026 • Nairobi</p>
+        <div className="flex-1 flex flex-col justify-center items-center gap-6 p-6 bg-white w-full h-full">
+          <nav className="w-full flex flex-col items-center gap-6 mt-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-bold text-primary hover:text-secondary transition-all uppercase tracking-wide py-4 px-6 rounded-2xl w-11/12 text-center bg-primary/5 shadow-sm border border-primary/10"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </header>

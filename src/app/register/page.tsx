@@ -23,7 +23,7 @@ export default function RegisterPage() {
 
   return (
     <main className="min-h-screen bg-muted/20">
-      <Navigation />
+      {/* No Navigation bar on register page */}
       
       <div className="container mx-auto px-4 pt-32 pb-24">
         <Link href="/" className="inline-flex items-center text-primary font-medium hover:underline gap-2 mb-8">
