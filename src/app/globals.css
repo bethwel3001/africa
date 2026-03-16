@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 20%;
+    --background: 0 0% 98%; /* Off-white #F9F9F9 */
+    --foreground: 0 0% 20%; /* Dark Gray #333 */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
-    --primary: 154 100% 21%;
+    --primary: 153 100% 21%; /* Deep Green #006B3C */
     --primary-foreground: 0 0% 100%;
-    --secondary: 51 100% 50%;
+    --secondary: 51 100% 50%; /* Gold #FFD700 */
     --secondary-foreground: 0 0% 20%;
     --muted: 0 0% 95%;
     --muted-foreground: 0 0% 45%;
-    --accent: 358 79% 50%;
+    --accent: 358 79% 50%; /* Red #E31B23 */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 154 100% 21%;
+    --ring: 153 100% 21%;
     --radius: 1rem;
   }
 }
@@ -38,9 +38,18 @@
 }
 
 .glass-nav {
-  @apply bg-white/80 backdrop-blur-md border-b border-white/20;
+  @apply bg-white/80 backdrop-blur-md border-b border-black/5;
 }
 
 .text-balance {
   text-wrap: balance;
+}
+
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s infinite alternate linear;
 }
