@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -5,6 +6,7 @@ import * as React from "react"
 const TARGET_DATE = new Date("2026-10-21T09:00:00")
 
 export function Countdown() {
+  const [mounted, setMounted] = React.useState(false)
   const [timeLeft, setTimeLeft] = React.useState({
     days: 0,
     hours: 0,
@@ -13,6 +15,7 @@ export function Countdown() {
   })
 
   React.useEffect(() => {
+    setMounted(true)
     const timer = setInterval(() => {
       const now = new Date()
       const difference = TARGET_DATE.getTime() - now.getTime()
@@ -31,6 +34,15 @@ export function Countdown() {
     return () => clearInterval(timer)
   }, [])
 
+  if (!mounted) return (
+    <div className="flex gap-2 sm:gap-4 justify-center items-center opacity-0">
+      <TimeUnit value={0} label="Days" />
+      <TimeUnit value={0} label="Hours" />
+      <TimeUnit value={0} label="Min" />
+      <TimeUnit value={0} label="Sec" />
+    </div>
+  )
+
   return (
     <div className="flex gap-2 sm:gap-4 justify-center items-center">
       <TimeUnit value={timeLeft.days} label="Days" />
@@ -44,10 +56,10 @@ export function Countdown() {
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center flex-1">
-      <div className="bg-primary rounded-2xl w-full aspect-square flex items-center justify-center border shadow-inner">
-        <span className="text-xl sm:text-3xl font-black text-white">{value.toString().padStart(2, "0")}</span>
+      <div className="bg-primary/5 rounded-2xl w-full aspect-square flex items-center justify-center border border-primary/10 shadow-sm">
+        <span className="text-xl sm:text-4xl font-black text-primary">{value.toString().padStart(2, "0")}</span>
       </div>
-      <span className="text-[10px] font-black mt-2 uppercase tracking-widest text-primary/60">{label}</span>
+      <span className="text-[10px] font-black mt-3 uppercase tracking-widest text-primary/60">{label}</span>
     </div>
   )
 }

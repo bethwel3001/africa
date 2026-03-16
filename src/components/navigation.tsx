@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -33,7 +34,7 @@ export function Navigation() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b" : "bg-transparent py-6"
+        scrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b" : "bg-transparent py-6"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -58,10 +59,7 @@ export function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={cn(
-                  "text-sm font-bold tracking-tight transition-colors hover:text-primary",
-                  scrolled ? "text-foreground" : "text-white"
-                )}
+                className="text-sm font-bold tracking-tight text-foreground transition-colors hover:text-primary"
               >
                 {link.name}
               </Link>
@@ -69,7 +67,7 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-6 border-l pl-6 border-primary/10">
-            <LanguageSwitcher light={!scrolled} />
+            <LanguageSwitcher light={false} />
             <Button 
               size="sm" 
               asChild 
@@ -80,15 +78,11 @@ export function Navigation() {
           </div>
         </nav>
 
-        {/* Mobile Menu Trigger - NO REGISTER BUTTON HERE */}
+        {/* Mobile Menu Trigger - NO REGISTER BUTTON IN HEADER */}
         <div className="flex items-center gap-4 md:hidden">
-          <LanguageSwitcher light={!scrolled} />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={cn(
-              "p-2 rounded-full transition-all",
-              scrolled ? "text-primary bg-primary/5" : "text-white bg-white/10 backdrop-blur-sm"
-            )}
+            className="p-2 rounded-full text-primary bg-primary/5 transition-all"
             aria-label="Toggle Menu"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -127,7 +121,8 @@ export function Navigation() {
           ))}
           <div className="w-24 h-1 bg-secondary rounded-full my-4" />
           <div className="text-center space-y-4">
-             <p className="text-muted-foreground text-sm font-bold uppercase tracking-widest">October 2026 • Nairobi</p>
+             <LanguageSwitcher light={false} />
+             <p className="text-muted-foreground text-sm font-bold uppercase tracking-widest pt-4">October 2026 • Nairobi</p>
           </div>
         </div>
       </div>
