@@ -44,7 +44,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
-          <div className="relative h-12 w-12 transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-12 w-24 transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/LOGO/logo.jpeg"
               alt="Conference Logo"
@@ -76,7 +76,7 @@ export function Navigation() {
             <LanguageSwitcher light={!scrolled && !isOpen} />
             <Link 
               href="/register"
-              className="bg-primary text-white hover:bg-primary/90 font-bold px-8 py-2 text-sm rounded-full transition-all"
+              className="bg-primary text-white hover:bg-primary/90 font-bold px-8 py-2 text-sm rounded-full transition-all shadow-md"
             >
               Register
             </Link>
@@ -107,7 +107,7 @@ export function Navigation() {
         )}
       >
         <div className="flex justify-between items-center p-6 border-b border-black/5 bg-white">
-          <div className="relative h-12 w-12">
+          <div className="relative h-12 w-24">
             <Image src="/LOGO/logo.jpeg" alt="Logo" fill className="object-contain" />
           </div>
           <button onClick={() => setIsOpen(false)} className="p-2 text-primary bg-primary/5 rounded-full">
