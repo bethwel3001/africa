@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -33,22 +32,22 @@ export function Countdown() {
   }, [])
 
   return (
-    <div className="flex gap-4 md:gap-8 justify-center items-center py-8">
+    <div className="flex gap-2 sm:gap-4 justify-center items-center">
       <TimeUnit value={timeLeft.days} label="Days" />
       <TimeUnit value={timeLeft.hours} label="Hours" />
-      <TimeUnit value={timeLeft.minutes} label="Minutes" />
-      <TimeUnit value={timeLeft.seconds} label="Seconds" />
+      <TimeUnit value={timeLeft.minutes} label="Min" />
+      <TimeUnit value={timeLeft.seconds} label="Sec" />
     </div>
   )
 }
 
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col items-center">
-      <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 md:p-4 min-w-[60px] md:min-w-[80px] border border-white/20">
-        <span className="text-2xl md:text-4xl font-bold text-secondary">{value.toString().padStart(2, "0")}</span>
+    <div className="flex flex-col items-center flex-1">
+      <div className="bg-primary rounded-2xl w-full aspect-square flex items-center justify-center border shadow-inner">
+        <span className="text-xl sm:text-3xl font-black text-white">{value.toString().padStart(2, "0")}</span>
       </div>
-      <span className="text-xs md:text-sm mt-2 uppercase tracking-wider text-white/80">{label}</span>
+      <span className="text-[10px] font-black mt-2 uppercase tracking-widest text-primary/60">{label}</span>
     </div>
   )
 }

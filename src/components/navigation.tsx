@@ -23,7 +23,7 @@ export function Navigation() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
+      setScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -32,14 +32,14 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "glass-nav py-2 shadow-md" : "bg-transparent py-6"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b" : "bg-transparent py-6"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           {logo && (
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/50 shadow-lg transition-transform duration-300 group-hover:scale-110">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-primary/20 shadow-sm transition-transform duration-300 group-hover:scale-105">
               <Image
                 src={logo.imageUrl}
                 alt="Conference Logo"
@@ -59,7 +59,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-bold tracking-tight transition-all hover:text-secondary",
+                  "text-sm font-bold tracking-tight transition-colors hover:text-primary",
                   scrolled ? "text-foreground" : "text-white"
                 )}
               >
@@ -68,26 +68,26 @@ export function Navigation() {
             ))}
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 border-l pl-6 border-primary/10">
             <LanguageSwitcher light={!scrolled} />
             <Button 
               size="sm" 
               asChild 
-              className="bg-primary text-white hover:bg-primary/90 font-bold px-8 rounded-full shadow-lg"
+              className="bg-primary text-white hover:bg-primary/90 font-bold px-8 rounded-full"
             >
               <Link href="/register">Register</Link>
             </Button>
           </div>
         </nav>
 
-        {/* Mobile Menu Trigger */}
+        {/* Mobile Menu Trigger - NO REGISTER BUTTON HERE */}
         <div className="flex items-center gap-4 md:hidden">
           <LanguageSwitcher light={!scrolled} />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
-              "p-2 rounded-full transition-all bg-white/10 backdrop-blur-sm",
-              scrolled ? "text-primary border border-primary/10" : "text-white border border-white/20"
+              "p-2 rounded-full transition-all",
+              scrolled ? "text-primary bg-primary/5" : "text-white bg-white/10 backdrop-blur-sm"
             )}
             aria-label="Toggle Menu"
           >
@@ -126,14 +126,9 @@ export function Navigation() {
             </Link>
           ))}
           <div className="w-24 h-1 bg-secondary rounded-full my-4" />
-          <Button 
-            size="lg" 
-            className="w-full max-w-xs bg-primary text-white text-lg py-7 rounded-full font-bold shadow-xl" 
-            asChild 
-            onClick={() => setIsOpen(false)}
-          >
-            <Link href="/register">Join the Conference</Link>
-          </Button>
+          <div className="text-center space-y-4">
+             <p className="text-muted-foreground text-sm font-bold uppercase tracking-widest">October 2026 • Nairobi</p>
+          </div>
         </div>
       </div>
     </header>
