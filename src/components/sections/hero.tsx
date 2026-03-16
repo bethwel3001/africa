@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 const heroImages = [
   "/GALLERY/66.jpeg",
   "/GALLERY/83.jpeg",
-  "/GALLERY/33.jpeg", // Updated 3rd image
+  "/GALLERY/33.jpeg",
   "/GALLERY/92.jpeg",
   "/GALLERY/14.jpeg",
   "/GALLERY/38.jpeg"
