@@ -30,7 +30,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-20">
       {/* Sliding Background */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((src, index) => (
@@ -38,7 +38,7 @@ export function HeroSection() {
             key={src}
             className={cn(
               "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-              index === currentImageIndex ? "opacity-40" : "opacity-0"
+              index === currentImageIndex ? "opacity-60" : "opacity-0"
             )}
           >
             <Image
@@ -50,9 +50,8 @@ export function HeroSection() {
             />
           </div>
         ))}
-        {/* Subtle light gradient to ensure text readability without blocking images */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent hidden lg:block" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/20 to-white/95 lg:hidden" />
+        {/* Subtle dark overlay for text contrast instead of white */}
+        <div className="absolute inset-0 bg-black/40 z-[1]" />
       </div>
 
       <div className="container relative z-10 px-4 mx-auto py-12">
@@ -60,17 +59,17 @@ export function HeroSection() {
           
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in-up text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-[10px] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary font-bold text-[10px] tracking-widest uppercase backdrop-blur-sm">
               21st – 23rd October 2026 • Nairobi
             </div>
             
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-5xl lg:text-5xl font-black tracking-tight text-foreground leading-tight uppercase">
+              <h1 className="text-3xl md:text-5xl lg:text-5xl font-black tracking-tight text-white leading-tight uppercase">
                 REIMAGINING <br />
-                <span className="text-primary">AFRICA'S</span> FUTURE
+                <span className="text-secondary">AFRICA'S</span> FUTURE
               </h1>
               
-              <p className="text-sm md:text-lg font-medium text-muted-foreground max-w-xl leading-relaxed">
+              <p className="text-sm md:text-lg font-medium text-white/90 max-w-xl leading-relaxed">
                 Uniting Pan-African youth for a just, inclusive, and sustainable continent. Together towards 2063.
               </p>
             </div>
@@ -81,7 +80,7 @@ export function HeroSection() {
                   Register Now <ArrowRight className="ml-2 h-3 w-3 hidden sm:inline" />
                 </Link>
               </Button>
-              <Button size="lg" className="bg-black text-white hover:bg-black/90 px-6 sm:px-8 h-12 rounded-full font-bold shadow-lg transition-transform hover:scale-105 whitespace-nowrap text-xs border border-white/10" asChild>
+              <Button size="lg" className="bg-black text-white hover:bg-black/80 px-6 sm:px-8 h-12 rounded-full font-bold shadow-lg transition-transform hover:scale-105 whitespace-nowrap text-xs border border-white/20" asChild>
                 <Link href="/register">
                   Tickets & Plans
                 </Link>
@@ -89,24 +88,26 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content - Countdown (Desktop Only Alignment) */}
+          {/* Right Content - Countdown (Desktop) */}
           <div className="hidden lg:block">
-            <div className="p-8 space-y-6">
-               <h3 className="text-center font-black uppercase tracking-[0.3em] text-[10px] text-primary">Countdown to Nairobi</h3>
+            <div className="p-8 space-y-6 bg-black/20 backdrop-blur-md rounded-[2rem] border border-white/10">
+               <h3 className="text-center font-black uppercase tracking-[0.3em] text-[10px] text-secondary">Countdown to Nairobi</h3>
                <Countdown />
             </div>
           </div>
 
           {/* Small Screen Countdown */}
-          <div className="lg:hidden w-full mt-8 pt-8 border-t border-black/5">
-            <p className="text-center font-bold text-[10px] uppercase tracking-widest text-primary mb-6">Starts In</p>
-            <Countdown />
+          <div className="lg:hidden w-full mt-8 pt-8 border-t border-white/10">
+            <p className="text-center font-bold text-[10px] uppercase tracking-widest text-secondary mb-6">Starts In</p>
+            <div className="bg-black/20 backdrop-blur-md rounded-2xl p-4 border border-white/5">
+              <Countdown />
+            </div>
           </div>
 
         </div>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block opacity-30">
-          <Link href="#about" className="text-primary hover:text-primary transition-colors">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block opacity-50">
+          <Link href="#about" className="text-white hover:text-secondary transition-colors">
             <ChevronDown size={32} />
           </Link>
         </div>
