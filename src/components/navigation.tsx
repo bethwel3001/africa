@@ -40,24 +40,18 @@ export function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center">
           {logo && (
-            <div className="relative h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden border border-primary/20">
+            <div className="relative h-12 w-32 md:h-16 md:w-48 overflow-hidden">
               <Image
                 src={logo.imageUrl}
                 alt={logo.description}
                 fill
-                className="object-cover"
-                data-ai-hint={logo.imageHint}
+                className="object-contain object-left"
+                priority
               />
             </div>
           )}
-          <span className={cn(
-            "font-bold text-sm md:text-lg leading-tight max-w-[150px] md:max-w-none transition-colors",
-            scrolled ? "text-primary" : "text-white"
-          )}>
-            PAYC 2026
-          </span>
         </Link>
 
         {/* Desktop Navigation */}

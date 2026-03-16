@@ -3,7 +3,7 @@
     {
       "id": "logo",
       "description": "PAYC and AUSP Conference Logo",
-      "imageUrl": "https://picsum.photos/seed/1/200/200",
+      "imageUrl": "/LOGO/logo.jpeg",
       "imageHint": "conference logo"
     },
     {
