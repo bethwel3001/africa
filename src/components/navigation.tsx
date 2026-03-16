@@ -32,14 +32,14 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "glass-nav py-3 shadow-sm" : "bg-transparent py-4"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled ? "glass-nav py-2 shadow-sm" : "bg-transparent py-4"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           {logo && (
-            <div className="relative h-12 w-12 md:h-14 md:w-14 overflow-hidden rounded-full border-2 border-white/20 shadow-lg transition-transform duration-300 group-hover:scale-105">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/50 shadow-md transition-transform duration-300 group-hover:scale-105">
               <Image
                 src={logo.imageUrl}
                 alt="Conference Logo"
@@ -75,21 +75,21 @@ export function Navigation() {
             <Button 
               size="sm" 
               asChild 
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-black px-6 rounded-full shadow-lg"
+              className="bg-primary text-white hover:bg-primary/90 font-bold px-6 rounded-full shadow-md"
             >
               <Link href="/register">Register</Link>
             </Button>
           </div>
         </nav>
 
-        {/* Mobile Menu Trigger - Removed Register button from here per user request */}
+        {/* Mobile Menu Trigger */}
         <div className="flex items-center gap-4 md:hidden">
           <LanguageSwitcher light={!scrolled} />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
-              "p-2 rounded-xl transition-all active:scale-95",
-              scrolled ? "bg-primary/10 text-primary" : "bg-white/10 text-white"
+              "p-2 rounded-xl transition-all",
+              scrolled ? "text-primary" : "text-white"
             )}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -100,7 +100,7 @@ export function Navigation() {
       {/* Mobile Overlay Navigation */}
       <div 
         className={cn(
-          "fixed inset-0 bg-background z-[60] transition-all duration-500 flex flex-col md:hidden transform",
+          "fixed inset-0 bg-background z-[60] transition-all duration-300 flex flex-col md:hidden transform",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -110,19 +110,18 @@ export function Navigation() {
               <Image src={logo.imageUrl} alt="Logo" fill className="object-cover" />
             </div>
           )}
-          <button onClick={() => setIsOpen(false)} className="p-2 text-primary active:scale-90 transition-transform">
+          <button onClick={() => setIsOpen(false)} className="p-2 text-primary">
             <X size={28} />
           </button>
         </div>
         
-        <div className="flex-1 flex flex-col justify-center gap-6 p-8 overflow-y-auto">
-          {navLinks.map((link, i) => (
+        <div className="flex-1 flex flex-col justify-center gap-8 p-8 overflow-y-auto">
+          {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-3xl font-black text-primary hover:text-secondary transition-all"
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className="text-2xl font-bold text-primary hover:text-secondary transition-all"
             >
               {link.name}
             </Link>
@@ -130,7 +129,7 @@ export function Navigation() {
           <div className="h-px bg-border/10 my-4" />
           <Button 
             size="lg" 
-            className="w-full bg-secondary text-secondary-foreground text-lg py-8 rounded-2xl font-black shadow-xl" 
+            className="w-full bg-primary text-white text-lg py-6 rounded-xl font-bold" 
             asChild 
             onClick={() => setIsOpen(false)}
           >

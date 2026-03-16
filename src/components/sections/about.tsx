@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -10,101 +9,91 @@ import { Button } from "@/components/ui/button"
 const stats = [
   { icon: Globe, label: "Countries", value: "46+" },
   { icon: Users, label: "Delegates", value: "1,500+" },
-  { icon: Award, label: "Winners", value: "10+" },
+  { icon: Award, label: "Impact", value: "High" },
 ]
 
 export function AboutSection() {
   const auspImage = PlaceHolderImages.find((img) => img.id === "about-ausp")
 
   return (
-    <section id="about" className="py-32 bg-background overflow-hidden scroll-mt-20">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center mb-40">
-          <div className="space-y-10 animate-in fade-in slide-in-from-left-8 duration-1000">
-            <div className="space-y-4">
-              <span className="text-primary font-black tracking-widest uppercase text-xs px-4 py-1 rounded-full bg-primary/5">Background</span>
-              <h2 className="text-4xl md:text-6xl font-black leading-tight text-foreground">
+    <section id="about" className="py-24 bg-background overflow-hidden scroll-mt-20">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="space-y-8">
+            <div className="space-y-2">
+              <span className="text-primary font-bold tracking-widest uppercase text-xs">The Vision</span>
+              <h2 className="text-3xl md:text-5xl font-black leading-tight text-foreground">
                 Translating Potential <br />
-                Into <span className="text-secondary italic underline decoration-primary/20">Actionable Power</span>
+                Into Actionable Power
               </h2>
             </div>
             
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               The African Union Students' Platform (AUSP) is a continental community spanning over 46 African countries. With 70% of the continent under 30, this conference is the catalyst to translate youth energy into systemic change.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 pt-4">
+            <div className="grid grid-cols-3 gap-4 pt-4 border-t">
               {stats.map((stat, i) => (
                 <div key={i} className="space-y-1">
-                  <stat.icon className="h-6 w-6 text-secondary mb-2" />
-                  <div className="text-2xl font-black text-primary">{stat.value}</div>
-                  <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{stat.label}</div>
+                  <stat.icon className="h-5 w-5 text-primary mb-1" />
+                  <div className="text-xl font-bold text-foreground">{stat.value}</div>
+                  <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="relative h-[500px] md:h-[700px] rounded-[3rem] overflow-hidden shadow-2xl animate-in fade-in slide-in-from-right-8 duration-1000">
+          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="https://picsum.photos/seed/about-youth/800/1200"
+              src="https://picsum.photos/seed/about-youth/800/1000"
               alt="Youth Leaders"
               fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
+              className="object-cover"
               data-ai-hint="african delegates"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
-            <div className="absolute bottom-10 left-10 right-10 p-8 glass-nav rounded-3xl border-white/10">
-              <p className="text-foreground font-bold text-lg leading-tight">
-                "Uniting student voices to build the Africa we want."
-              </p>
-            </div>
+            <div className="absolute inset-0 bg-primary/10" />
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl order-2 lg:order-1 group">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-xl order-2 lg:order-1">
             {auspImage && (
               <Image
                 src={auspImage.imageUrl}
                 alt="AUSP Team"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                data-ai-hint="african leadership"
+                className="object-cover"
               />
             )}
-            <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500" />
           </div>
-          <div className="space-y-10 order-1 lg:order-2">
-            <div className="space-y-4">
-               <span className="text-primary font-black tracking-widest uppercase text-xs px-4 py-1 rounded-full bg-primary/5">Initiator</span>
-              <h2 className="text-4xl md:text-5xl font-black leading-tight text-foreground">
-                Empowering the <br />
-                <span className="text-secondary italic">Continental Voice</span>
+          <div className="space-y-8 order-1 lg:order-2">
+            <div className="space-y-2">
+               <span className="text-primary font-bold tracking-widest uppercase text-xs">Our Role</span>
+              <h2 className="text-3xl md:text-4xl font-black leading-tight text-foreground">
+                Empowering the Continental Voice
               </h2>
             </div>
             
-            <div className="space-y-6">
-               <p className="text-lg text-muted-foreground leading-relaxed">
-                AUSP represents over 100 million students. Our mission is built on three unbreakable pillars: **Education, Connection, and Empowerment**.
-              </p>
-              
-              <ul className="space-y-4">
-                {[
-                  "Policy Advocacy at AU Level",
-                  "Cross-border Student Exchange",
-                  "Youth-led Innovation Incubation",
-                  "Continental Leadership Training"
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-foreground font-bold">
-                    <CheckCircle2 className="h-6 w-6 text-secondary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              AUSP represents over 100 million students. Our mission is built on three unbreakable pillars: Education, Connection, and Empowerment.
+            </p>
+            
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                "Policy Advocacy",
+                "Student Exchange",
+                "Youth Innovation",
+                "Leadership Training"
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-foreground font-bold text-sm">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  {item}
+                </li>
+              ))}
+            </ul>
 
-            <Button size="lg" className="rounded-full px-8 py-6 font-bold bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 active:scale-95">
-              Learn more about AUSP
+            <Button size="lg" className="rounded-full px-8 bg-primary text-white hover:bg-primary/90">
+              About AUSP
             </Button>
           </div>
         </div>
