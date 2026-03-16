@@ -7,6 +7,18 @@
       "imageHint": "conference logo"
     },
     {
+      "id": "vision-sdg",
+      "description": "Sustainable Development Goal 4 - Quality Education",
+      "imageUrl": "/SDgs/4.jpeg",
+      "imageHint": "quality education"
+    },
+    {
+      "id": "role-sdg",
+      "description": "Sustainable Development Goal 5 - Gender Equality",
+      "imageUrl": "/SDgs/5.jpeg",
+      "imageHint": "gender equality"
+    },
+    {
       "id": "hero-1",
       "description": "Conference Highlight 66",
       "imageUrl": "/GALLERY/66.jpeg",
@@ -17,30 +29,6 @@
       "description": "Conference Highlight 83",
       "imageUrl": "/GALLERY/83.jpeg",
       "imageHint": "african speakers"
-    },
-    {
-      "id": "hero-3",
-      "description": "Conference Highlight 29",
-      "imageUrl": "/GALLERY/29.jpeg",
-      "imageHint": "youth engagement"
-    },
-    {
-      "id": "hero-4",
-      "description": "Conference Highlight 92",
-      "imageUrl": "/GALLERY/92.jpeg",
-      "imageHint": "digital innovation"
-    },
-    {
-      "id": "hero-5",
-      "description": "Conference Highlight 14",
-      "imageUrl": "/GALLERY/14.jpeg",
-      "imageHint": "pan african unity"
-    },
-    {
-      "id": "hero-6",
-      "description": "Conference Highlight 38",
-      "imageUrl": "/GALLERY/38.jpeg",
-      "imageHint": "sustainable future"
     },
     {
       "id": "pillar-1",
@@ -71,12 +59,6 @@
       "description": "Trade and Innovation icon",
       "imageUrl": "https://picsum.photos/seed/7/400/300",
       "imageHint": "technology trade"
-    },
-    {
-      "id": "about-ausp",
-      "description": "AUSP delegation meeting",
-      "imageUrl": "https://picsum.photos/seed/8/600/400",
-      "imageHint": "african meeting"
     }
   ]
 }

@@ -1,9 +1,9 @@
+
 "use client"
 
 import * as React from "react"
 import Image from "next/image"
-import { CheckCircle2, Award, Users, Globe } from "lucide-react"
-import { PlaceHolderImages } from "@/lib/placeholder-images"
+import { Globe, Users, Award, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const stats = [
@@ -13,16 +13,15 @@ const stats = [
 ]
 
 export function AboutSection() {
-  const auspImage = PlaceHolderImages.find((img) => img.id === "about-ausp")
-
   return (
     <section id="about" className="py-24 bg-background overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+        {/* The Vision Section */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
           <div className="space-y-8">
             <div className="space-y-2">
               <span className="text-primary font-bold tracking-widest uppercase text-xs">The Vision</span>
-              <h2 className="text-3xl md:text-5xl font-black leading-tight text-foreground">
+              <h2 className="text-3xl md:text-5xl font-black leading-tight text-foreground uppercase">
                 Translating Potential <br />
                 Into Actionable Power
               </h2>
@@ -45,36 +44,36 @@ export function AboutSection() {
 
           <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="https://picsum.photos/seed/about-youth/800/1000"
-              alt="Youth Leaders"
+              src="/SDgs/4.jpeg"
+              alt="The Vision - Education"
               fill
               className="object-cover"
-              data-ai-hint="african delegates"
+              priority
             />
-            <div className="absolute inset-0 bg-primary/10" />
+            <div className="absolute inset-0 bg-primary/5" />
           </div>
         </div>
 
+        {/* Our Role Section */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-xl order-2 lg:order-1">
-            {auspImage && (
-              <Image
-                src={auspImage.imageUrl}
-                alt="AUSP Team"
-                fill
-                className="object-cover"
-              />
-            )}
+          <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl order-2 lg:order-1">
+            <Image
+              src="/SDgs/5.jpeg"
+              alt="Our Role - Empowerment"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-primary/5" />
           </div>
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-2">
-               <span className="text-primary font-bold tracking-widest uppercase text-xs">Our Role</span>
-              <h2 className="text-3xl md:text-4xl font-black leading-tight text-foreground">
+              <span className="text-primary font-bold tracking-widest uppercase text-xs">Our Role</span>
+              <h2 className="text-3xl md:text-5xl font-black leading-tight text-foreground uppercase">
                 Empowering the Continental Voice
               </h2>
             </div>
             
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               AUSP represents over 100 million students. Our mission is built on three unbreakable pillars: Education, Connection, and Empowerment.
             </p>
             
@@ -92,7 +91,7 @@ export function AboutSection() {
               ))}
             </ul>
 
-            <Button size="lg" className="rounded-full px-8 bg-primary text-white hover:bg-primary/90">
+            <Button size="lg" className="rounded-full px-8 bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider">
               About AUSP
             </Button>
           </div>

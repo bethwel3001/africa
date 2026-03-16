@@ -44,7 +44,8 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
-          <div className="relative h-12 w-24 transition-transform duration-300 group-hover:scale-105">
+          {/* Original rectangular shape restored */}
+          <div className="relative h-12 w-28 transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/LOGO/logo.jpeg"
               alt="Conference Logo"
@@ -63,7 +64,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-bold tracking-tight transition-colors hover:text-primary",
+                  "text-sm font-bold tracking-tight transition-colors hover:text-primary uppercase",
                   scrolled ? "text-foreground" : "text-white"
                 )}
               >
@@ -76,7 +77,7 @@ export function Navigation() {
             <LanguageSwitcher light={!scrolled && !isOpen} />
             <Link 
               href="/register"
-              className="bg-primary text-white hover:bg-primary/90 font-bold px-8 py-2 text-sm rounded-full transition-all shadow-md"
+              className="bg-primary text-white hover:bg-primary/90 font-bold px-8 py-2 text-xs rounded-full transition-all shadow-md uppercase tracking-wider"
             >
               Register
             </Link>
@@ -99,7 +100,7 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Overlay Navigation */}
+      {/* Mobile Overlay Navigation - No Register Button */}
       <div 
         className={cn(
           "fixed inset-0 bg-white z-[110] transition-all duration-300 flex flex-col md:hidden transform",
@@ -121,7 +122,7 @@ export function Navigation() {
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-3xl font-black text-primary hover:text-secondary transition-all"
+              className="text-3xl font-black text-primary hover:text-secondary transition-all uppercase"
             >
               {link.name}
             </Link>
