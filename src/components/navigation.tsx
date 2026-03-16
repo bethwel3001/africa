@@ -63,7 +63,10 @@ export function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-bold tracking-tight text-foreground transition-colors hover:text-primary"
+                className={cn(
+                  "text-sm font-bold tracking-tight transition-colors hover:text-primary",
+                  scrolled ? "text-foreground" : "text-white"
+                )}
               >
                 {link.name}
               </Link>
@@ -71,7 +74,7 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-6 border-l pl-6 border-primary/10">
-            <LanguageSwitcher />
+            <LanguageSwitcher light={!scrolled && !isOpen} />
             <Link 
               href="/register"
               className="bg-primary text-white hover:bg-primary/90 font-bold px-8 py-2 text-sm rounded-full transition-all"
@@ -85,7 +88,10 @@ export function Navigation() {
         <div className="flex items-center gap-4 md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-full text-primary bg-primary/5 transition-all"
+            className={cn(
+              "p-2 rounded-full transition-all",
+              scrolled || isOpen ? "text-primary bg-primary/5" : "text-white bg-white/10 backdrop-blur-sm"
+            )}
             aria-label="Toggle Menu"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
