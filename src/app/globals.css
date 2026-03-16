@@ -13,43 +13,17 @@
     --primary: 154 100% 21%;
     --primary-foreground: 0 0% 100%;
     --secondary: 51 100% 50%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 40%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
     --accent: 358 79% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 154 100% 21%;
-    --radius: 0.75rem;
-    --chart-1: 154 100% 21%;
-    --chart-2: 51 100% 50%;
-    --chart-3: 358 79% 50%;
-    --chart-4: 154 60% 70%;
-    --chart-5: 51 60% 70%;
-  }
-  .dark {
-    --background: 154 100% 5%;
-    --foreground: 0 0% 98%;
-    --card: 154 100% 7%;
-    --card-foreground: 0 0% 98%;
-    --popover: 154 100% 7%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 154 100% 21%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 51 100% 50%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 154 20% 15%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 358 79% 50%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 154 20% 15%;
-    --input: 154 20% 15%;
-    --ring: 154 100% 21%;
+    --radius: 1rem;
   }
 }
 
@@ -58,7 +32,15 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
   }
+}
+
+.glass-nav {
+  @apply bg-white/80 backdrop-blur-md border-b border-white/20;
+}
+
+.text-balance {
+  text-wrap: balance;
 }

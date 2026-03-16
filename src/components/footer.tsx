@@ -1,80 +1,83 @@
-
 "use client"
 
 import * as React from "react"
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Globe } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react"
+import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 export function Footer() {
+  const logo = PlaceHolderImages.find((img) => img.id === "logo")
+
   return (
-    <footer className="bg-[#1a1a1a] text-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight">PAYC <span className="text-secondary">2026</span></h2>
-            <p className="text-white/60 leading-relaxed max-w-xs">
-              Uniting African youth to drive sustainable development, innovation, and Pan-Africanism.
+    <footer className="bg-[#121212] text-white pt-32 pb-12">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+          <div className="space-y-8">
+            {logo && (
+              <div className="relative h-12 w-44 brightness-200 contrast-200">
+                <Image src={logo.imageUrl} alt="Logo" fill className="object-contain object-left" />
+              </div>
+            )}
+            <p className="text-white/60 leading-relaxed text-lg font-medium">
+              Uniting African youth to drive sustainable development and global innovation.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-colors text-white">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-colors text-white">
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-colors text-white">
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-colors text-white">
-                <Linkedin className="h-5 w-5" />
-              </Link>
+              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                <Link 
+                  key={i} 
+                  href="#" 
+                  className="h-12 w-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1 text-white hover:text-secondary-foreground"
+                >
+                  <Icon size={24} />
+                </Link>
+              ))}
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-4 text-white/60">
+            <h3 className="text-xl font-black mb-8 text-secondary tracking-widest uppercase text-xs">Navigation</h3>
+            <ul className="space-y-4 text-white/60 font-bold">
               <li><Link href="/" className="hover:text-secondary transition-colors">Home</Link></li>
-              <li><Link href="/#about" className="hover:text-secondary transition-colors">About the Conference</Link></li>
-              <li><Link href="/#program" className="hover:text-secondary transition-colors">Program Schedule</Link></li>
+              <li><Link href="/#about" className="hover:text-secondary transition-colors">About Conference</Link></li>
+              <li><Link href="/#pillars" className="hover:text-secondary transition-colors">Thematic Pillars</Link></li>
               <li><Link href="/gallery" className="hover:text-secondary transition-colors">Event Gallery</Link></li>
-              <li><Link href="/#contact" className="hover:text-secondary transition-colors">Contact Us</Link></li>
+              <li><Link href="/#contact" className="hover:text-secondary transition-colors">Get Involved</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-6">Resources</h3>
-            <ul className="space-y-4 text-white/60">
-              <li><Link href="/register" className="hover:text-secondary transition-colors">Registration</Link></li>
-              <li><Link href="/register" className="hover:text-secondary transition-colors">Buy Ticket</Link></li>
-              <li><Link href="#" className="hover:text-secondary transition-colors">Speaker Nomination</Link></li>
-              <li><Link href="#" className="hover:text-secondary transition-colors">Partnership Kit</Link></li>
-              <li><Link href="/admin/generator" className="hover:text-secondary transition-colors">Organizers Tool</Link></li>
+            <h3 className="text-xl font-black mb-8 text-secondary tracking-widest uppercase text-xs">Resources</h3>
+            <ul className="space-y-4 text-white/60 font-bold">
+              <li><Link href="/register" className="hover:text-secondary transition-colors">Registration Hub</Link></li>
+              <li><Link href="#" className="hover:text-secondary transition-colors">Partner Kit</Link></li>
+              <li><Link href="#" className="hover:text-secondary transition-colors">Speaker Nominees</Link></li>
+              <li><Link href="/admin/generator" className="hover:text-secondary transition-colors">Organizer Tools</Link></li>
             </ul>
           </div>
 
-          <div className="space-y-6">
-            <h3 className="text-lg font-bold mb-6">Newsletter</h3>
-            <p className="text-white/60 text-sm">Subscribe for updates and speaker announcements.</p>
-            <div className="flex gap-2">
+          <div className="space-y-8">
+            <h3 className="text-xl font-black mb-8 text-secondary tracking-widest uppercase text-xs">Newsletter</h3>
+            <p className="text-white/60 font-medium">Get the latest speaker updates and announcements.</p>
+            <div className="relative">
               <input 
                 type="email" 
                 placeholder="Email Address" 
-                className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-secondary transition-colors"
+                className="bg-white/5 border border-white/10 rounded-2xl px-6 py-4 w-full focus:outline-none focus:border-secondary transition-colors text-white font-medium"
               />
-              <button className="bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-bold hover:bg-secondary/90 transition-colors">
-                Join
+              <button className="absolute right-2 top-2 h-10 w-10 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+                <Send size={18} />
               </button>
             </div>
-            <p className="text-xs text-white/40 italic">#AUSPReimagines2063 | #TheAfricaWeWant</p>
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-sm">
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-white/30 text-sm font-medium">
           <p>© 2026 INTERNATIONAL PAN-AFRICAN YOUTH CONFERENCE. An Initiative of AUSP.africa.</p>
-          <div className="flex gap-8">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+          <div className="flex gap-10">
+            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="#" className="hover:text-white transition-colors">Conduct</Link>
           </div>
         </div>
       </div>

@@ -1,35 +1,47 @@
-
 "use client"
 
 import * as React from "react"
-import { Globe2, Accessibility } from "lucide-react"
+import { Globe2, Accessibility, ShieldCheck, Zap } from "lucide-react"
 
 export function ImpactSection() {
   return (
-    <section className="py-24 bg-muted/50">
-      <div className="container mx-auto px-4">
+    <section className="py-32 bg-background relative overflow-hidden">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+      
+      <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Why This Conference? */}
-          <div className="bg-white p-10 md:p-16 rounded-[2.5rem] shadow-xl border border-primary/5 space-y-6 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Globe2 size={150} />
+          <div className="bg-primary p-12 md:p-16 rounded-[3.5rem] shadow-2xl text-white space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-all duration-500">
+            <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 group-hover:rotate-12 transition-all duration-700">
+              <Globe2 size={200} />
             </div>
-            <h3 className="text-sm font-bold tracking-widest text-primary uppercase">Global Impact</h3>
-            <h2 className="text-3xl md:text-5xl font-bold">Reframing the <span className="text-secondary">Narrative</span></h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              This isn't just an event; it's a movement. We are strengthening multilateralism by exporting African models of innovation and sustainable growth. Our focus is on reframing the global narrative of Africa from a continent of potential to one of realized power.
+            <div className="h-14 w-14 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
+              <Zap className="text-secondary" size={32} />
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-sm font-black tracking-widest text-secondary uppercase">Global Movement</h3>
+              <h2 className="text-4xl md:text-6xl font-black leading-tight">Reframing the <br /> <span className="text-secondary italic">Narrative</span></h2>
+            </div>
+            <p className="text-xl text-white/80 leading-relaxed font-medium">
+              We are strengthening multilateralism by exporting African models of innovation. This is about moving from "potential" to "power" on the global stage.
             </p>
           </div>
 
           {/* Inclusion & Accessibility */}
-          <div className="bg-primary p-10 md:p-16 rounded-[2.5rem] shadow-xl text-white space-y-6 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Accessibility size={150} />
+          <div className="bg-white p-12 md:p-16 rounded-[3.5rem] shadow-xl border border-primary/5 text-foreground space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-all duration-500">
+            <div className="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 group-hover:-rotate-12 transition-all duration-700">
+              <Accessibility size={200} />
             </div>
-            <h3 className="text-sm font-bold tracking-widest text-secondary uppercase">Accessibility</h3>
-            <h2 className="text-3xl md:text-5xl font-bold">Inclusive by <span className="text-secondary">Design</span></h2>
-            <p className="text-lg text-white/80 leading-relaxed">
-              Ensuring no youth is left behind. The conference features multi-language support (Arabic, English, French, Portuguese, Spanish, Swahili), sign language interpretation, and data-friendly streaming to ensure reach across rural and urban Africa alike.
+            <div className="h-14 w-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-4">
+              <ShieldCheck className="text-primary" size={32} />
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-sm font-black tracking-widest text-primary uppercase">Accessibility</h3>
+              <h2 className="text-4xl md:text-6xl font-black leading-tight">Inclusive <br /> <span className="text-secondary italic">By Design</span></h2>
+            </div>
+            <p className="text-xl text-muted-foreground leading-relaxed font-medium">
+              Multi-language support, sign language interpretation, and data-friendly streaming ensure reach across urban and rural Africa alike.
             </p>
           </div>
         </div>

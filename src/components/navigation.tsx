@@ -11,12 +11,10 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { name: "Home", href: "/" },
   { name: "About", href: "/#about" },
+  { name: "Pillars", href: "/#pillars" },
   { name: "Program", href: "/#program" },
-  { name: "Speakers", href: "/#speakers" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Contact", href: "/#contact" },
 ]
 
 export function Navigation() {
@@ -35,17 +33,17 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        scrolled ? "glass-nav py-3 shadow-md" : "bg-transparent py-6"
       )}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <Link href="/" className="flex items-center group">
           {logo && (
-            <div className="relative h-12 w-32 md:h-16 md:w-48 overflow-hidden">
+            <div className="relative h-10 w-32 md:h-12 md:w-40 overflow-hidden transition-transform duration-300 group-hover:scale-105">
               <Image
                 src={logo.imageUrl}
-                alt={logo.description}
+                alt="Conference Logo"
                 fill
                 className="object-contain object-left"
                 priority
@@ -54,73 +52,85 @@ export function Navigation() {
           )}
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium hover:text-secondary transition-colors",
-                scrolled ? "text-foreground" : "text-white/90"
-              )}
+        {/* Desktop & Tablet Navigation */}
+        <nav className="hidden md:flex items-center gap-8">
+          <div className="flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "text-sm font-bold transition-all hover:text-secondary",
+                  scrolled ? "text-foreground" : "text-white"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          
+          <div className="h-4 w-px bg-border/40 mx-2" />
+          
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher light={!scrolled} />
+            <Button 
+              size="sm" 
+              asChild 
+              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-black px-6 rounded-full shadow-lg"
             >
-              {link.name}
-            </Link>
-          ))}
-          <div className="h-6 w-px bg-border mx-2" />
-          <LanguageSwitcher />
-          <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" asChild className={cn(
-              scrolled ? "border-primary text-primary" : "border-white text-white hover:bg-white/10"
-            )}>
               <Link href="/register">Register</Link>
-            </Button>
-            <Button size="sm" asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-              <Link href="/register">Buy Ticket</Link>
             </Button>
           </div>
         </nav>
 
         {/* Mobile Menu Trigger */}
-        <div className="lg:hidden flex items-center gap-4">
-          <LanguageSwitcher />
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={cn(
-              "p-2 rounded-md",
-              scrolled ? "text-primary" : "text-white"
-            )}
-          >
-            {isOpen ? <X /> : <Menu />}
-          </button>
-        </div>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={cn(
+            "md:hidden p-2 rounded-xl transition-all active:scale-95",
+            scrolled ? "bg-primary/10 text-primary" : "bg-white/10 text-white"
+          )}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white z-40 flex flex-col pt-20 px-6">
-          <div className="flex flex-col gap-6 items-center text-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-xl font-semibold text-foreground hover:text-primary transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="w-full h-px bg-border my-4" />
-            <Button size="lg" className="w-full bg-primary text-white" asChild onClick={() => setIsOpen(false)}>
-              <Link href="/register">Register Now</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="w-full border-secondary text-secondary" asChild onClick={() => setIsOpen(false)}>
-              <Link href="/register">Buy Ticket</Link>
-            </Button>
-          </div>
+      {/* Mobile Overlay Navigation */}
+      <div 
+        className={cn(
+          "fixed inset-0 bg-background z-[60] transition-all duration-500 flex flex-col md:hidden transform",
+          isOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="flex justify-between items-center p-6 border-b border-border/10 bg-white shadow-sm">
+           {logo && (
+            <div className="relative h-8 w-24">
+              <Image src={logo.imageUrl} alt="Logo" fill className="object-contain" />
+            </div>
+          )}
+          <button onClick={() => setIsOpen(false)} className="p-2 text-primary active:scale-90 transition-transform">
+            <X size={32} />
+          </button>
         </div>
-      )}
+        
+        <div className="flex-1 flex flex-col justify-center gap-8 p-12 overflow-y-auto">
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-black text-primary hover:text-secondary transition-all"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <div className="h-px bg-border/10 my-4" />
+          <Button size="lg" className="w-full bg-secondary text-secondary-foreground text-xl py-10 rounded-2xl font-black shadow-xl" asChild onClick={() => setIsOpen(false)}>
+            <Link href="/register">Register Now</Link>
+          </Button>
+        </div>
+      </div>
     </header>
   )
 }
