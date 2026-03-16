@@ -34,14 +34,7 @@ export function Countdown() {
     return () => clearInterval(timer)
   }, [])
 
-  if (!mounted) return (
-    <div className="flex gap-2 sm:gap-4 justify-center items-center opacity-0">
-      <TimeUnit value={0} label="Days" />
-      <TimeUnit value={0} label="Hours" />
-      <TimeUnit value={0} label="Min" />
-      <TimeUnit value={0} label="Sec" />
-    </div>
-  )
+  if (!mounted) return null
 
   return (
     <div className="flex gap-2 sm:gap-4 justify-center items-center">
@@ -56,10 +49,10 @@ export function Countdown() {
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center flex-1">
-      <div className="bg-white/50 backdrop-blur-sm rounded-2xl w-full aspect-square flex items-center justify-center border border-primary/10 shadow-sm">
-        <span className="text-2xl sm:text-4xl font-black text-primary">{value.toString().padStart(2, "0")}</span>
+      <div className="bg-white/10 backdrop-blur-sm rounded-2xl w-full aspect-square flex items-center justify-center border-none shadow-none">
+        <span className="text-2xl sm:text-4xl font-black text-white">{value.toString().padStart(2, "0")}</span>
       </div>
-      <span className="text-[10px] font-black mt-3 uppercase tracking-widest text-primary/60">{label}</span>
+      <span className="text-[10px] font-black mt-3 uppercase tracking-widest text-secondary/80">{label}</span>
     </div>
   )
 }
