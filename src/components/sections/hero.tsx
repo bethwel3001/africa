@@ -52,11 +52,13 @@ export function HeroSection() {
               fill
               className="object-cover"
               priority={index === 0}
+              quality={100}
+              sizes="100vw"
               onError={() => handleImageError(index)}
             />
           </div>
         ))}
-        {/* Dark overlay to ensure text legibility */}
+        {/* Subtle dark overlay to ensure text legibility while maintaining image vibrancy */}
         <div className="absolute inset-0 bg-black/40 z-[1]" />
       </div>
 
@@ -96,7 +98,7 @@ export function HeroSection() {
 
           {/* Right Content - Countdown (Desktop) */}
           <div className="hidden lg:block">
-            <div className="p-8 space-y-6 bg-black/10 backdrop-blur-md rounded-[2rem]">
+            <div className="p-8 space-y-6">
                <h3 className="text-center font-black uppercase tracking-[0.3em] text-[10px] text-secondary">Countdown to Nairobi</h3>
                <Countdown />
             </div>
@@ -105,7 +107,7 @@ export function HeroSection() {
           {/* Small Screen Countdown */}
           <div className="lg:hidden w-full mt-8 pt-8 border-t border-white/10">
             <p className="text-center font-bold text-[10px] uppercase tracking-widest text-secondary mb-6">Starts In</p>
-            <div className="bg-black/10 backdrop-blur-md rounded-2xl p-4">
+            <div className="p-4">
               <Countdown />
             </div>
           </div>

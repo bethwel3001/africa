@@ -49,10 +49,14 @@ export function Countdown() {
 function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center flex-1">
-      <div className="bg-white/10 backdrop-blur-sm rounded-2xl w-full aspect-square flex items-center justify-center border-none shadow-none">
-        <span className="text-2xl sm:text-4xl font-black text-white">{value.toString().padStart(2, "0")}</span>
+      <div className="w-full aspect-square flex items-center justify-center">
+        <span className="text-2xl sm:text-5xl font-black text-white drop-shadow-lg">
+          {value.toString().padStart(2, "0")}
+        </span>
       </div>
-      <span className="text-[10px] font-black mt-3 uppercase tracking-widest text-secondary/80">{label}</span>
+      <span className="text-[10px] font-black mt-1 uppercase tracking-widest text-secondary shadow-black/20 drop-shadow-sm">
+        {label}
+      </span>
     </div>
   )
 }
