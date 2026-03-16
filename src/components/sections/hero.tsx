@@ -76,12 +76,12 @@ export function HeroSection() {
           
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in-up text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/30 text-secondary font-bold text-[10px] tracking-widest uppercase backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-bold text-[10px] tracking-widest uppercase backdrop-blur-sm">
               21st – 23rd October 2026 • Nairobi
             </div>
             
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight uppercase">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase">
                 REIMAGINING <br />
                 <span className="text-secondary">AFRICA'S</span> FUTURE
               </h1>
@@ -92,12 +92,12 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-row items-center gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-white hover:bg-primary/90 px-6 sm:px-10 h-14 rounded-full font-bold shadow-lg transition-transform hover:scale-105 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wider" asChild>
+              <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-6 sm:px-10 h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wider" asChild>
                 <Link href="/register">
                   Register Now <ArrowRight className="ml-2 h-4 w-4 hidden sm:inline" />
                 </Link>
               </Button>
-              <Button size="lg" className="bg-black text-white hover:bg-black/80 px-6 sm:px-10 h-14 rounded-full font-bold shadow-lg transition-transform hover:scale-105 whitespace-nowrap text-xs sm:text-sm border-none uppercase tracking-wider" asChild>
+              <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-6 sm:px-10 h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm border-none uppercase tracking-wider" asChild>
                 <Link href="/register">
                   Tickets & Plans
                 </Link>
@@ -108,7 +108,7 @@ export function HeroSection() {
           {/* Right Content - Countdown (Desktop) */}
           <div className="hidden lg:block">
             <div className="p-8 space-y-8">
-               <h3 className="text-center font-black uppercase tracking-[0.4em] text-[10px] text-secondary">Countdown to Nairobi</h3>
+               <h3 className="text-center font-bold uppercase tracking-[0.4em] text-[10px] text-secondary">Countdown to Nairobi</h3>
                <Countdown />
             </div>
           </div>

@@ -21,7 +21,7 @@ export function AboutSection() {
           <div className="space-y-8">
             <div className="space-y-2">
               <span className="text-primary font-bold tracking-widest uppercase text-xs">The Vision</span>
-              <h2 className="text-3xl md:text-5xl font-black leading-tight text-foreground uppercase">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
                 Translating Potential <br />
                 Into Actionable Power
               </h2>
@@ -34,7 +34,7 @@ export function AboutSection() {
             <div className="grid grid-cols-3 gap-4 pt-4 border-t">
               {stats.map((stat, i) => (
                 <div key={i} className="space-y-1">
-                  <stat.icon className="h-5 w-5 text-primary mb-1" />
+                  <stat.icon className="h-5 w-5 text-secondary mb-1" />
                   <div className="text-xl font-bold text-foreground">{stat.value}</div>
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{stat.label}</div>
                 </div>
@@ -68,7 +68,7 @@ export function AboutSection() {
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-2">
               <span className="text-primary font-bold tracking-widest uppercase text-xs">Our Role</span>
-              <h2 className="text-3xl md:text-5xl font-black leading-tight text-foreground uppercase">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
                 Empowering the Continental Voice
               </h2>
             </div>
@@ -91,7 +91,7 @@ export function AboutSection() {
               ))}
             </ul>
 
-            <Button size="lg" className="rounded-full px-8 bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider">
+            <Button size="lg" className="rounded-full px-8 bg-primary text-white hover:bg-secondary hover:text-secondary-foreground font-bold uppercase tracking-wider transition-colors">
               About AUSP
             </Button>
           </div>

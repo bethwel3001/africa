@@ -5,24 +5,24 @@
 @layer base {
   :root {
     --background: 0 0% 98%; /* Off-white #F9F9F9 */
-    --foreground: 0 0% 20%; /* Dark Gray #333 */
+    --foreground: 0 0% 12%; /* Rich Black #1E1E1E */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card-foreground: 0 0% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
-    --primary: 153 100% 21%; /* Deep Green #006B3C */
+    --popover-foreground: 0 0% 12%;
+    --primary: 154 100% 21%; /* Deep Green #006B3C */
     --primary-foreground: 0 0% 100%;
     --secondary: 51 100% 50%; /* Gold #FFD700 */
-    --secondary-foreground: 0 0% 20%;
+    --secondary-foreground: 0 0% 12%;
     --muted: 0 0% 95%;
     --muted-foreground: 0 0% 45%;
-    --accent: 358 79% 50%; /* Red #E31B23 */
+    --accent: 358 79% 51%; /* Soft Red #E31B23 */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 153 100% 21%;
+    --border: 0 0% 88%; /* Light Gray #E0E0E0 */
+    --input: 0 0% 88%;
+    --ring: 154 100% 21%;
     --radius: 0.75rem;
   }
 }
@@ -33,7 +33,12 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+    line-height: 1.2;
   }
 }
 

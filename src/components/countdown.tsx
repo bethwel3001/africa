@@ -50,11 +50,11 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
       <div className="flex items-center justify-center">
-        <span className="text-3xl sm:text-6xl font-black text-white tabular-nums tracking-tighter drop-shadow-2xl">
+        <span className="text-4xl sm:text-7xl font-bold text-secondary tabular-nums tracking-tighter drop-shadow-xl">
           {value.toString().padStart(2, "0")}
         </span>
       </div>
-      <span className="text-[10px] font-black mt-2 uppercase tracking-[0.2em] text-secondary drop-shadow-md">
+      <span className="text-[10px] font-bold mt-2 uppercase tracking-[0.2em] text-foreground drop-shadow-sm">
         {label}
       </span>
     </div>
