@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -28,8 +27,8 @@ export function LanguageSwitcher() {
     setMounted(true)
   }, [])
 
-  // If not mounted, render a visual placeholder that matches the server-side structure
-  // without the Radix DropdownMenu trigger logic that generates dynamic IDs.
+  // To prevent hydration mismatch, we render a static button during SSR
+  // and only enable the Radix-powered DropdownMenu after mounting.
   if (!mounted) {
     return (
       <Button variant="ghost" size="sm" className="flex items-center gap-2">
