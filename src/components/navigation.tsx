@@ -23,7 +23,7 @@ export function Navigation() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 10)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -32,14 +32,14 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "glass-nav py-2 shadow-sm" : "bg-transparent py-4"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        scrolled ? "glass-nav py-2 shadow-md" : "bg-transparent py-6"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           {logo && (
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/50 shadow-md transition-transform duration-300 group-hover:scale-105">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-white/50 shadow-lg transition-transform duration-300 group-hover:scale-110">
               <Image
                 src={logo.imageUrl}
                 alt="Conference Logo"
@@ -52,14 +52,14 @@ export function Navigation() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-10">
+          <div className="flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-bold transition-all hover:text-secondary",
+                  "text-sm font-bold tracking-tight transition-all hover:text-secondary",
                   scrolled ? "text-foreground" : "text-white"
                 )}
               >
@@ -68,14 +68,12 @@ export function Navigation() {
             ))}
           </div>
           
-          <div className="h-4 w-px bg-border/40 mx-2" />
-          
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <LanguageSwitcher light={!scrolled} />
             <Button 
               size="sm" 
               asChild 
-              className="bg-primary text-white hover:bg-primary/90 font-bold px-6 rounded-full shadow-md"
+              className="bg-primary text-white hover:bg-primary/90 font-bold px-8 rounded-full shadow-lg"
             >
               <Link href="/register">Register</Link>
             </Button>
@@ -88,11 +86,12 @@ export function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
-              "p-2 rounded-xl transition-all",
-              scrolled ? "text-primary" : "text-white"
+              "p-2 rounded-full transition-all bg-white/10 backdrop-blur-sm",
+              scrolled ? "text-primary border border-primary/10" : "text-white border border-white/20"
             )}
+            aria-label="Toggle Menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -100,40 +99,40 @@ export function Navigation() {
       {/* Mobile Overlay Navigation */}
       <div 
         className={cn(
-          "fixed inset-0 bg-background z-[60] transition-all duration-300 flex flex-col md:hidden transform",
-          isOpen ? "translate-x-0" : "translate-x-full"
+          "fixed inset-0 bg-white z-[60] transition-all duration-500 flex flex-col md:hidden transform",
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         )}
       >
-        <div className="flex justify-between items-center p-6 border-b border-border/10">
+        <div className="flex justify-between items-center p-6 border-b border-black/5">
            {logo && (
             <div className="relative h-12 w-12 rounded-full overflow-hidden border border-primary/10">
               <Image src={logo.imageUrl} alt="Logo" fill className="object-cover" />
             </div>
           )}
-          <button onClick={() => setIsOpen(false)} className="p-2 text-primary">
-            <X size={28} />
+          <button onClick={() => setIsOpen(false)} className="p-2 text-primary bg-primary/5 rounded-full">
+            <X size={24} />
           </button>
         </div>
         
-        <div className="flex-1 flex flex-col justify-center gap-8 p-8 overflow-y-auto">
+        <div className="flex-1 flex flex-col justify-center items-center gap-8 p-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-2xl font-bold text-primary hover:text-secondary transition-all"
+              className="text-3xl font-black text-primary hover:text-secondary transition-all"
             >
               {link.name}
             </Link>
           ))}
-          <div className="h-px bg-border/10 my-4" />
+          <div className="w-24 h-1 bg-secondary rounded-full my-4" />
           <Button 
             size="lg" 
-            className="w-full bg-primary text-white text-lg py-6 rounded-xl font-bold" 
+            className="w-full max-w-xs bg-primary text-white text-lg py-7 rounded-full font-bold shadow-xl" 
             asChild 
             onClick={() => setIsOpen(false)}
           >
-            <Link href="/register">Register Now</Link>
+            <Link href="/register">Join the Conference</Link>
           </Button>
         </div>
       </div>

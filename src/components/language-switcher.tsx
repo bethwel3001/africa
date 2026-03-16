@@ -12,12 +12,11 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const languages = [
-  { name: "English", code: "en" },
-  { name: "Arabic", code: "ar" },
-  { name: "French", code: "fr" },
-  { name: "Portuguese", code: "pt" },
-  { name: "Spanish", code: "es" },
-  { name: "Swahili", code: "sw" },
+  { name: "English", code: "EN" },
+  { name: "French", code: "FR" },
+  { name: "Arabic", code: "AR" },
+  { name: "Swahili", code: "SW" },
+  { name: "Portuguese", code: "PT" },
 ]
 
 export function LanguageSwitcher({ light }: { light?: boolean }) {
@@ -28,7 +27,21 @@ export function LanguageSwitcher({ light }: { light?: boolean }) {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  if (!mounted) {
+    return (
+      <Button 
+        variant="ghost" 
+        size="sm" 
+        className={cn(
+          "flex items-center gap-2 font-bold px-3 opacity-0",
+          light ? "text-white" : "text-foreground"
+        )}
+      >
+        <Globe className="h-4 w-4" />
+        <span className="text-xs">EN</span>
+      </Button>
+    )
+  }
 
   return (
     <DropdownMenu>
@@ -37,21 +50,23 @@ export function LanguageSwitcher({ light }: { light?: boolean }) {
           variant="ghost" 
           size="sm" 
           className={cn(
-            "flex items-center gap-2 font-medium hover:bg-white/10 transition-colors",
-            light ? "text-white" : "text-foreground"
+            "flex items-center gap-2 font-bold px-3 rounded-full transition-all",
+            light ? "text-white hover:bg-white/10" : "text-foreground hover:bg-black/5"
           )}
         >
           <Globe className="h-4 w-4" />
-          <span className="hidden lg:inline">{currentLang.name}</span>
-          <span className="lg:hidden uppercase text-xs font-bold">{currentLang.code}</span>
+          <span className="text-xs tracking-wider">{currentLang.code}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-40 p-2 rounded-xl">
+      <DropdownMenuContent align="end" className="w-40 p-1.5 rounded-2xl shadow-xl border-black/5">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setCurrentLang(lang)}
-            className="cursor-pointer rounded-lg font-medium py-2 px-3 focus:bg-primary/5 focus:text-primary"
+            className={cn(
+              "cursor-pointer rounded-xl font-bold py-2.5 px-4 focus:bg-primary focus:text-white mb-0.5 last:mb-0",
+              currentLang.code === lang.code ? "bg-primary/5 text-primary" : "text-muted-foreground"
+            )}
           >
             {lang.name}
           </DropdownMenuItem>
