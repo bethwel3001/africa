@@ -2,10 +2,14 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
+import { BackToTop } from "@/components/back-to-top"
 
 export const metadata: Metadata = {
   title: 'INTERNATIONAL PAN-AFRICAN YOUTH CONFERENCE 2026',
   description: 'Uniting African youth for a Just, Inclusive & Sustainable Africa. An initiative of AUSP.',
+  icons: {
+    icon: './LOGO/logo.jpeg',
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +27,7 @@ export default function RootLayout({
       <body className="font-body antialiased selection:bg-secondary selection:text-secondary-foreground">
         {children}
         <Toaster />
+        <BackToTop />
       </body>
     </html>
   );

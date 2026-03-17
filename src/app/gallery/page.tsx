@@ -7,7 +7,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 // No Navigation bar on gallery page
 import { Footer } from "@/components/footer"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { DownloadCloud, Maximize2, Minimize2, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -24,6 +24,18 @@ export default function GalleryPage() {
 
   const [modalImg, setModalImg] = useState<null | { imageUrl: string, description: string }>(null)
   const [modalSize, setModalSize] = useState<'full' | 'half'>('full')
+
+  useEffect(() => {
+    if (modalImg) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    }
+  }, [modalImg]);
+
 
   return (
     <main className="min-h-screen bg-background">

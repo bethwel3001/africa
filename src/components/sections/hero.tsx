@@ -64,29 +64,29 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-black/50 z-[1]" />
       </div>
 
-      <div className="container relative z-10 px-2 sm:px-4 mx-auto py-2 flex flex-col lg:flex-row items-center justify-between min-h-[60vh] gap-8 lg:gap-0">
+      <div className="container relative z-10 px-2 sm:px-4 mx-auto pt-24 pb-12 lg:py-2 flex flex-col lg:flex-row items-center justify-between min-h-[60vh] gap-8 lg:gap-0">
         {/* Left Content */}
-        <div className="flex-1 w-full max-w-2xl animate-fade-in-up flex flex-col justify-center items-start text-left gap-4">
+        <div className="flex-1 w-full max-w-2xl animate-fade-in-up flex flex-col justify-center items-center text-center lg:items-start lg:text-left gap-4">
           <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground font-bold text-[8px] sm:text-[9px] md:text-[10px] tracking-widest uppercase backdrop-blur-sm shadow">
             21st – 23rd October 2026 • Nairobi
           </div>
-          <h1 className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
             REIMAGINING <br />
-            <span className="text-secondary">AFRICA'S</span> FUTURE
+            <span className="text-secondary">AFRICA\'S</span> FUTURE
           </h1>
-          <p className="text-sm sm:text-base md:text-lg font-medium text-white max-w-lg leading-relaxed drop-shadow">
+          <p className="text-lg sm:text-xl md:text-2xl font-medium text-white max-w-lg leading-relaxed drop-shadow">
             Uniting Pan-African youth for a just, inclusive, and sustainable continent. Together towards 2063.
           </p>
-          {/* Buttons row for small screens, left-aligned */}
-          <div className="flex flex-row gap-2 pt-2 w-full">
+          {/* Buttons row for small screens, centered */}
+          <div className="flex flex-row gap-2 pt-2 w-full justify-center lg:justify-start">
             <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-4 sm:px-8 h-11 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wider w-full max-w-[180px]" asChild>
               <Link href="/register">
                 Register Now <ArrowRight className="ml-2 h-4 w-4 hidden sm:inline" />
               </Link>
             </Button>
             <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-4 sm:px-8 h-11 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm border-none uppercase tracking-wider w-full max-w-[180px]" asChild>
-              <Link href="/register">
-                Tickets & Plans
+              <Link href="/NOTE/concept_note.pdf" target="_blank">
+                Concept Note
               </Link>
             </Button>
           </div>

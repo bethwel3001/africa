@@ -25,7 +25,7 @@ export default function RegisterPage() {
     <main className="min-h-screen bg-muted/20">
       {/* No Navigation bar on register page */}
       
-      <div className="container mx-auto px-4 pt-32 pb-24">
+      <div className="container mx-auto px-4 pt-16 pb-24">
         <Link href="/" className="inline-flex items-center text-primary font-medium hover:underline gap-2 mb-8">
           <ArrowLeft className="h-4 w-4" /> Back to Home
         </Link>
@@ -40,7 +40,7 @@ export default function RegisterPage() {
             {ticketTypes.map((ticket) => (
               <Card 
                 key={ticket.id} 
-                className={`relative border-2 transition-all cursor-pointer ${selectedTicket === ticket.id ? 'border-primary shadow-xl ring-2 ring-primary/10' : 'border-border'}`}
+                className={`relative border-2 transition-all cursor-pointer rounded-2xl ${selectedTicket === ticket.id ? 'border-primary shadow-xl ring-2 ring-primary/10' : 'border-border'}`}
                 onClick={() => setSelectedTicket(ticket.id)}
               >
                 {selectedTicket === ticket.id && (
@@ -102,7 +102,7 @@ export default function RegisterPage() {
                   </div>
                 </div>
                 <div className="md:col-span-2 pt-4">
-                  <Button size="lg" className="w-full bg-primary text-white font-bold py-8 text-xl">
+                  <Button className="w-full bg-primary text-white font-bold py-6 text-lg">
                     Proceed to Payment
                   </Button>
                   <p className="text-center text-xs text-muted-foreground mt-4">

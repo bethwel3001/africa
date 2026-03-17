@@ -66,13 +66,13 @@ export function ContactFAQSection() {
           </div>
 
           {/* Contact Form Section */}
-          <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-primary/5 space-y-10">
+          <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-primary/5 space-y-10 flex flex-col h-full">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold">Get In <span className="text-primary">Touch</span></h3>
               <p className="text-muted-foreground">Have a question or interested in partnering? Reach out to our team.</p>
             </div>
 
-            <form className="space-y-6">
+            <form className="space-y-6 flex-grow flex flex-col">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Full Name</label>
@@ -87,30 +87,33 @@ export function ContactFAQSection() {
                 <label className="text-sm font-medium">Subject</label>
                 <Input placeholder="Partnership Inquiry" />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 flex-grow flex flex-col">
                 <label className="text-sm font-medium">Message</label>
-                <Textarea placeholder="Tell us more..." className="min-h-[150px]" />
+                <Textarea placeholder="Tell us more..." className="flex-grow" />
               </div>
-              <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold py-6">
+              <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold py-6 rounded-full">
                 <Send className="h-4 w-4 mr-2" /> Send Message
               </Button>
             </form>
+          </div>
+        </div>
 
-            <div className="pt-8 border-t space-y-4">
-              <div className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-sm font-medium">events@ausp.africa</span>
-              </div>
-              <div className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
-                <Phone className="h-5 w-5 text-secondary" />
-                <span className="text-sm font-medium">+254 728 762 971</span>
-              </div>
-              <div className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
-                <MapPin className="h-5 w-5 text-secondary" />
-                <span className="text-sm font-medium">Nairobi, Kenya & Online</span>
+        <div className="text-center mt-24 pt-16 border-t border-primary/10">
+           <h3 className="font-bold text-2xl mb-8">Our Contact Details</h3>
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 text-muted-foreground">
+              <a href="mailto:events@ausp.africa" className="flex items-center gap-3 hover:text-primary transition-colors text-lg">
+                <Mail className="h-6 w-6 text-secondary" />
+                <span className="font-medium">events@ausp.africa</span>
+              </a>
+              <a href="tel:+254728762971" className="flex items-center gap-3 hover:text-primary transition-colors text-lg">
+                <Phone className="h-6 w-6 text-secondary" />
+                <span className="font-medium">+254 728 762 971</span>
+              </a>
+              <div className="flex items-center gap-3 text-lg">
+                <MapPin className="h-6 w-6 text-secondary" />
+                <span className="font-medium">Nairobi, Kenya & Online</span>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
