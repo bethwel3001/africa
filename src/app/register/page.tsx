@@ -102,9 +102,11 @@ export default function RegisterPage() {
                   </div>
                 </div>
                 <div className="md:col-span-2 pt-4">
-                  <Button className="w-full bg-primary text-white font-bold py-6 text-lg">
-                    Proceed to Payment
-                  </Button>
+                    <Link href="/payment">
+                        <Button className="w-full bg-primary text-white font-bold py-6 text-lg">
+                            Proceed to Payment
+                        </Button>
+                    </Link>
                   <p className="text-center text-xs text-muted-foreground mt-4">
                     Payments are securely processed. Registration implies agreement to our Code of Conduct.
                   </p>

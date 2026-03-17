@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { BackToTop } from "@/components/back-to-top"
 
 export const metadata: Metadata = {
-  title: 'INTERNATIONAL PAN-AFRICAN YOUTH CONFERENCE 2026',
+  title: 'IPAYC 2026',
   description: 'Uniting African youth for a Just, Inclusive & Sustainable Africa. An initiative of AUSP.',
   icons: {
     icon: './LOGO/logo.jpeg',
