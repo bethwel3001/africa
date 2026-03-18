@@ -1,45 +1,44 @@
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { eventsData } from '@/lib/events-data';
-import { Footer } from "@/components/footer"
-import { ArrowLeft } from 'lucide-react';
+import { Album, eventsData } from "@/lib/events-data";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Events",
+  description: "A gallery of past sessions, webinars, and events.",
+};
 
 export default function EventsPage() {
   return (
-    <main className="min-h-screen bg-muted/20">
-      <div className="container mx-auto px-4 py-16">
-        <Link href="/" className="inline-flex items-center text-primary font-medium hover:underline gap-2 mb-8">
-          <ArrowLeft className="h-4 w-4" /> Back to Site
-        </Link>
-        <div className="text-center space-y-4 mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold">Our <span className="text-secondary">Past Events</span></h1>
-            <p className="text-muted-foreground text-lg">A visual journey through our most impactful collaborations.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {eventsData.map((album) => (
-            <Link key={album.slug} href={`/events/${album.slug}`}>
-              <div className="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out overflow-hidden">
-                <div className="relative h-64 w-full overflow-hidden">
-                    <Image
-                        src={album.coverImage}
-                        alt={`Cover image for ${album.title}`}
-                        layout="fill"
-                        objectFit="cover"
-                        className="transition-transform duration-500 ease-in-out group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors duration-300">{album.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-2">Click to view album</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+    <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div className="text-center">
+        <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+          Gallery of Past Events
+        </h1>
+        <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+          Explore our gallery of past sessions, webinars, and events. Click on a category to see more.
+        </p>
       </div>
-      <Footer />
-    </main>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
+        {eventsData.map((album: Album) => (
+          <Link key={album.slug} href={`/events/${album.slug}`}>
+            <div className="group relative block overflow-hidden rounded-lg">
+              <Image
+                src={album.coverImage}
+                alt={album.title}
+                width={400}
+                height={400}
+                className="object-cover w-full h-full transform transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="text-white text-lg font-semibold text-center">{album.title}</h3>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }

@@ -9,9 +9,8 @@ export interface Album {
 // Function to generate image paths
 const generateImagePaths = (folder: string, count: number): string[] => {
   const paths: string[] = [];
-  const encodedFolder = encodeURIComponent(folder);
   for (let i = 1; i <= count; i++) {
-    paths.push(`/${encodedFolder}/${i}.jpeg`);
+    paths.push(`/${folder}/${i}.jpeg`);
   }
   return paths;
 };
@@ -20,37 +19,37 @@ export const eventsData: Album[] = [
   {
     title: "Africa We Want",
     slug: "africa-we-want",
-    coverImage: "/AFRICA%20WE%20WANT/1.jpeg",
-    images: generateImagePaths("AFRICA WE WANT", 9),
+    coverImage: "/africa-we-want/1.jpeg",
+    images: generateImagePaths("africa-we-want", 9),
   },
   {
     title: "Law Society",
     slug: "law-society",
-    coverImage: "/LAW%20SOCIETY/1.jpeg",
-    images: generateImagePaths("LAW SOCIETY", 8),
+    coverImage: "/law-society/1.jpeg",
+    images: generateImagePaths("law-society", 8),
   },
   {
     title: "Medical Society",
     slug: "medical-society",
-    coverImage: "/MEDICAL%20SOCIETY/1.jpeg",
-    images: generateImagePaths("MEDICAL SOCIETY", 4),
+    coverImage: "/medical-society/1.jpeg",
+    images: generateImagePaths("medical-society", 4),
   },
   {
     title: "Commonwealth Secretariat",
     slug: "commonwealth-secretariat",
-    coverImage: "/COMMONWEALTH%20SECRETARIAT/1.jpeg",
-    images: generateImagePaths("COMMONWEALTH SECRETARIAT", 7),
+    coverImage: "/commonwealth-secretariat/1.jpeg",
+    images: generateImagePaths("commonwealth-secretariat", 7),
   },
   {
     title: "Leaders' Chamber Program",
     slug: "leaders-chamber-program",
-    coverImage: "/LEADERS'%20CHAMBER%20PROGRAM/1.jpeg",
-    images: generateImagePaths("LEADERS' CHAMBER PROGRAM", 7),
+    coverImage: "/leaders-chamber-program/1.jpeg",
+    images: generateImagePaths("leaders-chamber-program", 7),
   },
   {
     title: "SDGs",
     slug: "sdgs",
-    coverImage: "/SDgs/1.jpeg",
-    images: generateImagePaths("SDgs", 5),
+    coverImage: "/sdgs/1.jpeg",
+    images: generateImagePaths("sdgs", 5),
   },
 ];
