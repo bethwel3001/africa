@@ -3,6 +3,7 @@ import { Album, eventsData } from "@/lib/events-data";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <Link href="/" className="inline-flex items-center text-primary font-medium hover:underline gap-2 mb-8">
+        <ArrowLeft className="h-4 w-4" /> Back to Home
+      </Link>
       <div className="text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
           Gallery of Past Events
