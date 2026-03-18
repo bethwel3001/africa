@@ -7,6 +7,7 @@ import { PillarsSection } from "@/components/sections/pillars"
 import { InitiativesSection } from "@/components/sections/initiatives"
 import { ImpactSection } from "@/components/sections/impact"
 import { SpeakersProgramSection } from "@/components/sections/speakers-program"
+import { PastEventsSection } from "@/components/sections/past-events"
 import { ContactFAQSection } from "@/components/sections/contact-faq"
 import { Footer } from "@/components/footer"
 
@@ -20,6 +21,7 @@ export default function HomePage() {
       <InitiativesSection />
       <ImpactSection />
       <SpeakersProgramSection />
+      <PastEventsSection />
       <ContactFAQSection />
       <Footer />
     </main>
