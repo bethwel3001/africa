@@ -5,13 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const eventCategories = [
-  { name: "Medical Society", path: "/MEDICAL SOCIETY/1.jpeg", slug: "medical-society" },
-  { name: "Law Society", path: "/LAW SOCIETY/1.jpeg", slug: "law-society" },
-  { name: "Leaders' Chamber Program", path: "/LEADERS' CHAMBER PROGRAM/1.jpeg", slug: "leaders-chamber-program" },
-  { name: "Commonwealth Secretariat", path: "/COMMONWEALTH SECRETARIAT/1.jpeg", slug: "commonwealth-secretariat" },
-  { name: "The Africa We Want", path: "/AFRICA WE WANT/1.jpeg", slug: "the-africa-we-want" },
-  { name: "SDGs", path: "/SDgs/1.jpeg", slug: "sdgs" },
-  { name: "Gallery", path: "/GALLERY/10.jpeg", slug: "gallery" },
+  { name: "Medical Society", path: "/medical-society/1.jpeg", slug: "medical-society" },
+  { name: "Law Society", path: "/law-society/1.jpeg", slug: "law-society" },
+  { name: "Leaders' Chamber Program", path: "/leaders-chamber-program/1.jpeg", slug: "leaders-chamber-program" },
+  { name: "Commonwealth Secretariat", path: "/commonwealth-secretariat/1.jpeg", slug: "commonwealth-secretariat" },
+  { name: "The Africa We Want", path: "/africa-we-want/1.jpeg", slug: "the-africa-we-want" },
+  { name: "SDGs", path: "/sdgs/1.jpeg", slug: "sdgs" },
+  { name: "Gallery", path: "/gallery/32.jpeg", slug: "gallery" },
 ];
 
 export function PastEventsSection() {

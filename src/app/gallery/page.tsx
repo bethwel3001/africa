@@ -13,11 +13,11 @@ import { Button } from "@/components/ui/button"
 
 
 export default function GalleryPage() {
-  // List of all images in public/GALLERY/
+  // List of all images in public/
   const galleryImages = [
     "10.webp", "14.webp", "26.webp", "3.webp", "32.webp", "34.webp", "38.webp", "39.webp", "4.webp", "43.webp", "45.webp", "5.webp", "58.webp", "59.webp", "66.webp", "79.webp", "8.webp", "82.webp", "83.webp", "92.webp"
   ].map(filename => ({
-    imageUrl: `/GALLERY/${filename}`,
+    imageUrl: `/${filename}`,
     description: filename,
     imageHint: filename
   }))

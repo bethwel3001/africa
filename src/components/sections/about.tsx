@@ -45,7 +45,7 @@ export function AboutSection() {
 
           <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl bg-white">
             <Image
-              src="/SDgs%20/4.jpeg"
+              src="/about-vision.jpeg"
               alt="The Vision - Quality Education"
               fill
               className="object-cover"
@@ -59,7 +59,7 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center animate-fade-in-up">
           <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl bg-white order-2 lg:order-1">
             <Image
-              src="/SDgs%20/5.jpeg"
+              src="/about-role.jpeg"
               alt="Our Role - Gender Equality"
               fill
               className="object-cover"

@@ -10,9 +10,9 @@ import { Countdown } from "@/components/countdown"
 import { cn } from "@/lib/utils"
 
 const heroImages = [
-  "/GALLERY/66.jpeg",
-  "/GALLERY/83.jpeg",
-  "/GALLERY/14.jpeg"
+  "/66.webp",
+  "/83.webp",
+  "/14.webp"
 ]
 
 export function HeroSection() {
@@ -78,7 +78,7 @@ export function HeroSection() {
             Uniting Pan-African youth for a just, inclusive, and sustainable continent. Together towards 2063.
           </p>
           {/* Buttons row for small screens, centered */}
-          <div className="flex flex-row gap-2 pt-2 w-full justify-center lg:justify-start">
+        <div className="flex flex-row gap-2 pt-2 w-full justify-center lg:justify-start">
             <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-4 sm:px-8 h-11 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wider w-full max-w-[180px]" asChild>
               <Link href="/register">
                 Register Now <ArrowRight className="ml-2 h-4 w-4 hidden sm:inline" />
