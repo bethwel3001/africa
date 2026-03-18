@@ -3,31 +3,31 @@
     {
       "id": "logo",
       "description": "PAYC and AUSP Conference Logo",
-      "imageUrl": "/LOGO/logo.jpeg",
+      "imageUrl": "/LOGO/logo.webp",
       "imageHint": "conference logo"
     },
     {
       "id": "vision-sdg",
       "description": "Sustainable Development Goal 4 - Quality Education",
-      "imageUrl": "/SDgs/4.jpeg",
+      "imageUrl": "/SDgs/4.webp",
       "imageHint": "quality education"
     },
     {
       "id": "role-sdg",
       "description": "Sustainable Development Goal 5 - Gender Equality",
-      "imageUrl": "/SDgs/5.jpeg",
+      "imageUrl": "/SDgs/5.webp",
       "imageHint": "gender equality"
     },
     {
       "id": "hero-1",
       "description": "Conference Highlight 66",
-      "imageUrl": "/GALLERY/66.jpeg",
+      "imageUrl": "/GALLERY/66.webp",
       "imageHint": "youth leaders"
     },
     {
       "id": "hero-2",
       "description": "Conference Highlight 83",
-      "imageUrl": "/GALLERY/83.jpeg",
+      "imageUrl": "/GALLERY/83.webp",
       "imageHint": "african speakers"
     },
     {

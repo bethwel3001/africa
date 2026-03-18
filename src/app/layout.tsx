@@ -3,6 +3,10 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { BackToTop } from "@/components/back-to-top"
+import { Montserrat, Open_Sans } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['500', '600', '700'] });
+const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '600'] });
 
 export const metadata: Metadata = {
   title: 'IPAYC 2026',
@@ -19,12 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased selection:bg-secondary selection:text-secondary-foreground">
+      <body className={`${montserrat.className} ${openSans.className} font-body antialiased selection:bg-secondary selection:text-secondary-foreground`}>
         {children}
         <Toaster />
         <BackToTop />

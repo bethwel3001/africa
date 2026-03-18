@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button"
 export default function GalleryPage() {
   // List of all images in public/GALLERY/
   const galleryImages = [
-    "10.jpeg", "14.jpeg", "26.jpeg", "3.jpeg", "32.jpeg", "34.jpeg", "38.jpeg", "39.jpeg", "4.jpeg", "43.jpeg", "45.jpeg", "5.jpeg", "58.jpeg", "59.jpeg", "66.jpeg", "79.jpeg", "8.jpeg", "82.jpeg", "83.jpeg", "92.jpeg"
+    "10.webp", "14.webp", "26.webp", "3.webp", "32.webp", "34.webp", "38.webp", "39.webp", "4.webp", "43.webp", "45.webp", "5.webp", "58.webp", "59.webp", "66.webp", "79.webp", "8.webp", "82.webp", "83.webp", "92.webp"
   ].map(filename => ({
     imageUrl: `/GALLERY/${filename}`,
     description: filename,
