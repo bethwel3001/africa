@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/context/LanguageContext"
 
 const languages = [
   { name: "English", code: "EN" },
@@ -17,11 +19,11 @@ const languages = [
   { name: "Arabic", code: "AR" },
   { name: "Swahili", code: "SW" },
   { name: "Portuguese", code: "PT" },
-]
+] as const
 
 export function LanguageSwitcher({ light }: { light?: boolean }) {
+  const { language, setLanguage } = useLanguage()
   const [mounted, setMounted] = React.useState(false)
-  const [currentLang, setCurrentLang] = React.useState(languages[0])
 
   React.useEffect(() => {
     setMounted(true)
@@ -43,6 +45,8 @@ export function LanguageSwitcher({ light }: { light?: boolean }) {
     )
   }
 
+  const currentLang = languages.find(l => l.code === language) || languages[0]
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -62,10 +66,10 @@ export function LanguageSwitcher({ light }: { light?: boolean }) {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setCurrentLang(lang)}
+            onClick={() => setLanguage(lang.code)}
             className={cn(
               "cursor-pointer rounded-xl font-bold py-2.5 px-4 focus:bg-primary focus:text-white mb-0.5 last:mb-0",
-              currentLang.code === lang.code ? "bg-primary/5 text-primary" : "text-muted-foreground"
+              language === lang.code ? "bg-primary/5 text-primary" : "text-muted-foreground"
             )}
           >
             {lang.name}

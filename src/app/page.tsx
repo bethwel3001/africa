@@ -1,6 +1,5 @@
 
 import * as React from "react"
-import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/sections/hero"
 import { AboutSection } from "@/components/sections/about"
 import { PillarsSection } from "@/components/sections/pillars"
@@ -14,7 +13,6 @@ import { Footer } from "@/components/footer"
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      <Navigation />
       <HeroSection />
       <AboutSection />
       <PillarsSection />

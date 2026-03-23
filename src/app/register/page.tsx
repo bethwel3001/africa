@@ -4,7 +4,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { ArrowLeft, Check, Ticket, Users, Monitor } from "lucide-react"
-import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -23,9 +22,8 @@ export default function RegisterPage() {
 
   return (
     <main className="min-h-screen bg-muted/20">
-      {/* No Navigation bar on register page */}
       
-      <div className="container mx-auto px-4 pt-16 pb-24">
+      <div className="container mx-auto px-4 pt-32 pb-24">
         <Link href="/" className="inline-flex items-center text-primary font-medium hover:underline gap-2 mb-8">
           <ArrowLeft className="h-4 w-4" /> Back to Home
         </Link>

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { Countdown } from "@/components/countdown"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/context/LanguageContext"
 
 const heroImages = [
   "/66.webp",
@@ -18,6 +19,7 @@ const heroImages = [
 export function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
   const [failedImages, setFailedImages] = React.useState<Set<number>>(new Set())
+  const { t } = useLanguage()
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -71,17 +73,17 @@ export function HeroSection() {
             21st – 23rd October 2026 • Nairobi
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
-            REIMAGINING <br />
-            <span className="text-secondary">AFRICA\'S</span> FUTURE
+            {t('reimagining')} <br />
+            <span className="text-secondary">{t('africas')}</span> {t('future')}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-medium text-white max-w-lg leading-relaxed drop-shadow">
-            Uniting Pan-African youth for a just, inclusive, and sustainable continent. Together towards 2063.
+            {t('heroSubtitle')}
           </p>
           {/* Buttons row for small screens, centered */}
         <div className="flex flex-row gap-2 pt-2 w-full justify-center lg:justify-start">
             <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-4 sm:px-8 h-11 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wider w-full max-w-[180px]" asChild>
               <Link href="/register">
-                Register Now <ArrowRight className="ml-2 h-4 w-4 hidden sm:inline" />
+                {t('registerNow')} <ArrowRight className="ml-2 h-4 w-4 hidden sm:inline" />
               </Link>
             </Button>
             <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-4 sm:px-8 h-11 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs sm:text-sm border-none uppercase tracking-wider w-full max-w-[180px]" asChild>

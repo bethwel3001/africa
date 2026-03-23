@@ -2,7 +2,6 @@
 "use client"
 
 import * as React from "react"
-import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
@@ -17,7 +16,7 @@ export default function ContentGeneratorPage() {
   const [loading, setLoading] = React.useState(false)
   const [result, setResult] = React.useState("")
   const [formData, setFormData] = React.useState<GenerateConferenceContentInput>({
-    conferenceName: 'INTERNATIONAL PAN-AFRICAN YOUTH CONFERENCE',
+    conferenceName: 'INTERNATIONAL PAN AFRICAN YOUTH CONFERENCE',
     conferenceDates: '21st – 23rd October 2026',
     conferenceTheme: 'Pan-African Youth for a Just, Inclusive & Sustainable Africa',
     targetAudience: 'Students',
@@ -52,7 +51,6 @@ export default function ContentGeneratorPage() {
 
   return (
     <main className="min-h-screen bg-muted/20">
-      <Navigation />
       
       <div className="container mx-auto px-4 pt-32 pb-24">
         <div className="max-w-4xl mx-auto space-y-8">

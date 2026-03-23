@@ -22,7 +22,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tighter text-secondary">PAYC 2026</h2>
+            <h2 className="text-2xl font-bold tracking-tighter text-secondary">IPAYC 2026</h2>
             <p className="text-primary-foreground/80 text-sm leading-relaxed max-w-xs">
               Uniting African youth to drive sustainable development and global innovation. An initiative of the African Union Students' Platform.
             </p>
@@ -82,7 +82,7 @@ export function Footer() {
         </div>
 
         <div className="pt-10 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-6 text-primary-foreground/40 text-[10px] font-bold tracking-widest uppercase">
-          <p>© 2026 INTERNATIONAL PAN-AFRICAN YOUTH CONFERENCE. AUSP.AFRICA</p>
+          <p>© 2026 INTERNATIONAL PAN AFRICAN YOUTH CONFERENCE. AUSP.AFRICA</p>
           <div className="flex gap-8">
             <Link href="/privacy-policy" className="hover:text-secondary">Privacy Policy</Link>
             <Link href="/terms-of-use" className="hover:text-secondary">Terms of Use</Link>

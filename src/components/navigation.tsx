@@ -4,21 +4,28 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { name: "About", href: "/#about" },
-  { name: "Pillars", href: "/#pillars" },
-  { name: "Program", href: "/#program" },
-  { name: "Past Events", href: "/events" },
-  { name: "Gallery", href: "/gallery" },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const { t } = useLanguage();
+
+  const shouldHideNav = pathname === "/gallery" || pathname.startsWith("/events");
+
+  const navLinks = [
+    { name: t('about'), href: "/#about" },
+    { name: t('pillars'), href: "/#pillars" },
+    { name: t('program'), href: "/#program" },
+    { name: t('pastEvents'), href: "/events" },
+    { name: t('gallery'), href: "/gallery" },
+  ];
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -33,11 +40,17 @@ export function Navigation() {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
+  if (shouldHideNav) {
+    return null;
+  }
+
+  const showLightNav = isHomePage && !isScrolled && !isOpen;
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 shadow-md backdrop-blur-sm" : "bg-transparent",
+        showLightNav ? "bg-transparent" : "bg-white shadow-md",
         isOpen && "bg-white"
       )}
     >
@@ -63,7 +76,7 @@ export function Navigation() {
                 href={link.href}
                 className={cn(
                   "text-sm font-bold tracking-tight transition-colors hover:text-primary uppercase",
-                  isScrolled || isOpen ? "text-foreground" : "text-white"
+                  showLightNav ? "text-white" : "text-foreground"
                 )}
               >
                 {link.name}
@@ -72,24 +85,24 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-6 border-l pl-6 border-primary/10">
-            <LanguageSwitcher light={!isScrolled && !isOpen} />
+            <LanguageSwitcher light={showLightNav} />
             <Link 
               href="/register"
               className="bg-primary text-white hover:bg-primary/90 font-bold px-8 py-2 text-xs rounded-full transition-all shadow-md uppercase tracking-wider"
             >
-              Register
+              {t('register')}
             </Link>
           </div>
         </nav>
 
         {/* Mobile Menu Trigger */}
         <div className="flex items-center gap-4 md:hidden">
-          {!isOpen && <LanguageSwitcher light={!isScrolled} />}
+          {!isOpen && <LanguageSwitcher light={showLightNav} />}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
               "p-2 rounded-md transition-colors z-[60]",
-              isScrolled || isOpen ? "text-primary" : "text-white"
+              showLightNav ? "text-white" : "text-primary"
             )}
             aria-label="Toggle Menu"
           >
@@ -117,6 +130,13 @@ export function Navigation() {
                 {link.name}
               </Link>
             ))}
+            <Link 
+              href="/register"
+              onClick={() => setIsOpen(false)}
+              className="bg-primary text-white hover:bg-primary/90 font-bold px-12 py-4 rounded-full transition-all shadow-md uppercase tracking-wider text-xl"
+            >
+              {t('registerNow')}
+            </Link>
           </nav>
         </div>
       </div>

@@ -6,14 +6,17 @@ import Image from "next/image"
 import Link from "next/link"
 import { Globe, Users, Award, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const stats = [
-  { icon: Globe, label: "Countries", value: "46+" },
-  { icon: Users, label: "Delegates", value: "1,500+" },
-  { icon: Award, label: "Impact", value: "High" },
-]
+import { useLanguage } from "@/context/LanguageContext"
 
 export function AboutSection() {
+  const { t } = useLanguage()
+
+  const stats = [
+    { icon: Globe, label: t('statsCountries'), value: "46+" },
+    { icon: Users, label: t('statsDelegates'), value: "1,500+" },
+    { icon: Award, label: t('statsImpact'), value: "High" },
+  ]
+
   return (
     <section id="about" className="py-24 bg-background overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-4">
@@ -21,15 +24,14 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-32 animate-fade-in-up">
           <div className="space-y-8">
             <div className="space-y-2">
-              <span className="text-primary font-bold tracking-widest uppercase text-xs">The Vision</span>
+              <span className="text-primary font-bold tracking-widest uppercase text-xs">{t('visionTitle')}</span>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
-                Translating Potential <br />
-                Into Actionable Power
+                {t('visionHeadline')}
               </h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The African Union Students' Platform (AUSP) is a continental community spanning over 46 African countries. With 70% of the continent under 30, this conference is the catalyst to translate youth energy into systemic change.
+              {t('visionDescription')}
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-4 border-t">
@@ -68,14 +70,14 @@ export function AboutSection() {
           </div>
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-2">
-              <span className="text-primary font-bold tracking-widest uppercase text-xs">Our Role</span>
+              <span className="text-primary font-bold tracking-widest uppercase text-xs">{t('roleTitle')}</span>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
-                Empowering the Continental Voice
+                {t('roleHeadline')}
               </h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              AUSP represents over 100 million students. Our mission is built on three unbreakable pillars: Education, Connection, and Empowerment.
+              {t('roleDescription')}
             </p>
             
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
