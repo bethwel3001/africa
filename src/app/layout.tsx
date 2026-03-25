@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'IPAYC 2026 | International Pan African Youth Conference',
   description: 'Uniting African youth for a Just, Inclusive & Sustainable Africa. An initiative of AUSP.',
   icons: {
-    icon: './LOGO/logo.jpeg',
+    icon: '/logo.png',
   },
 };
 

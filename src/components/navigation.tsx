@@ -23,6 +23,7 @@ export function Navigation() {
     { name: t('about'), href: "/#about" },
     { name: t('pillars'), href: "/#pillars" },
     { name: t('program'), href: "/#program" },
+    { name: t('team'), href: "/#team" },
     { name: t('pastEvents'), href: "/events" },
     { name: t('gallery'), href: "/gallery" },
   ];
@@ -38,6 +39,11 @@ export function Navigation() {
 
   React.useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
+    if (isOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
   }, [isOpen]);
 
   if (shouldHideNav) {
@@ -58,7 +64,7 @@ export function Navigation() {
         <Link href="/" className="flex items-center group">
           <div className="relative h-16 w-40 transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/LOGO/logo.jpeg"
+              src="/logo.png"
               alt="Conference Logo"
               fill
               className="object-contain"
@@ -75,11 +81,15 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-bold tracking-tight transition-colors hover:text-primary uppercase",
+                  "text-sm font-bold tracking-tight transition-colors hover:text-primary uppercase relative group/link",
                   showLightNav ? "text-white" : "text-foreground"
                 )}
               >
                 {link.name}
+                <span className={cn(
+                  "absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover/link:w-full",
+                  showLightNav ? "bg-white" : "bg-primary"
+                )} />
               </Link>
             ))}
           </div>
@@ -130,13 +140,6 @@ export function Navigation() {
                 {link.name}
               </Link>
             ))}
-            <Link 
-              href="/register"
-              onClick={() => setIsOpen(false)}
-              className="bg-primary text-white hover:bg-primary/90 font-bold px-12 py-4 rounded-full transition-all shadow-md uppercase tracking-wider text-xl"
-            >
-              {t('registerNow')}
-            </Link>
           </nav>
         </div>
       </div>
