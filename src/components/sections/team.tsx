@@ -51,6 +51,24 @@ const team = [
     socials: {
       linkedin: "#"
     }
+  },
+  {
+    name: "Felix Odhiambo",
+    role: "Secretary General of the AUSP Pan African Youth Conference",
+    image: "/team/7.png",
+    description: "Felix Odhiambo is a third-year Architecture student at JKUAT with a strong passion for designing spaces that are both functional and socially impactful. He is deeply committed to creating architecture that is culturally grounded, translating concepts into meaningful environments through refined design thinking, spatial planning, and visualization skills.\n\nIn his role as Secretary General of the AUSP Pan African Youth Conference, Felix oversees coordination, communication, and organizational strategy, ensuring seamless collaboration and the successful execution of conference initiatives. This experience has strengthened his leadership capacity, attention to structure, and ability to work effectively within diverse, multidisciplinary teams.\n\nFelix is particularly interested in sustainable, community-driven, and culturally responsive architecture. He remains open to opportunities that allow him to contribute to projects with tangible social impact while continuing to grow as a thoughtful and innovative designer.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/felix-odhiambo-b78799356?trk=contact-info"
+    }
+  },
+  {
+    name: "Qs. Ndung’u",
+    role: "Registered Quantity Surveyor and Project Manager serving as the ME&I Committee Lead for AUSP Kenya 2026.",
+    image: "/team/6.png",
+    description: "A member of the Finance Committee, he leverages his expertise in technical cost management to oversee the conference budget, sponsorship packages, and impact evaluation.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/samuel-ndungu-4b168819b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    }
   }
 ]
 

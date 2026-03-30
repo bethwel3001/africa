@@ -24,6 +24,7 @@ export function Navigation() {
     { name: t('pillars'), href: "/#pillars" },
     { name: t('program'), href: "/#program" },
     { name: t('team'), href: "/#team" },
+    { name: t('partners'), href: "/#partners" },
     { name: t('pastEvents'), href: "/events" },
     { name: t('gallery'), href: "/gallery" },
   ];

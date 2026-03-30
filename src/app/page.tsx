@@ -8,6 +8,7 @@ import { ImpactSection } from "@/components/sections/impact"
 import { SpeakersProgramSection } from "@/components/sections/speakers-program"
 import { TeamSection } from "@/components/sections/team"
 import { PastEventsSection } from "@/components/sections/past-events"
+import { PartnersSection } from "@/components/sections/partners"
 import { ContactFAQSection } from "@/components/sections/contact-faq"
 import { Footer } from "@/components/footer"
 
@@ -22,6 +23,7 @@ export default function HomePage() {
       <SpeakersProgramSection />
       <TeamSection />
       <PastEventsSection />
+      <PartnersSection />
       <ContactFAQSection />
       <Footer />
     </main>
