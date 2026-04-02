@@ -85,7 +85,7 @@ const partnerCategories: PartnerCategory[] = [
     title: "Innovation & Youth Platforms",
     icon: Rocket,
     partners: [
-      { name: "Dot Rwanda" },
+      { name: "Dot Rwanda", logo: "/partners/dot.png" },
       { name: "Hack Makers" },
       { name: "AIMS Rwanda" },
       { name: "Julius Nyerere Leadership Centre" }
@@ -129,6 +129,7 @@ export function PartnersSection() {
                 src="/logo.png"
                 alt="Conference Logo"
                 fill
+                sizes="(max-width: 768px) 192px, 192px"
                 className="object-contain opacity-80"
               />
             </div>
@@ -166,6 +167,7 @@ export function PartnersSection() {
                           src={partner.logo}
                           alt={`${partner.name} logo`}
                           fill
+                          sizes="64px"
                           className="object-contain transition-all"
                         />
                       ) : (

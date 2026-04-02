@@ -17,7 +17,7 @@ export function Navigation() {
   const isHomePage = pathname === "/";
   const { t } = useLanguage();
 
-  const shouldHideNav = pathname === "/gallery" || pathname.startsWith("/events");
+  const shouldHideNav = pathname === "/gallery" || pathname === "/register" || pathname.startsWith("/events");
 
   const navLinks = [
     { name: t('about'), href: "/#about" },
@@ -68,6 +68,7 @@ export function Navigation() {
               src="/logo.png"
               alt="Conference Logo"
               fill
+              sizes="(max-width: 768px) 160px, 160px"
               className="object-contain"
               priority
             />

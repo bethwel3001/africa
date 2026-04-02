@@ -50,6 +50,7 @@ export function AboutSection() {
               src="/about-vision.jpeg"
               alt="The Vision - Quality Education"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
               priority
               quality={100}
@@ -64,6 +65,7 @@ export function AboutSection() {
               src="/about-role.jpeg"
               alt="Our Role - Gender Equality"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
               quality={100}
             />

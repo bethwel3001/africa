@@ -70,6 +70,7 @@ export default function GalleryPage() {
                   src={img.imageUrl}
                   alt={img.description}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   data-ai-hint={img.imageHint}
                   onClick={() => setModalImg(img)}
@@ -107,6 +108,7 @@ export default function GalleryPage() {
                 src={modalImg.imageUrl}
                 alt={modalImg.description}
                 fill
+                sizes="(max-width: 768px) 100vw, 80vw"
                 className="object-contain rounded-xl shadow-2xl"
                 style={{ background: '#fff' }}
               />

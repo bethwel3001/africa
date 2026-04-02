@@ -21,9 +21,9 @@ export function AlbumGallery({ album }: { album: Album }) {
             <Image
               src={image}
               alt={`${album.title} gallery image ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
-              className="transition-transform duration-500 ease-in-out"
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+              className="object-cover transition-transform duration-500 ease-in-out"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
           </div>

@@ -11,6 +11,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
@@ -116,6 +117,7 @@ export function TeamSection() {
                   src={member.image}
                   alt={member.name}
                   fill
+                  sizes="(max-width: 768px) 160px, 192px"
                   className="object-cover"
                 />
               </div>
@@ -137,37 +139,43 @@ export function TeamSection() {
                         Read Bio
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[500px] rounded-3xl">
-                      <DialogHeader className="flex flex-col items-center text-center space-y-4">
-                        <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary/10">
-                          <Image
-                            src={member.image}
-                            alt={member.name}
-                            fill
-                            className="object-cover"
-                          />
+                    <DialogContent className="sm:max-w-[600px] md:max-w-[800px] lg:max-w-[900px] w-[95vw] max-h-[85vh] flex flex-col p-0 overflow-hidden rounded-[3.5rem] border-none shadow-2xl">
+                      <div className="flex-1 overflow-y-auto p-10 md:p-14 scrollbar-hide">
+                        <DialogHeader className="flex flex-col items-center text-center space-y-6 mb-10">
+                          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/10 shadow-md">
+                            <Image
+                              src={member.image}
+                              alt={member.name}
+                              fill
+                              sizes="(max-width: 768px) 128px, 160px"
+                              className="object-cover"
+                            />
+                          </div>
+                          <div className="space-y-3">
+                            <DialogTitle className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">{member.name}</DialogTitle>
+                            <p className="text-primary font-bold text-xs md:text-base uppercase tracking-[0.3em]">{member.role}</p>
+                          </div>
+                        </DialogHeader>
+                        <div className="relative max-w-3xl mx-auto">
+                          <div className="absolute -left-6 top-0 bottom-0 w-1.5 bg-primary/10 rounded-full" />
+                          <DialogDescription className="text-muted-foreground text-base md:text-lg lg:text-xl leading-relaxed whitespace-pre-wrap font-medium">
+                            {member.description}
+                          </DialogDescription>
                         </div>
-                        <div className="space-y-1">
-                          <DialogTitle className="text-2xl font-bold">{member.name}</DialogTitle>
-                          <p className="text-primary font-bold text-xs uppercase tracking-widest">{member.role}</p>
+                        <div className="mt-14 flex justify-center items-center gap-8">
+                          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+                          {member.socials.linkedin && (
+                            <Link 
+                              href={member.socials.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="h-16 w-16 rounded-[2rem] bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-110 active:scale-95 shadow-sm"
+                            >
+                              <Linkedin size={28} />
+                            </Link>
+                          )}
+                          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
                         </div>
-                      </DialogHeader>
-                      <div className="mt-4">
-                        <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-wrap">
-                          {member.description}
-                        </p>
-                      </div>
-                      <div className="mt-6 flex justify-center">
-                        {member.socials.linkedin && (
-                          <Link 
-                            href={member.socials.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="h-10 w-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all"
-                          >
-                            <Linkedin size={18} />
-                          </Link>
-                        )}
                       </div>
                     </DialogContent>
                   </Dialog>
