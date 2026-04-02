@@ -12,78 +12,112 @@ import {
 } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 
-const partnerCategories = [
+interface Partner {
+  name: string;
+  logo?: string;
+}
+
+interface PartnerCategory {
+  title: string;
+  subtitle?: string;
+  icon: any;
+  partners: Partner[];
+}
+
+const partnerCategories: PartnerCategory[] = [
   {
     title: "Strategic & Institutional Partners",
     subtitle: "Top-tier credibility – governments, global orgs, major institutions",
     icon: Globe,
     partners: [
-      { name: "Mastercard Foundation", domain: "mastercardfdn.org" },
-      { name: "Commonwealth Secretariat", domain: "thecommonwealth.org" },
-      { name: "The Royal Society (UK)", domain: "royalsociety.org" },
-      { name: "KOICA Rwanda", domain: "koica.go.kr" },
-      { name: "Ministry of Youth Rwanda", domain: "miniyouth.gov.rw" },
-      { name: "National Youth Council Rwanda", domain: "nyc.gov.rw" },
-      { name: "Pan African Movement", domain: "panafricanmovement.rw" },
-      { name: "China-Africa Forum", domain: "focac.org" }
+      { name: "Mastercard Foundation", logo: "/partners/m.png" },
+      { name: "Commonwealth Secretariat", logo: "/partners/cs.png" },
+      { name: "The Royal Society (UK)", logo: "/partners/royal-society.png" },
+      { name: "KOICA Rwanda", logo: "/partners/rwanda.png" },
+      { name: "Ministry of Youth Rwanda", logo: "/partners/youth-rwanda.png" },
+      { name: "National Youth Council Rwanda", logo: "/partners/nyc-rwanda.png" },
+      { name: "Pan African Movement", logo: "/partners/pan-african.png" },
+      { name: "China-Africa Forum", logo: "/partners/china-africa.png" }
     ]
   },
   {
     title: "Academic & University Partners",
     icon: GraduationCap,
     partners: [
-      { name: "Makerere University", domain: "mak.ac.ug" },
-      { name: "University of Nairobi", domain: "uonbi.ac.ke" },
-      { name: "Strathmore University", domain: "strathmore.edu" },
-      { name: "USIU Africa", domain: "usiu.ac.ke" },
-      { name: "Amref International University", domain: "amref.ac.ke" },
-      { name: "Kepler College Rwanda", domain: "kepler.org" },
-      { name: "Rwanda Polytechnic", domain: "rp.ac.rw" },
-      { name: "East African University Rwanda", domain: "eaur.ac.rw" },
-      { name: "UTB", domain: "utb.ac.rw" }
+      { name: "Makerere University", logo: "/partners/makerere.png" },
+      { name: "University of Nairobi", logo: "/partners/uon.png" },
+      { name: "Strathmore University", logo: "/partners/strath.png" },
+      { name: "USIU Africa", logo: "/partners/usiu.png" },
+      { name: "Amref International University", logo: "/partners/amref.png" },
+      { name: "Kepler College Rwanda", logo: "/partners/kpler.png" },
+      { name: "Rwanda Polytechnic", logo: "/partners/rp.png" },
+      { name: "East African University Rwanda", logo: "/partners/eaur.png" }
     ]
   },
   {
     title: "Corporate & Private Sector Partners",
     icon: Briefcase,
     partners: [
-      { name: "Ecobank", domain: "ecobank.com" },
-      { name: "Airtel Rwanda", domain: "airtel.co.rw" },
-      { name: "MTN Rwanda", domain: "mtn.co.rw" },
-      { name: "Cogebanque", domain: "cogebanque.co.rw" },
-      { name: "Azam Rwanda", domain: "azam.com" },
-      { name: "Oracle", domain: "oracle.com" },
-      { name: "Simplilearn", domain: "simplilearn.com" }
+      { name: "Ecobank", logo: "/partners/ecobank.png" },
+      { name: "Airtel Rwanda", logo: "/partners/airtel.png" },
+      { name: "MTN Rwanda", logo: "/partners/mtn.png" },
+      { name: "Cogebanque", logo: "/partners/coge.png" },
+      { name: "Azam Rwanda", logo: "/partners/azam.png" },
+      { name: "Oracle", logo: "/partners/oracle.png" },
+      { name: "Simplilearn", logo: "/partners/simlilearn.png" }
     ]
   },
   {
     title: "NGOs & Development Organizations",
     icon: Leaf,
     partners: [
-      { name: "African Wildlife Foundation", domain: "awf.org" },
-      { name: "CBM Rwanda", domain: "cbm.org" },
-      { name: "WomenTech Network", domain: "womentech.net" },
-      { name: "Africa Asia Youth Foundation", domain: "aayf.org" },
-      { name: "Embrace East Africa", domain: "embraceeastafrica.org" },
-      { name: "Mwananchi Youth Development Foundation", domain: "mwananchiyouth.org" },
-      { name: "Fabius Mulongo Foundation", domain: "fabiusmulongo.org" },
-      { name: "Treach Tolerantia Org", domain: "treachtolerantia.org" }
+      { name: "African Wildlife Foundation", logo: "/partners/awf.png" },
+      { name: "CBM Rwanda", logo: "/partners/cbm.png" },
+      { name: "WomenTech Network", logo: "/partners/women.png" },
+      { name: "Africa Asia Youth Foundation", logo: "/partners/aayf.png" },
+      { name: "Embrace East Africa", logo: "/partners/ea.png" },
+      { name: "Mwananchi Youth Development Foundation" },
+      { name: "Fabius Mulongo Foundation" },
+      { name: "Treach Tolerantia Org" }
     ]
   },
   {
     title: "Innovation & Youth Platforms",
     icon: Rocket,
     partners: [
-      { name: "Dot Rwanda", domain: "dotrust.org" },
-      { name: "Hack Makers", domain: "hackmakers.com" },
-      { name: "AIMS Rwanda", domain: "aims.ac.rw" },
-      { name: "Julius Nyerere Leadership Centre", domain: "jnlc.mak.ac.ug" }
+      { name: "Dot Rwanda" },
+      { name: "Hack Makers" },
+      { name: "AIMS Rwanda" },
+      { name: "Julius Nyerere Leadership Centre" }
     ]
   }
 ]
 
 export function PartnersSection() {
   const { t } = useLanguage()
+
+  // Helper to get initials and a consistent color
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .substring(0, 2)
+      .toUpperCase()
+  }
+
+  const getColorClass = (name: string) => {
+    const colors = [
+      'bg-blue-100 text-blue-600',
+      'bg-green-100 text-green-600',
+      'bg-purple-100 text-purple-600',
+      'bg-orange-100 text-orange-600',
+      'bg-pink-100 text-pink-600',
+      'bg-cyan-100 text-cyan-600',
+    ]
+    const index = name.length % colors.length
+    return colors[index]
+  }
 
   return (
     <section id="partners" className="py-24 bg-muted/30 scroll-mt-20">
@@ -127,19 +161,18 @@ export function PartnersSection() {
                     className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-primary/5 flex flex-col items-center justify-center text-center min-h-[140px] hover:shadow-md transition-all hover:-translate-y-1 group"
                   >
                     <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
-                      <Image
-                        src={`https://logo.clearbit.com/${partner.domain}`}
-                        alt={`${partner.name} logo`}
-                        fill
-                        className="object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                        onError={(e) => {
-                          // Fallback logic if image fails is handled by transparency or CSS
-                          (e.target as any).style.display = 'none';
-                        }}
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-primary/20 group-hover:text-primary/0 transition-colors uppercase">
-                        {partner.name.substring(0, 2)}
-                      </div>
+                      {partner.logo ? (
+                        <Image
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          fill
+                          className="object-contain transition-all"
+                        />
+                      ) : (
+                        <div className={`w-14 h-14 rounded-full flex items-center justify-center text-sm font-bold shadow-inner ${getColorClass(partner.name)}`}>
+                          {getInitials(partner.name)}
+                        </div>
+                      )}
                     </div>
                     <span className="text-[10px] md:text-xs font-bold text-muted-foreground group-hover:text-primary transition-colors leading-tight line-clamp-2">
                       {partner.name}
