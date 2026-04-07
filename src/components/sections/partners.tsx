@@ -1,8 +1,8 @@
-
 "use client"
 
 import * as React from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { 
   Globe, 
   GraduationCap, 
@@ -11,6 +11,7 @@ import {
   Rocket 
 } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
+import { Button } from "@/components/ui/button"
 
 interface Partner {
   name: string;
@@ -184,6 +185,21 @@ export function PartnersSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-20 text-center bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Interested in Partnering?</h3>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Join a prestigious network of organizations dedicated to empowering the next generation of African leaders. Explore our comprehensive sponsorship packages and benefits.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button size="lg" rounded="full" asChild>
+              <Link href="/sponsorship">View Sponsorship Packages</Link>
+            </Button>
+            <Button size="lg" variant="outline" rounded="full" asChild>
+              <a href="mailto:partnerships@ausp.africa">Contact Partnerships Team</a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

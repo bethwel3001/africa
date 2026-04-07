@@ -25,13 +25,13 @@ export function PastEventsSection() {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
           {eventCategories.map((category) => (
             <Link key={category.name} href={category.slug === 'gallery' ? '/gallery' : `/events/${category.slug}`}>
-              <div className="group relative overflow-hidden rounded-lg">
+              <div className="group relative overflow-hidden rounded-3xl">
                 <Image
                   src={category.path}
                   alt={`${category.name} cover image`}
                   width={400}
                   height={400}
-                  className="mx-auto object-cover h-64 w-full rounded-lg"
+                  className="mx-auto object-cover h-64 w-full rounded-3xl transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                   <h3 className="text-white text-xl font-bold">{category.name}</h3>

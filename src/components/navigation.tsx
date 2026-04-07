@@ -25,6 +25,7 @@ export function Navigation() {
     { name: t('program'), href: "/#program" },
     { name: t('team'), href: "/#team" },
     { name: t('partners'), href: "/#partners" },
+    { name: t('sponsorship'), href: "/sponsorship" },
     { name: t('pastEvents'), href: "/events" },
     { name: t('gallery'), href: "/gallery" },
   ];

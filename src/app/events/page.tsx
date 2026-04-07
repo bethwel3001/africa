@@ -28,7 +28,7 @@ export default function EventsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
         {eventsData.map((album: Album) => (
           <Link key={album.slug} href={`/events/${album.slug}`}>
-            <div className="group relative block overflow-hidden rounded-lg">
+            <div className="group relative block overflow-hidden rounded-3xl">
               <Image
                 src={album.coverImage}
                 alt={album.title}

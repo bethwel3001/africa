@@ -47,6 +47,7 @@ const translations: Record<Language, Record<string, string>> = {
     teamSubtitle: "The dedicated individuals working tirelessly to shape the future of African youth leadership.",
     partners: "Partners",
     partnersTitle: "Our Trusted Partners & Sponsors",
+    sponsorship: "Sponsorship",
   },
   FR: {
     about: "À propos",
@@ -83,6 +84,7 @@ const translations: Record<Language, Record<string, string>> = {
     teamSubtitle: "Les individus dévoués travaillant sans relâche pour façonner l'avenir du leadership de la jeunesse africaine.",
     partners: "Partenaires",
     partnersTitle: "Nos partenaires et sponsors de confiance",
+    sponsorship: "Parrainage",
   },
   AR: {
     about: "حول",
@@ -119,6 +121,7 @@ const translations: Record<Language, Record<string, string>> = {
     teamSubtitle: "الأفراد المكرسون الذين يعملون بلا كلل لتشكيل مستقبل قيادة الشباب الأفريقي.",
     partners: "الشركاء",
     partnersTitle: "شركاؤنا ورعاتنا الموثوق بهم",
+    sponsorship: "رعاية",
   },
   SW: {
     about: "Kuhusu",
@@ -155,6 +158,7 @@ const translations: Record<Language, Record<string, string>> = {
     teamSubtitle: "Watu waliojitolea wanaofanya kazi bila kuchoka kuunda mustakabali wa uongozi wa vijana wa Afrika.",
     partners: "Washirika",
     partnersTitle: "Washirika na Wafadhili Wetu Wanaoaminika",
+    sponsorship: "Udhamini",
   },
   PT: {
     about: "Sobre",
@@ -191,6 +195,7 @@ const translations: Record<Language, Record<string, string>> = {
     teamSubtitle: "Os indivíduos dedicados que trabalham incansavelmente para moldar o futuro da liderança juvenil africana.",
     partners: "Parceiros",
     partnersTitle: "Nossos Parceiros e Patrocinadores de Confiança",
+    sponsorship: "Patrocínio",
   }
 }
 
