@@ -3,13 +3,6 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { 
-  Globe, 
-  GraduationCap, 
-  Briefcase, 
-  Leaf, 
-  Rocket 
-} from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 import { Button } from "@/components/ui/button"
 
@@ -21,7 +14,6 @@ interface Partner {
 interface PartnerCategory {
   title: string;
   subtitle?: string;
-  icon: any;
   partners: Partner[];
 }
 
@@ -29,7 +21,6 @@ const partnerCategories: PartnerCategory[] = [
   {
     title: "Strategic & Institutional Partners",
     subtitle: "Top-tier credibility – governments, global orgs, major institutions",
-    icon: Globe,
     partners: [
       { name: "Mastercard Foundation", logo: "/partners/m.png" },
       { name: "Commonwealth Secretariat", logo: "/partners/cs.png" },
@@ -43,7 +34,6 @@ const partnerCategories: PartnerCategory[] = [
   },
   {
     title: "Academic & University Partners",
-    icon: GraduationCap,
     partners: [
       { name: "Makerere University", logo: "/partners/makerere.png" },
       { name: "University of Nairobi", logo: "/partners/uon.png" },
@@ -57,7 +47,6 @@ const partnerCategories: PartnerCategory[] = [
   },
   {
     title: "Corporate & Private Sector Partners",
-    icon: Briefcase,
     partners: [
       { name: "Ecobank", logo: "/partners/ecobank.png" },
       { name: "Airtel Rwanda", logo: "/partners/airtel.png" },
@@ -70,7 +59,6 @@ const partnerCategories: PartnerCategory[] = [
   },
   {
     title: "NGOs & Development Organizations",
-    icon: Leaf,
     partners: [
       { name: "African Wildlife Foundation", logo: "/partners/awf.png" },
       { name: "CBM Rwanda", logo: "/partners/cbm.png" },
@@ -84,7 +72,6 @@ const partnerCategories: PartnerCategory[] = [
   },
   {
     title: "Innovation & Youth Platforms",
-    icon: Rocket,
     partners: [
       { name: "Dot Rwanda", logo: "/partners/dot.png" },
       { name: "Hack Makers" },
@@ -109,75 +96,74 @@ export function PartnersSection() {
 
   const getColorClass = (name: string) => {
     const colors = [
-      'bg-blue-100 text-blue-600',
-      'bg-green-100 text-green-600',
-      'bg-purple-100 text-purple-600',
-      'bg-orange-100 text-orange-600',
-      'bg-pink-100 text-pink-600',
-      'bg-cyan-100 text-cyan-600',
+      'bg-blue-50 text-blue-600',
+      'bg-green-50 text-green-600',
+      'bg-purple-50 text-purple-600',
+      'bg-orange-50 text-orange-600',
+      'bg-pink-50 text-pink-600',
+      'bg-cyan-50 text-cyan-600',
     ]
     const index = name.length % colors.length
     return colors[index]
   }
 
   return (
-    <section id="partners" className="py-24 bg-muted/30 scroll-mt-20">
+    <section id="partners" className="py-24 bg-white scroll-mt-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 space-y-4">
-          <div className="flex justify-center mb-6">
-            <div className="relative h-20 w-48">
+        <div className="text-center mb-20 space-y-4">
+          <div className="flex justify-center mb-8">
+            <div className="relative h-16 w-40">
               <Image
                 src="/logo.png"
                 alt="Conference Logo"
                 fill
-                sizes="(max-width: 768px) 192px, 192px"
-                className="object-contain opacity-80"
+                sizes="(max-width: 768px) 160px, 160px"
+                className="object-contain opacity-90"
               />
             </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground uppercase">
             {t('partnersTitle') || "Our Trusted Partners & Sponsors"}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base italic">
-            "Partnering across Africa and globally to empower youth, innovation, and leadership."
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
+            Building a collaborative ecosystem for the next generation of African leaders.
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-24">
           {partnerCategories.map((category, idx) => (
-            <div key={idx} className="space-y-8">
-              <div className="text-center md:text-left border-b border-primary/10 pb-4">
-                <h3 className="text-xl md:text-2xl font-bold text-primary flex items-center justify-center md:justify-start gap-3">
-                  <category.icon className="w-6 h-6 md:w-8 md:h-8" />
+            <div key={idx} className="space-y-10">
+              <div className="text-center md:text-left border-l-4 border-primary pl-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
                   {category.title}
                 </h3>
                 {category.subtitle && (
-                  <p className="text-muted-foreground text-sm mt-1 ml-0 md:ml-11">{category.subtitle}</p>
+                  <p className="text-muted-foreground text-sm md:text-base mt-2">{category.subtitle}</p>
                 )}
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
                 {category.partners.map((partner, pIdx) => (
                   <div 
                     key={pIdx} 
-                    className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-primary/5 flex flex-col items-center justify-center text-center min-h-[140px] hover:shadow-md transition-all hover:-translate-y-1 group"
+                    className="group relative bg-white p-6 rounded-2xl border border-border hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[160px]"
                   >
-                    <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+                    <div className="relative w-20 h-20 mb-4 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
                       {partner.logo ? (
                         <Image
                           src={partner.logo}
                           alt={`${partner.name} logo`}
                           fill
-                          sizes="64px"
-                          className="object-contain transition-all"
+                          sizes="80px"
+                          className="object-contain"
                         />
                       ) : (
-                        <div className={`w-14 h-14 rounded-full flex items-center justify-center text-sm font-bold shadow-inner ${getColorClass(partner.name)}`}>
+                        <div className={`w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold ${getColorClass(partner.name)}`}>
                           {getInitials(partner.name)}
                         </div>
                       )}
                     </div>
-                    <span className="text-[10px] md:text-xs font-bold text-muted-foreground group-hover:text-primary transition-colors leading-tight line-clamp-2">
+                    <span className="text-xs md:text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors leading-tight line-clamp-2">
                       {partner.name}
                     </span>
                   </div>
@@ -187,17 +173,40 @@ export function PartnersSection() {
           ))}
         </div>
 
-        <div className="mt-20 text-center bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">Interested in Partnering?</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join a prestigious network of organizations dedicated to empowering the next generation of African leaders. Explore our comprehensive sponsorship packages and benefits.
+        <div className="mt-32 text-center bg-muted/30 rounded-[3rem] p-8 md:p-16 border border-border">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">Interested in Partnering?</h3>
+          <p className="text-muted-foreground mb-12 max-w-2xl mx-auto text-lg">
+            Join a prestigious network of organizations dedicated to empowering African youth. Reach out to our teams below to explore opportunities.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" rounded="full" asChild>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto text-left">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-border hover:border-primary/20 transition-colors">
+              <h4 className="text-xl font-bold text-primary mb-3">Partnerships Team</h4>
+              <p className="text-sm text-muted-foreground mb-6">For general partnership inquiries, institutional collaborations, and strategic alliances.</p>
+              <Button variant="link" className="p-0 h-auto text-primary font-bold text-lg" asChild>
+                <a href="mailto:partnerships@ausp.africa">partnerships@ausp.africa</a>
+              </Button>
+            </div>
+            
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-border hover:border-primary/20 transition-colors">
+              <h4 className="text-xl font-bold text-primary mb-3">Resource Mobilization Team</h4>
+              <p className="text-sm text-muted-foreground mb-6">For sponsorship packages, fundraising, and supporting conference activities.</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-muted-foreground w-12">Call:</span>
+                  <a href="tel:+254793971426" className="text-foreground font-bold hover:text-primary transition-colors">+254 793 971 426</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-muted-foreground w-12">Email:</span>
+                  <a href="mailto:fundraising_payc@ausp.africa" className="text-foreground font-bold hover:text-primary transition-colors">fundraising_payc@ausp.africa</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button size="lg" rounded="full" className="px-10 py-7 text-lg shadow-xl" asChild>
               <Link href="/sponsorship">View Sponsorship Packages</Link>
-            </Button>
-            <Button size="lg" variant="outline" rounded="full" asChild>
-              <a href="mailto:partnerships@ausp.africa">Contact Partnerships Team</a>
             </Button>
           </div>
         </div>

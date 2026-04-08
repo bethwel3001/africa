@@ -120,7 +120,7 @@ export default function SponsorshipPage() {
               <a href="mailto:partnerships@ausp.africa">Become a Partner</a>
             </Button>
             <Button size="lg" variant="outline" rounded="full" className="px-8 py-6 text-base font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all hover:scale-105 active:scale-95 backdrop-blur-md" asChild>
-              <a href="/NOTE/IPAYC_0.pdf" target="_blank">Download PDF Package</a>
+              <a href="mailto:partnerships@ausp.africa?subject=Request for Sponsorship Package - IPAYC 2026&body=Hello Team,%0D%0A%0D%0AI am interested in partnering with you for IPAYC 2026. Please send me the sponsorship package.%0D%0A%0D%0ARegards,">Request PDF Package</a>
             </Button>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function SponsorshipPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-in slide-in-from-left duration-1000">
+            <div className="space-y-6">
               <h2 className="text-3xl font-bold">About the Conference</h2>
               <ul className="space-y-4">
                 {[
@@ -143,14 +143,14 @@ export default function SponsorshipPage() {
                   "Delegates from across Africa",
                   "Hosted in Nairobi, Kenya | 21st - 23rd Oct 2026"
                 ].map((text, i) => (
-                  <li key={i} className="flex gap-3 animate-in fade-in duration-500" style={{ animationDelay: `${i * 150}ms` }}>
+                  <li key={i} className="flex gap-3">
                     <CheckCircle2 className="text-primary w-6 h-6 flex-shrink-0" />
                     <span>{text}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl animate-in slide-in-from-right duration-1000">
+            <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
               <Image 
                 src="/gallery/32.jpeg" 
                 alt="Conference Crowd" 
@@ -173,7 +173,7 @@ export default function SponsorshipPage() {
               { icon: Megaphone, title: "Media Exposure", desc: "Gain coverage through regional and continental media." },
               { icon: Target, title: "Brand Positioning", desc: "Establish yourself as a supporter of Pan-African youth." }
             ].map((item, i) => (
-              <div key={i} className="p-6 bg-white rounded-3xl shadow-sm space-y-4 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-500" style={{ animationDelay: `${i * 100}ms` }}>
+              <div key={i} className="p-6 bg-white rounded-3xl shadow-sm space-y-4 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mx-auto">
                   <item.icon className="w-8 h-8" />
                 </div>
@@ -191,7 +191,7 @@ export default function SponsorshipPage() {
           <h2 className="text-3xl font-bold text-center mb-16">Sponsorship Tiers</h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {tiers.map((tier, i) => (
-              <Card key={i} className="overflow-hidden flex flex-col rounded-3xl border-none shadow-lg hover:shadow-2xl transition-all duration-500 animate-in zoom-in-95 duration-700" style={{ animationDelay: `${i * 150}ms` }}>
+              <Card key={i} className="overflow-hidden flex flex-col rounded-3xl border-none shadow-lg hover:shadow-2xl transition-all duration-500">
                 <CardHeader className={`${tier.color} p-8`}>
                   <div className="flex justify-between items-start mb-2">
                     <CardTitle className="text-2xl">{tier.name}</CardTitle>
@@ -235,7 +235,7 @@ export default function SponsorshipPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Special Event Sponsorships</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {specialSponsorships.map((s, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-primary/5 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-in fade-in slide-in-from-right duration-500" style={{ animationDelay: `${i * 100}ms` }}>
+              <div key={i} className="bg-white p-8 rounded-3xl border border-primary/5 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <h3 className="font-bold text-lg mb-3">{s.name}</h3>
                 <div className="text-primary font-black text-2xl mb-1">{s.price}</div>
                 <div className="text-sm font-bold text-muted-foreground uppercase tracking-wider">{s.slots}</div>
@@ -251,19 +251,19 @@ export default function SponsorshipPage() {
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 animate-in slide-in-from-bottom duration-700">Ready to Partner With Us?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">Ready to Partner With Us?</h2>
           <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto mb-16">
             {[
-              { icon: Mail, text: "partnerships@ausp.africa" },
-              { icon: MessageSquare, text: "+254 728 762 971" },
-              { icon: Globe, text: "ausp.africa" }
+              { icon: Mail, text: "partnerships@ausp.africa", href: "mailto:partnerships@ausp.africa" },
+              { icon: MessageSquare, text: "+254 728 762 971", href: "https://wa.me/254728762971" },
+              { icon: Globe, text: "ausp.africa", href: "https://ausp.africa" }
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center gap-4 group animate-in fade-in duration-1000" style={{ animationDelay: `${i * 200}ms` }}>
+              <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group">
                 <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-300 transform group-hover:rotate-12">
                   <item.icon className="w-8 h-8" />
                 </div>
                 <p className="text-lg font-bold tracking-wide">{item.text}</p>
-              </div>
+              </a>
             ))}
           </div>
           <Button size="lg" variant="secondary" rounded="full" className="px-16 py-8 text-xl font-black shadow-2xl hover:scale-110 transition-transform duration-300" asChild>
