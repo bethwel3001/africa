@@ -27,6 +27,15 @@ export default function PaymentPage() {
             <PaymentOption icon={CreditCard} name="Credit/Debit Card" />
             <PaymentOption icon={Banknote} name="M-Pesa" />
             <PaymentOption icon={Landmark} name="Bank Transfer" />
+            <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+              <div className="flex items-center gap-4">
+                <div className="h-8 w-8 text-primary flex items-center justify-center font-bold text-xl italic">
+                  PP
+                </div>
+                <span className="font-semibold">PayPal</span>
+              </div>
+              <div className="h-5 w-5 rounded-full border border-gray-300"></div>
+            </div>
           </div>
 
           <Button className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90">

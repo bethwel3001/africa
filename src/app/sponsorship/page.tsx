@@ -269,6 +269,9 @@ export default function SponsorshipPage() {
           <Button size="lg" variant="secondary" rounded="full" className="px-16 py-8 text-xl font-black shadow-2xl hover:scale-110 transition-transform duration-300" asChild>
             <a href="mailto:partnerships@ausp.africa">Get In Touch Now</a>
           </Button>
+          <p className="mt-12 text-white/40 text-[10px] font-bold tracking-widest uppercase">
+            Sponsorship is governed by our <a href="/terms-of-use#s6" className="text-white hover:text-secondary underline underline-offset-4 decoration-secondary/30">Partnership Compliance Terms</a>
+          </p>
         </div>
       </section>
 

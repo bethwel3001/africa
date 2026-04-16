@@ -23,7 +23,7 @@ export default function RegisterPage() {
   return (
     <main className="min-h-screen bg-muted/20">
       
-      <div className="container mx-auto px-4 pt-32 pb-24">
+      <div className="container mx-auto px-4 pt-12 pb-24">
         <Link href="/" className="inline-flex items-center text-primary font-medium hover:underline gap-2 mb-8">
           <ArrowLeft className="h-4 w-4" /> Back to Home
         </Link>
@@ -106,7 +106,7 @@ export default function RegisterPage() {
                         </Button>
                     </Link>
                   <p className="text-center text-xs text-muted-foreground mt-4">
-                    Payments are securely processed. Registration implies agreement to our Code of Conduct.
+                    Payments are securely processed. Registration implies agreement to our <Link href="/terms-of-use" className="text-primary hover:underline underline-offset-4">Terms of use</Link> and <Link href="/terms-of-use#s5" className="text-primary hover:underline underline-offset-4">Code of Conduct</Link>.
                   </p>
                 </div>
              </form>

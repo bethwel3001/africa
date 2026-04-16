@@ -82,10 +82,10 @@ export function Footer() {
         </div>
 
         <div className="pt-10 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-6 text-primary-foreground/40 text-[10px] font-bold tracking-widest uppercase">
-          <p>© 2026 INTERNATIONAL PAN AFRICAN YOUTH CONFERENCE. AUSP.AFRICA</p>
+          <p>© 2026 International Pan African Youth Conference. ausp.africa</p>
           <div className="flex gap-8">
-            <Link href="/privacy-policy" className="hover:text-secondary">Privacy Policy</Link>
-            <Link href="/terms-of-use" className="hover:text-secondary">Terms of Use</Link>
+            <Link href="/privacy-policy" className="hover:text-secondary">Privacy policy</Link>
+            <Link href="/terms-of-use" className="hover:text-secondary">Terms of use</Link>
           </div>
         </div>
       </div>

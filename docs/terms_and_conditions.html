@@ -1,0 +1,358 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.wrap{max-width:720px;margin:0 auto;padding:1.5rem 0}
+.doc-header{background:#1a5c2a;border-radius:var(--border-radius-lg);padding:2rem 1.5rem;margin-bottom:1.5rem;text-align:center}
+.doc-header h1{color:#fff;font-size:20px;font-weight:500;margin-bottom:4px}
+.doc-header p{color:rgba(255,255,255,0.7);font-size:12px}
+.doc-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:1.5rem}
+.meta-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;text-align:center}
+.meta-label{font-size:10px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px}
+.meta-val{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.toc{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem}
+.toc-title{font-size:12px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:10px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.toc-item{font-size:12px;color:#1a5c2a;cursor:pointer;padding:3px 0;text-decoration:underline;text-decoration-color:rgba(26,92,42,0.3)}
+.toc-item:hover{color:#174e24}
+.section{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.sec-num{width:26px;height:26px;border-radius:50%;background:#1a5c2a;color:#fff;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-title{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.sec-badge{margin-left:auto;font-size:10px;padding:3px 8px;border-radius:10px;font-weight:500}
+.badge-all{background:#e8f5e9;color:#1b5e20}
+.badge-delegate{background:#e3f2fd;color:#0d47a1}
+.badge-sponsor{background:#fff8e1;color:#e65100}
+.badge-partner{background:#f3e5f5;color:#4a148c}
+.badge-vip{background:#fff3e0;color:#bf360c}
+.badge-observer{background:#e0f2f1;color:#004d40}
+.badge-media{background:#fce4ec;color:#880e4f}
+.badge-speaker{background:#e8eaf6;color:#1a237e}
+.clause{margin-bottom:10px}
+.clause-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.clause-body{font-size:13px;color:var(--color-text-secondary);line-height:1.7}
+.clause-body li{margin-left:1rem;margin-top:3px}
+.participant-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.ptab{font-size:11px;padding:4px 10px;border-radius:10px;border:0.5px solid var(--color-border-tertiary);cursor:pointer;background:var(--color-background-secondary);color:var(--color-text-secondary);transition:all 0.15s}
+.ptab.active{background:#1a5c2a;color:#fff;border-color:#1a5c2a}
+.ptab-content{display:none}
+.ptab-content.active{display:block}
+.highlight-box{border-radius:var(--border-radius-md);padding:10px 14px;margin-bottom:10px;font-size:12px;line-height:1.6}
+.hb-green{background:#f0f9f1;border-left:3px solid #1a5c2a;color:#1b4d2a}
+.hb-amber{background:#fffaf0;border-left:3px solid #b8860b;color:#7a5c00}
+.hb-red{background:#fff5f5;border-left:3px solid #c0392b;color:#7b2020}
+.hb-blue{background:#f0f4ff;border-left:3px solid #1565c0;color:#1a3a6b}
+.accept-box{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-top:1rem}
+.accept-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:10px}
+.check-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.check-row input[type=checkbox]{margin-top:3px;flex-shrink:0;width:15px;height:15px;accent-color:#1a5c2a}
+.check-row label{font-size:12px;color:var(--color-text-secondary);line-height:1.6;cursor:pointer}
+.sig-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.sig-field{display:flex;flex-direction:column;gap:4px}
+.sig-field label{font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em}
+.sig-field input{font-size:13px;color:var(--color-text-primary);background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:8px 10px;width:100%;outline:none}
+.sig-field input:focus{border-color:#1a5c2a}
+.accept-btn{margin-top:14px;width:100%;padding:12px;background:#1a5c2a;color:#fff;border:none;border-radius:var(--border-radius-lg);font-size:14px;font-weight:500;cursor:pointer;transition:all 0.15s}
+.accept-btn:disabled{background:var(--color-background-secondary);color:var(--color-text-secondary);cursor:not-allowed}
+.accept-btn:not(:disabled):hover{background:#174e24}
+.accepted-banner{display:none;background:#f0f9f1;border:0.5px solid rgba(26,92,42,0.3);border-radius:var(--border-radius-lg);padding:1rem 1.5rem;text-align:center;margin-top:1rem}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:1rem 0}
+.ver-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(255,215,0,0.2);border:1px solid rgba(255,215,0,0.4);border-radius:20px;padding:3px 10px;font-size:11px;color:#ffd700;margin-bottom:8px}
+</style>
+
+<h2 class="sr-only">IPAYC 2026 Terms, Privacy and Conditions document covering all participant categories</h2>
+
+<div class="wrap">
+
+<div class="doc-header">
+  <div class="ver-pill">Version 1.0 · April 2026</div>
+  <h1>Terms, Privacy &amp; Conditions of Participation</h1>
+  <p>International Pan-African Youth Conference (IPAYC) 2026 · Nairobi, Kenya · October 2026<br>Issued by AUSP.Africa — African Union Students' Platform</p>
+</div>
+
+<div class="doc-meta">
+  <div class="meta-card"><div class="meta-label">Governing body</div><div class="meta-val">AUSP.Africa</div></div>
+  <div class="meta-card"><div class="meta-label">Effective date</div><div class="meta-val">April 2026</div></div>
+  <div class="meta-card"><div class="meta-label">Jurisdiction</div><div class="meta-val">Republic of Kenya</div></div>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Table of contents</div>
+  <div class="toc-grid">
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s1').offsetTop)">1. Definitions &amp; scope</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s2').offsetTop)">2. Participant categories</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s3').offsetTop)">3. Registration &amp; fees</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s4').offsetTop)">4. Cancellation &amp; refunds</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s5').offsetTop)">5. Code of conduct</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s6').offsetTop)">6. Sponsorship &amp; partnership</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s7').offsetTop)">7. Intellectual property</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s8').offsetTop)">8. Media &amp; photography</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s9').offsetTop)">9. Privacy &amp; data protection</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s10').offsetTop)">10. Health &amp; safety</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s11').offsetTop)">11. Liability &amp; indemnity</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s12').offsetTop)">12. Force majeure</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s13').offsetTop)">13. Governing law</span>
+    <span class="toc-item" onclick="scrollTo(0,document.getElementById('s14').offsetTop)">14. Acceptance</span>
+  </div>
+</div>
+
+<div class="highlight-box hb-green">These Terms &amp; Conditions ("T&amp;C") constitute a legally binding agreement between AUSP.Africa ("the Organiser") and any individual or entity ("the Participant") who registers for, attends, sponsors, partners with, or otherwise participates in the International Pan-African Youth Conference 2026 ("the Conference"). By completing registration or signing any agreement with the Organiser, you confirm that you have read, understood, and accepted these terms in full.</div>
+
+<div id="s1" class="section">
+  <div class="sec-head"><div class="sec-num">1</div><div class="sec-title">Definitions &amp; scope</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">1.1 Definitions</div><div class="clause-body">In these T&amp;C: "Conference" means IPAYC 2026, to be held in Nairobi, Kenya in October 2026. "Organiser" means AUSP.Africa and its authorised representatives. "Participant" means any person or entity engaging with the Conference in any capacity, including but not limited to delegates, speakers, panellists, sponsors, partners, VIPs, observers, media, volunteers, and facilitators. "Agreement" means these T&amp;C together with any supplementary agreements, letters of intent, or Memoranda of Understanding (MoUs) entered into with the Organiser.</div></div>
+  <div class="clause"><div class="clause-title">1.2 Scope</div><div class="clause-body">These T&amp;C apply to all Conference-related activities, including in-person attendance in Nairobi, virtual participation, pre-conference engagements, side events, social functions, media coverage, and any digital platforms operated by the Organiser in connection with IPAYC 2026.</div></div>
+  <div class="clause"><div class="clause-title">1.3 Amendments</div><div class="clause-body">The Organiser reserves the right to amend these T&amp;C at any time. Participants will be notified of material changes via their registered email. Continued participation constitutes acceptance of amended terms.</div></div>
+</div>
+
+<div id="s2" class="section">
+  <div class="sec-head"><div class="sec-num">2</div><div class="sec-title">Participant categories &amp; specific terms</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause-body" style="margin-bottom:12px;font-size:12px;color:var(--color-text-secondary)">Select a participant category to view specific terms that apply to that group.</div>
+
+  <div class="participant-tabs">
+    <div class="ptab active" onclick="switchTab(this,'tab-delegate')">Delegates</div>
+    <div class="ptab" onclick="switchTab(this,'tab-speaker')">Speakers &amp; panellists</div>
+    <div class="ptab" onclick="switchTab(this,'tab-sponsor')">Sponsors</div>
+    <div class="ptab" onclick="switchTab(this,'tab-partner')">Partners</div>
+    <div class="ptab" onclick="switchTab(this,'tab-vip')">VIPs &amp; dignitaries</div>
+    <div class="ptab" onclick="switchTab(this,'tab-observer')">Observers</div>
+    <div class="ptab" onclick="switchTab(this,'tab-media')">Media &amp; press</div>
+    <div class="ptab" onclick="switchTab(this,'tab-volunteer')">Volunteers &amp; staff</div>
+    <div class="ptab" onclick="switchTab(this,'tab-virtual')">Virtual delegates</div>
+  </div>
+
+  <div id="tab-delegate" class="ptab-content active">
+    <div class="highlight-box hb-blue">Applies to: local, national, regional, continental, and diaspora delegates attending in person in Nairobi.</div>
+    <div class="clause"><div class="clause-title">Registration confirmation</div><div class="clause-body">A delegate's place is confirmed only upon receipt of full payment of the applicable registration fee ($50 standard / $70 for delegates aged 36+) and written confirmation from the Organiser. Submission of a registration form does not constitute a guaranteed place.</div></div>
+    <div class="clause"><div class="clause-title">Age bracket &amp; fee accuracy</div><div class="clause-body">Delegates must accurately declare their age bracket. Misrepresentation of age to obtain a lower fee tier will result in immediate cancellation of registration without refund and may be reported to the delegate's parent institution.</div></div>
+    <div class="clause"><div class="clause-title">Position paper — delegates aged 36+</div><div class="clause-body">Senior delegates (36+) are required to submit a position paper on behalf of their declared country or organisation prior to the Conference. The paper must: (a) be submitted no later than 30 days before the Conference; (b) be original work; (c) address at least one thematic pillar of IPAYC 2026. Failure to submit a position paper will not entitle the delegate to a refund but may restrict access to the UN-model plenary debate.</div></div>
+    <div class="clause"><div class="clause-title">Delegate conduct</div><div class="clause-body">Delegates agree to participate respectfully in all sessions, uphold the Pan-African values of the Conference, and comply with all instructions from the Organiser and venue management. Disruptive behaviour will result in removal without refund.</div></div>
+    <div class="clause"><div class="clause-title">Goodie bag &amp; t-shirt</div><div class="clause-body">Delegate materials including the goodie bag and branded t-shirt are distributed once at the registration desk on the first day of the Conference. Uncollected items are not replaceable and no cash equivalent will be offered.</div></div>
+  </div>
+
+  <div id="tab-speaker" class="ptab-content">
+    <div class="highlight-box hb-blue">Applies to: keynote speakers, panellists, workshop facilitators, and rapporteurs.</div>
+    <div class="clause"><div class="clause-title">Engagement agreement</div><div class="clause-body">Speakers and panellists must sign a Speaker Engagement Letter with the Organiser no later than 60 days before the Conference. This letter will specify session details, travel and accommodation arrangements (if applicable), and content guidelines.</div></div>
+    <div class="clause"><div class="clause-title">Content standards</div><div class="clause-body">All presentations, speeches, and workshop materials must: (a) be original or properly attributed; (b) align with the Conference's thematic pillars and Pan-African values; (c) be free from hate speech, political propaganda, or content that discriminates on the basis of race, gender, religion, nationality, sexual orientation, or disability. The Organiser reserves the right to withdraw a speaker invitation if submitted materials do not meet these standards.</div></div>
+    <div class="clause"><div class="clause-title">Intellectual property</div><div class="clause-body">Speakers grant AUSP.Africa a non-exclusive, royalty-free licence to record, reproduce, and distribute their presentation for Conference documentation and promotional purposes, unless a prior written exception is agreed.</div></div>
+    <div class="clause"><div class="clause-title">Cancellation by speaker</div><div class="clause-body">Speakers who cancel within 30 days of the Conference without a documented emergency may forfeit any agreed honorarium and may be excluded from future AUSP.Africa events.</div></div>
+  </div>
+
+  <div id="tab-sponsor" class="ptab-content">
+    <div class="highlight-box hb-amber">Applies to: all financial sponsors at any tier (Title, Platinum, Gold, Silver, Bronze, Community, etc.).</div>
+    <div class="clause"><div class="clause-title">Sponsorship agreement</div><div class="clause-body">All sponsorship commitments must be formalised through a signed Sponsorship Agreement and accompanying invoice. No sponsorship benefits will be activated until at least 50% of the agreed sponsorship fee has been received. Full payment is required no later than 30 days before the Conference.</div></div>
+    <div class="clause"><div class="clause-title">Benefits &amp; visibility</div><div class="clause-body">Sponsor benefits are tier-dependent and outlined in the IPAYC 2026 Sponsorship Packages document. The Organiser will make all reasonable efforts to deliver agreed benefits. Benefits that cannot be delivered due to circumstances beyond the Organiser's control will be substituted with equivalents of similar value.</div></div>
+    <div class="clause"><div class="clause-title">Brand usage</div><div class="clause-body">Sponsors grant AUSP.Africa permission to use their logo and brand name across Conference materials. The Organiser will not alter sponsor logos without consent. Sponsors may not use the AUSP.Africa or IPAYC 2026 name and logo for their own promotional purposes without written approval from the Organiser.</div></div>
+    <div class="clause"><div class="clause-title">Editorial independence</div><div class="clause-body">Sponsorship does not confer editorial control over Conference content, speakers, or programming. The Organiser maintains full editorial independence. Sponsors may not direct the Organiser to exclude or favour any participant, speaker, or topic.</div></div>
+    <div class="clause"><div class="clause-title">Refunds</div><div class="clause-body">Sponsorship fees are non-refundable once the Sponsorship Agreement is signed. In the event of Conference cancellation by the Organiser (not due to force majeure), a credit equivalent to 75% of the sponsorship fee will be applied toward a future AUSP.Africa event within 24 months.</div></div>
+    <div class="clause"><div class="clause-title">Prohibited sponsors</div><div class="clause-body">The Organiser reserves the right to decline or terminate sponsorship from entities whose activities are inconsistent with AUSP.Africa's values, including but not limited to: tobacco companies, arms manufacturers, entities under international sanctions, and organisations with documented human rights violations.</div></div>
+  </div>
+
+  <div id="tab-partner" class="ptab-content">
+    <div class="highlight-box hb-blue">Applies to: institutional partners, co-organisers, implementing partners, academic partners, and MoU signatories.</div>
+    <div class="clause"><div class="clause-title">Partnership formalisation</div><div class="clause-body">All partnerships must be documented through a signed Memorandum of Understanding (MoU) or Partnership Agreement, specifying roles, deliverables, timelines, and mutual obligations. Verbal agreements do not constitute binding partnerships.</div></div>
+    <div class="clause"><div class="clause-title">Co-branding</div><div class="clause-body">Partners will be credited on all Conference materials as agreed in the MoU. Co-branding guidelines will be shared upon agreement signing. Partners may not represent the partnership as an endorsement of their broader activities beyond the scope of the Conference.</div></div>
+    <div class="clause"><div class="clause-title">Deliverables</div><div class="clause-body">Each partner is responsible for fulfilling their agreed deliverables by the dates specified in the MoU. Failure to deliver without adequate notice may result in removal of partner recognition from Conference materials.</div></div>
+    <div class="clause"><div class="clause-title">Data sharing</div><div class="clause-body">Any data shared between the Organiser and partners for programmatic purposes will be governed by a data-sharing protocol appended to the MoU. No participant personal data will be shared with partners without explicit participant consent.</div></div>
+  </div>
+
+  <div id="tab-vip" class="ptab-content">
+    <div class="highlight-box hb-amber">Applies to: government officials, ambassadors, AU Commission representatives, heads of institutions, and all formally designated VIP guests.</div>
+    <div class="clause"><div class="clause-title">VIP designation</div><div class="clause-body">VIP status is extended by invitation only and must be confirmed in writing by the Organiser's Protocol Office. VIP access includes reserved seating, dedicated liaison officers, access to VIP lounges, and protocol-compliant hosting arrangements.</div></div>
+    <div class="clause"><div class="clause-title">Protocol obligations</div><div class="clause-body">VIP guests are expected to honour confirmed attendance commitments. Where a VIP is unable to attend, the Organiser requests no less than 72 hours' written notice to make appropriate adjustments to programme and protocol arrangements.</div></div>
+    <div class="clause"><div class="clause-title">Security</div><div class="clause-body">VIP guests requiring security detail must notify the Organiser's Protocol Office at least 14 days before the Conference. The Organiser will liaise with the venue and relevant authorities but cannot guarantee armed escort services — these remain the responsibility of the VIP's institution or government.</div></div>
+    <div class="clause"><div class="clause-title">Programme contributions</div><div class="clause-body">VIPs who are scheduled to deliver remarks, open sessions, or present awards must submit any written remarks to the Protocol Office at least 5 days before the Conference for review and scheduling purposes.</div></div>
+    <div class="clause"><div class="clause-title">Photography &amp; media</div><div class="clause-body">VIP guests consent to being photographed and filmed during public Conference sessions. Any restrictions on photography must be communicated to the Organiser's Media Team in advance. Private meetings arranged by the Organiser are not recorded without explicit consent.</div></div>
+  </div>
+
+  <div id="tab-observer" class="ptab-content">
+    <div class="highlight-box hb-blue">Applies to: representatives of civil society organisations, diplomatic missions, think tanks, and others attending in a non-participating observer capacity.</div>
+    <div class="clause"><div class="clause-title">Observer access</div><div class="clause-body">Observers are granted access to open plenary sessions and designated side events. Access to closed workshops, working group sessions, and VIP areas is not included unless specifically authorised by the Organiser.</div></div>
+    <div class="clause"><div class="clause-title">Non-participation</div><div class="clause-body">Observers may not participate in debates, vote on resolutions, or present position papers unless formally upgraded to delegate status and the applicable registration fee is paid.</div></div>
+    <div class="clause"><div class="clause-title">Reporting</div><div class="clause-body">Observers representing organisations intending to publish reports or summaries of Conference proceedings must notify the Organiser's Communications Team in advance. Any published report must accurately represent the Conference's positions and must not be attributed to AUSP.Africa without written approval.</div></div>
+  </div>
+
+  <div id="tab-media" class="ptab-content">
+    <div class="highlight-box hb-blue">Applies to: accredited journalists, photographers, videographers, social media correspondents, and broadcast crews.</div>
+    <div class="clause"><div class="clause-title">Accreditation</div><div class="clause-body">Media personnel must apply for accreditation through the Organiser's Media Team no later than 21 days before the Conference. Accreditation grants access to designated media areas, press conferences, and open sessions. Access to closed sessions requires additional authorisation.</div></div>
+    <div class="clause"><div class="clause-title">Photography &amp; filming</div><div class="clause-body">Photography and filming are permitted in open sessions and designated media zones. Flash photography during keynote addresses requires prior approval. Filming of minors (if any are present) requires signed parental/guardian consent. Footage of VIP guests in private areas is strictly prohibited.</div></div>
+    <div class="clause"><div class="clause-title">Embargo</div><div class="clause-body">Certain sessions may be subject to news embargo. The Organiser will communicate embargo periods clearly before affected sessions. Breach of embargo will result in immediate withdrawal of accreditation.</div></div>
+    <div class="clause"><div class="clause-title">Content accuracy</div><div class="clause-body">Media representatives are expected to report accurately and responsibly. The Organiser reserves the right to formally respond to any coverage deemed materially inaccurate or defamatory.</div></div>
+    <div class="clause"><div class="clause-title">Social media</div><div class="clause-body">Live social media coverage is encouraged using the official conference hashtag. Misrepresentation of the Conference's positions or selective quoting that distorts context is a breach of these terms.</div></div>
+  </div>
+
+  <div id="tab-volunteer" class="ptab-content">
+    <div class="highlight-box hb-green">Applies to: all Conference volunteers, logistics staff, registration team members, and session support personnel.</div>
+    <div class="clause"><div class="clause-title">Volunteer agreement</div><div class="clause-body">Volunteers must sign a Volunteer Agreement prior to commencement of duties. This agreement outlines responsibilities, hours, code of conduct, and entitlements (meals, transport stipends, and a volunteer certificate).</div></div>
+    <div class="clause"><div class="clause-title">Confidentiality</div><div class="clause-body">Volunteers may have access to participant personal data, logistical information, and VIP arrangements. All such information is strictly confidential and must not be shared with any third party during or after the Conference.</div></div>
+    <div class="clause"><div class="clause-title">Conduct</div><div class="clause-body">Volunteers represent AUSP.Africa and are expected to maintain professional conduct at all times. Harassment of participants, misuse of access privileges, or failure to fulfil agreed duties will result in immediate dismissal without compensation.</div></div>
+    <div class="clause"><div class="clause-title">Liability</div><div class="clause-body">Volunteers participate on a goodwill basis. The Organiser is not liable for personal injury, loss, or damage to a volunteer's property unless caused by the Organiser's direct negligence. Volunteers are encouraged to obtain personal travel and health insurance.</div></div>
+  </div>
+
+  <div id="tab-virtual" class="ptab-content">
+    <div class="highlight-box hb-blue">Applies to: registered delegates attending IPAYC 2026 online via the virtual platform.</div>
+    <div class="clause"><div class="clause-title">Virtual access</div><div class="clause-body">Virtual delegates will receive access credentials to the Conference's live-streaming platform upon payment confirmation. Credentials are personal and non-transferable. Sharing access links or credentials with unregistered individuals is a breach of these terms.</div></div>
+    <div class="clause"><div class="clause-title">Technical requirements</div><div class="clause-body">Virtual delegates are responsible for ensuring they have a stable internet connection, compatible device, and any required software. The Organiser will provide technical guidance but cannot be held responsible for connectivity issues on the delegate's end.</div></div>
+    <div class="clause"><div class="clause-title">Recording prohibition</div><div class="clause-body">Virtual delegates may not record, screenshot, or redistribute any live-streamed Conference content without written authorisation from the Organiser. Violations will result in permanent access revocation and may attract legal action.</div></div>
+    <div class="clause"><div class="clause-title">Goodie bag</div><div class="clause-body">Virtual delegates are not entitled to physical goodie bags or t-shirts unless they make separate arrangements with the Organiser for shipping at their own cost.</div></div>
+  </div>
+</div>
+
+<div id="s3" class="section">
+  <div class="sec-head"><div class="sec-num">3</div><div class="sec-title">Registration, fees &amp; payments</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">3.1 Fee structure</div><div class="clause-body">Registration fees are as follows: Standard delegate (ages 15–35): $50 USD. Senior delegate (age 36+): $70 USD, inclusive of position paper and UN-model plenary debate seat. VIPs, accredited media, and invited speakers may attend at no registration cost as determined by the Organiser. Sponsor and partner fees are as per their respective agreements.</div></div>
+  <div class="clause"><div class="clause-title">3.2 Payment methods</div><div class="clause-body">Accepted payment methods will be communicated via confirmation email. The Organiser accepts mobile money (M-Pesa), bank transfer, and approved digital payment platforms. All fees are stated in USD. Bank charges or conversion fees are the responsibility of the payer.</div></div>
+  <div class="clause"><div class="clause-title">3.3 Payment deadline</div><div class="clause-body">Full payment must be received no later than 30 days before the Conference. Registrations unpaid by this date will be automatically cancelled, and the space may be offered to waitlisted participants.</div></div>
+  <div class="clause"><div class="clause-title">3.4 Receipts</div><div class="clause-body">An official receipt will be issued within 5 working days of payment confirmation. Delegates requiring invoices for institutional reimbursement should request these at the time of registration.</div></div>
+</div>
+
+<div id="s4" class="section">
+  <div class="sec-head"><div class="sec-num">4</div><div class="sec-title">Cancellation, transfers &amp; refunds</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">4.1 Cancellation by participant</div><div class="clause-body">Cancellations must be submitted in writing to the Organiser. The following refund policy applies:
+    <ul style="margin-top:6px">
+      <li>Cancellation 60+ days before Conference: 75% refund</li>
+      <li>Cancellation 30–59 days before Conference: 50% refund</li>
+      <li>Cancellation less than 30 days before Conference: no refund</li>
+      <li>No-show without prior notice: no refund</li>
+    </ul>
+  </div></div>
+  <div class="clause"><div class="clause-title">4.2 Transfer of registration</div><div class="clause-body">Delegates may transfer their registration to another eligible person at the same or higher fee tier with written notice to the Organiser no later than 14 days before the Conference. A transfer fee of $10 USD applies.</div></div>
+  <div class="clause"><div class="clause-title">4.3 Cancellation by Organiser</div><div class="clause-body">If the Organiser cancels the Conference for reasons other than force majeure, all paid delegates will receive a full refund within 30 working days. If the Conference is postponed, registrations will be transferred to the new date unless a delegate requests a refund in writing within 14 days of the postponement announcement.</div></div>
+</div>
+
+<div id="s5" class="section">
+  <div class="sec-head"><div class="sec-num">5</div><div class="sec-title">Code of conduct</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="highlight-box hb-red">Violation of the code of conduct may result in immediate removal from the Conference without refund, and may be reported to the participant's parent institution, government, or relevant professional body.</div>
+  <div class="clause"><div class="clause-title">5.1 Respect &amp; inclusion</div><div class="clause-body">All participants are expected to treat every individual at the Conference with dignity and respect, regardless of gender, age, nationality, ethnicity, religion, disability, sexual orientation, or socioeconomic background. IPAYC 2026 is a safe and inclusive space for all.</div></div>
+  <div class="clause"><div class="clause-title">5.2 Prohibited conduct</div><div class="clause-body">The following are strictly prohibited at all Conference venues and events:
+    <ul style="margin-top:6px">
+      <li>Harassment, intimidation, or threatening behaviour of any kind</li>
+      <li>Hate speech, discrimination, or derogatory language</li>
+      <li>Physical violence or threatening of violence</li>
+      <li>Unauthorised recording or photography of individuals</li>
+      <li>Possession or use of illegal substances</li>
+      <li>Theft or damage of Conference or venue property</li>
+      <li>Misrepresentation of one's identity, credentials, or organisation</li>
+      <li>Disruption of sessions, debates, or official proceedings</li>
+    </ul>
+  </div></div>
+  <div class="clause"><div class="clause-title">5.3 Reporting</div><div class="clause-body">Participants who experience or witness a code of conduct violation should report it immediately to any member of the Conference Organising Committee or at the designated Delegate Support Desk. All reports will be treated confidentially and investigated promptly.</div></div>
+  <div class="clause"><div class="clause-title">5.4 Social media conduct</div><div class="clause-body">Participants must not publish false, defamatory, or misleading content about the Conference, its organisers, sponsors, partners, or fellow participants on any social media platform. The Organiser reserves the right to pursue legal remedies for reputational damage caused by bad-faith social media conduct.</div></div>
+</div>
+
+<div id="s6" class="section">
+  <div class="sec-head"><div class="sec-num">6</div><div class="sec-title">Sponsorship &amp; partnership compliance</div><span class="sec-badge badge-sponsor">Sponsors</span></div>
+  <div class="clause"><div class="clause-title">6.1 Activation restrictions</div><div class="clause-body">Sponsors and partners may only activate agreed benefits within designated areas and time slots confirmed by the Organiser. Unsanctioned branding, distribution of materials, or promotional activities at Conference venues are prohibited and may result in immediate removal of benefits without refund.</div></div>
+  <div class="clause"><div class="clause-title">6.2 Anti-greenwashing &amp; ethics</div><div class="clause-body">Sponsors may not use the Conference association to make claims about their social or environmental credentials that are materially misleading. The Organiser reserves the right to publicly disassociate itself from any sponsor found to be engaged in unethical practices during the period of the partnership.</div></div>
+  <div class="clause"><div class="clause-title">6.3 Exclusivity</div><div class="clause-body">Category exclusivity is available at Title and Platinum sponsor tiers only, as specified in the Sponsorship Packages document. Exclusivity applies to the immediate sector of the sponsor (e.g., a Title sponsor from the banking sector prevents the Organiser from signing another banking sponsor). Exclusivity terms must be expressly stated in the signed Sponsorship Agreement.</div></div>
+</div>
+
+<div id="s7" class="section">
+  <div class="sec-head"><div class="sec-num">7</div><div class="sec-title">Intellectual property</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">7.1 AUSP.Africa IP</div><div class="clause-body">All Conference branding, the IPAYC 2026 name, logo, theme, and all materials produced by the Organiser are the intellectual property of AUSP.Africa. No participant, sponsor, or partner may reproduce, adapt, or commercialise these without written permission.</div></div>
+  <div class="clause"><div class="clause-title">7.2 Participant-generated content</div><div class="clause-body">Position papers, presentations, and other materials submitted by delegates, speakers, and panellists remain the intellectual property of their authors. By submitting, participants grant AUSP.Africa a non-exclusive licence to reproduce and distribute the materials for Conference documentation, publications, and reporting to continental and international bodies including the African Union and relevant UN agencies.</div></div>
+  <div class="clause"><div class="clause-title">7.3 Conference resolutions</div><div class="clause-body">Resolutions, communiqués, and declarations produced through the Conference's deliberative process are collective outputs of IPAYC 2026 and will be attributed to AUSP.Africa for purposes of advocacy and submission to relevant bodies.</div></div>
+</div>
+
+<div id="s8" class="section">
+  <div class="sec-head"><div class="sec-num">8</div><div class="sec-title">Media, photography &amp; image rights</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">8.1 Consent to photography</div><div class="clause-body">By attending the Conference, all participants acknowledge that photography, video recording, and audio recording may take place in all open session areas. Images and footage may be used by AUSP.Africa for reporting, advocacy, social media, publications, and future promotional purposes.</div></div>
+  <div class="clause"><div class="clause-title">8.2 Opt-out</div><div class="clause-body">Participants who do not wish to be photographed or filmed must notify the Organiser's Media Team in writing before the Conference. The Organiser will make reasonable efforts to accommodate this request but cannot guarantee complete exclusion from group photography in open areas.</div></div>
+  <div class="clause"><div class="clause-title">8.3 Third-party media</div><div class="clause-body">Participants must not share, sell, or licence photographs or footage of other participants taken at the Conference without the express consent of those individuals.</div></div>
+</div>
+
+<div id="s9" class="section">
+  <div class="sec-head"><div class="sec-num">9</div><div class="sec-title">Privacy &amp; data protection</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">9.1 Data collected</div><div class="clause-body">The Organiser collects personal data including name, email, phone number, country, age bracket, dietary requirements, health and accessibility information, professional background, and in some cases passport or national ID details for visa support. This data is collected for the purposes of Conference management, logistics, communication, and post-event reporting.</div></div>
+  <div class="clause"><div class="clause-title">9.2 Data usage</div><div class="clause-body">Personal data will be used solely for Conference-related purposes and will not be sold to any third party. Data may be shared with: (a) the Conference venue for logistics; (b) government authorities as required by Kenyan law; (c) partner organisations with whom you have given consent for data sharing. Anonymised and aggregated data may be used in public reports.</div></div>
+  <div class="clause"><div class="clause-title">9.3 Data retention</div><div class="clause-body">Personal data will be retained for a maximum of 24 months after the Conference for reporting and follow-up purposes, after which it will be securely deleted. Participants may request deletion of their data at any time by writing to the Organiser.</div></div>
+  <div class="clause"><div class="clause-title">9.4 Your rights</div><div class="clause-body">Participants have the right to: access their personal data; request corrections; request deletion; withdraw consent for marketing communications at any time. To exercise these rights, contact the Organiser at the official contact address provided.</div></div>
+  <div class="clause"><div class="clause-title">9.5 Security</div><div class="clause-body">The Organiser employs appropriate technical and organisational measures to protect personal data against unauthorised access, loss, or misuse. In the event of a data breach that materially affects participants, the Organiser will notify affected individuals within 72 hours of becoming aware of the breach.</div></div>
+</div>
+
+<div id="s10" class="section">
+  <div class="sec-head"><div class="sec-num">10</div><div class="sec-title">Health, safety &amp; wellbeing</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">10.1 Health responsibility</div><div class="clause-body">Participants are responsible for ensuring they are in good health to attend the Conference. The Organiser strongly advises all participants to obtain comprehensive travel and health insurance prior to travel to Nairobi.</div></div>
+  <div class="clause"><div class="clause-title">10.2 Medical emergencies</div><div class="clause-body">First aid will be available on-site throughout the Conference. In the event of a medical emergency, the Organiser will contact emergency services and designated next-of-kin if provided. The Organiser is not responsible for medical costs incurred by participants.</div></div>
+  <div class="clause"><div class="clause-title">10.3 Public health</div><div class="clause-body">The Organiser reserves the right to require proof of vaccination, negative test results, or compliance with any public health measures mandated by Kenyan authorities at the time of the Conference. Participants who cannot comply may be denied entry without a refund if the requirement is imposed by law.</div></div>
+  <div class="clause"><div class="clause-title">10.4 Dietary &amp; accessibility needs</div><div class="clause-body">The Organiser will make reasonable efforts to accommodate dietary requirements and accessibility needs declared at registration. Late declarations (within 14 days of the Conference) cannot be guaranteed to be fulfilled.</div></div>
+</div>
+
+<div id="s11" class="section">
+  <div class="sec-head"><div class="sec-num">11</div><div class="sec-title">Liability &amp; indemnity</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">11.1 Limitation of liability</div><div class="clause-body">To the fullest extent permitted by Kenyan law, AUSP.Africa shall not be liable for any indirect, incidental, or consequential loss suffered by any participant, including loss of travel costs, business opportunities, or personal injury not caused by the Organiser's direct negligence.</div></div>
+  <div class="clause"><div class="clause-title">11.2 Participant indemnity</div><div class="clause-body">Each participant agrees to indemnify and hold harmless AUSP.Africa, its officers, volunteers, and agents from any claims, damages, or legal actions arising from: (a) the participant's breach of these T&amp;C; (b) the participant's misconduct at or in relation to the Conference; (c) content submitted by the participant that infringes third-party rights.</div></div>
+  <div class="clause"><div class="clause-title">11.3 Property</div><div class="clause-body">The Organiser is not responsible for loss, theft, or damage to personal property at Conference venues. Participants are responsible for their own belongings.</div></div>
+</div>
+
+<div id="s12" class="section">
+  <div class="sec-head"><div class="sec-num">12</div><div class="sec-title">Force majeure</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-body">The Organiser shall not be liable for failure to fulfil any obligation under these T&amp;C due to circumstances beyond its reasonable control, including but not limited to: acts of God, natural disasters, pandemics, acts of terrorism, civil unrest, government restrictions, venue destruction, or internet outages affecting virtual delivery. In such cases, the Organiser will communicate its position within 7 days and endeavour to reschedule or provide alternatives where feasible.</div></div>
+</div>
+
+<div id="s13" class="section">
+  <div class="sec-head"><div class="sec-num">13</div><div class="sec-title">Governing law &amp; dispute resolution</div><span class="sec-badge badge-all">All participants</span></div>
+  <div class="clause"><div class="clause-title">13.1 Governing law</div><div class="clause-body">These T&amp;C are governed by the laws of the Republic of Kenya. Any disputes arising from or in connection with participation in IPAYC 2026 shall be subject to the exclusive jurisdiction of the Kenyan courts.</div></div>
+  <div class="clause"><div class="clause-title">13.2 Dispute resolution</div><div class="clause-body">The parties agree to first attempt to resolve any dispute through good-faith negotiation within 30 days of a written notice of dispute. If unresolved, the matter may be referred to mediation before any litigation is pursued. The language of all proceedings shall be English.</div></div>
+  <div class="clause"><div class="clause-title">13.3 Severability</div><div class="clause-body">If any clause of these T&amp;C is found to be unenforceable, the remaining clauses shall continue in full force and effect.</div></div>
+</div>
+
+<div id="s14" class="accept-box">
+  <div class="accept-title">Acceptance of terms</div>
+  <div class="clause-body" style="font-size:12px;color:var(--color-text-secondary);margin-bottom:12px">Please read all sections carefully. Check each box to confirm your understanding and provide your details to generate a signed acceptance record.</div>
+
+  <div class="check-row"><input type="checkbox" id="c1" onchange="checkAll()"><label for="c1">I have read and understood the Terms, Privacy &amp; Conditions of IPAYC 2026 in full, including the provisions applicable to my participant category.</label></div>
+  <div class="check-row"><input type="checkbox" id="c2" onchange="checkAll()"><label for="c2">I consent to the collection and use of my personal data as described in Section 9 (Privacy &amp; Data Protection) and understand my rights regarding that data.</label></div>
+  <div class="check-row"><input type="checkbox" id="c3" onchange="checkAll()"><label for="c3">I agree to abide by the Code of Conduct (Section 5) and understand that violations may result in removal from the Conference without refund.</label></div>
+  <div class="check-row"><input type="checkbox" id="c4" onchange="checkAll()"><label for="c4">I acknowledge the cancellation and refund policy (Section 4) and accept the registration fee applicable to my category.</label></div>
+  <div class="check-row"><input type="checkbox" id="c5" onchange="checkAll()"><label for="c5">I confirm that the information I have provided during registration is accurate and complete to the best of my knowledge.</label></div>
+
+  <div class="sig-row">
+    <div class="sig-field"><label>Full name</label><input type="text" id="sig-name" placeholder="As per registration"></div>
+    <div class="sig-field"><label>Participant category</label>
+      <select id="sig-cat" style="font-size:13px;color:var(--color-text-primary);background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:8px 10px;width:100%;outline:none">
+        <option value="">-- Select --</option>
+        <option>Delegate</option><option>Speaker / Panellist</option><option>Sponsor</option><option>Partner</option><option>VIP / Dignitary</option><option>Observer</option><option>Media / Press</option><option>Volunteer</option><option>Virtual Delegate</option>
+      </select>
+    </div>
+    <div class="sig-field"><label>Organisation</label><input type="text" id="sig-org" placeholder="Institution or company"></div>
+    <div class="sig-field"><label>Date of acceptance</label><input type="text" id="sig-date" placeholder="Auto-filled on acceptance" readonly style="color:var(--color-text-secondary)"></div>
+  </div>
+
+  <button class="accept-btn" id="accept-btn" disabled onclick="doAccept()">Accept &amp; confirm all terms</button>
+</div>
+
+<div class="accepted-banner" id="accepted-banner">
+  <div style="font-size:22px;margin-bottom:8px">&#10003;</div>
+  <div style="font-size:15px;font-weight:500;color:#1b5e20;margin-bottom:4px">Terms accepted</div>
+  <div id="accept-summary" style="font-size:12px;color:#2e7d32;line-height:1.7"></div>
+  <div style="margin-top:10px;font-size:11px;color:var(--color-text-secondary)">A confirmation record will be included in your registration email from AUSP.Africa.</div>
+</div>
+
+</div>
+
+<script>
+function switchTab(el,id){
+  document.querySelectorAll('.ptab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.ptab-content').forEach(function(c){c.classList.remove('active');});
+  el.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+function checkAll(){
+  var all=['c1','c2','c3','c4','c5'].every(function(id){return document.getElementById(id).checked;});
+  document.getElementById('accept-btn').disabled=!all;
+}
+function doAccept(){
+  var name=document.getElementById('sig-name').value.trim();
+  var cat=document.getElementById('sig-cat').value;
+  var org=document.getElementById('sig-org').value.trim();
+  if(!name){alert('Please enter your full name.');return;}
+  if(!cat){alert('Please select your participant category.');return;}
+  var now=new Date();
+  var ds=now.toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})+' at '+now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('sig-date').value=ds;
+  document.getElementById('accept-btn').style.display='none';
+  document.getElementById('accepted-banner').style.display='block';
+  document.getElementById('accept-summary').innerHTML=name+' · '+cat+(org?' · '+org:'')+'<br>Accepted on: '+ds+'<br>Reference: IPAYC2026-TC-'+Math.random().toString(36).substr(2,8).toUpperCase();
+}
+</script>
