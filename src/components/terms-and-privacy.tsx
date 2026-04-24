@@ -412,6 +412,52 @@ export function TermsAndPrivacy() {
           </div>
         </div>
 
+        {/* Section 6: Sponsorship */}
+        <div id="s6" className="bg-white border rounded-2xl overflow-hidden shadow-sm">
+          <div className="p-6">
+            <div className="flex items-center gap-4 pb-4 border-b mb-4">
+              <div className="h-8 w-8 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs font-bold shrink-0">6</div>
+              <h2 className="text-lg font-bold">Sponsorship & partnership compliance</h2>
+              <Badge variant="secondary" className="ml-auto">Sponsors</Badge>
+            </div>
+            <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+              <p><span className="font-bold text-foreground">6.1 Activation restrictions:</span> Sponsors and partners may only activate agreed benefits within designated areas and time slots confirmed by the Organiser.</p>
+              <p><span className="font-bold text-foreground">6.2 Anti-greenwashing & ethics:</span> Sponsors may not use the Conference association to make claims about their social or environmental credentials that are materially misleading.</p>
+              <p><span className="font-bold text-foreground">6.3 Exclusivity:</span> Category exclusivity is available at Title and Platinum sponsor tiers only, as specified in the Sponsorship Packages document.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 7: IP */}
+        <div id="s7" className="bg-white border rounded-2xl overflow-hidden shadow-sm">
+          <div className="p-6">
+            <div className="flex items-center gap-4 pb-4 border-b mb-4">
+              <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">7</div>
+              <h2 className="text-lg font-bold">Intellectual property</h2>
+              <Badge variant="secondary" className="ml-auto">All participants</Badge>
+            </div>
+            <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+              <p><span className="font-bold text-foreground">7.1 AUSP.Africa IP:</span> All Conference branding, the IPAYC 2026 name, logo, theme, and all materials produced by the Organiser are the intellectual property of AUSP.Africa.</p>
+              <p><span className="font-bold text-foreground">7.2 Participant-generated content:</span> Position papers, presentations, and other materials submitted by delegates remain the intellectual property of their authors.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 8: Media */}
+        <div id="s8" className="bg-white border rounded-2xl overflow-hidden shadow-sm">
+          <div className="p-6">
+            <div className="flex items-center gap-4 pb-4 border-b mb-4">
+              <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">8</div>
+              <h2 className="text-lg font-bold">Media, photography & image rights</h2>
+              <Badge variant="secondary" className="ml-auto">All participants</Badge>
+            </div>
+            <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+              <p><span className="font-bold text-foreground">8.1 Consent to photography:</span> By attending the Conference, all participants acknowledge that photography, video recording, and audio recording may take place.</p>
+              <p><span className="font-bold text-foreground">8.2 Opt-out:</span> Participants who do not wish to be photographed or filmed must notify the Organiser's Media Team in writing before the Conference.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Section 9: Privacy */}
         <div id="s9" className="bg-white border rounded-2xl overflow-hidden shadow-sm">
           <div className="p-6">
@@ -433,6 +479,49 @@ export function TermsAndPrivacy() {
                 <h3 className="font-bold text-foreground mb-1">9.3 Data retention</h3>
                 <p>Personal data will be retained for a maximum of 24 months after the Conference for reporting and follow-up purposes, after which it will be securely deleted.</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 10: Health & Safety */}
+        <div id="s10" className="bg-white border rounded-2xl overflow-hidden shadow-sm">
+          <div className="p-6">
+            <div className="flex items-center gap-4 pb-4 border-b mb-4">
+              <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">10</div>
+              <h2 className="text-lg font-bold">Health, safety & wellbeing</h2>
+              <Badge variant="secondary" className="ml-auto">All participants</Badge>
+            </div>
+            <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+              <p><span className="font-bold text-foreground">10.1 Health responsibility:</span> Participants are responsible for ensuring they are in good health to attend the Conference.</p>
+              <p><span className="font-bold text-foreground">10.2 Medical emergencies:</span> First aid will be available on-site. The Organiser is not responsible for medical costs incurred by participants.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 11: Liability */}
+        <div id="s11" className="bg-white border rounded-2xl overflow-hidden shadow-sm">
+          <div className="p-6">
+            <div className="flex items-center gap-4 pb-4 border-b mb-4">
+              <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">11</div>
+              <h2 className="text-lg font-bold">Liability & indemnity</h2>
+              <Badge variant="secondary" className="ml-auto">All participants</Badge>
+            </div>
+            <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+              <p><span className="font-bold text-foreground">11.1 Limitation of liability:</span> To the fullest extent permitted by Kenyan law, AUSP.Africa shall not be liable for any indirect, incidental, or consequential loss suffered by any participant.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 12: Force Majeure */}
+        <div id="s12" className="bg-white border rounded-2xl overflow-hidden shadow-sm">
+          <div className="p-6">
+            <div className="flex items-center gap-4 pb-4 border-b mb-4">
+              <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">12</div>
+              <h2 className="text-lg font-bold">Force majeure</h2>
+              <Badge variant="secondary" className="ml-auto">All participants</Badge>
+            </div>
+            <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+              <p>The Organiser shall not be liable for failure to fulfil any obligation under these T&C due to circumstances beyond its reasonable control.</p>
             </div>
           </div>
         </div>

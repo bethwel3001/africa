@@ -10,14 +10,17 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
-
-const ticketTypes = [
-  { id: "student", name: "Student Delegate", price: "$50", icon: Users, perks: ["Access to sessions", "Delegate bag", "Certificate"] },
-  { id: "general", name: "General Admission", price: "$150", icon: Ticket, perks: ["Full session access", "Networking dinner", "Lunch & Snacks", "Certificate"] },
-  { id: "virtual", name: "Virtual Delegate", price: "$25", icon: Monitor, perks: ["Streaming access", "Digital workbook", "E-Certificate"] },
-]
+import { useLanguage } from "@/context/LanguageContext"
 
 export default function RegisterPage() {
+  const { t } = useLanguage();
+
+  const ticketTypes = [
+    { id: "student", name: t('studentDelegate'), price: "$50", icon: Users, perks: [t('perkSessions'), t('perkBag'), t('perkCert')] },
+    { id: "general", name: t('generalAdmission'), price: "$150", icon: Ticket, perks: [t('perkFullAccess'), t('perkDinner'), t('perkLunch'), t('perkCert')] },
+    { id: "virtual", name: t('virtualDelegate'), price: "$25", icon: Monitor, perks: [t('perkStream'), t('perkWorkbook'), t('perkECert')] },
+  ]
+
   const [selectedTicket, setSelectedTicket] = React.useState(ticketTypes[1].id)
 
   return (
@@ -25,13 +28,13 @@ export default function RegisterPage() {
       
       <div className="container mx-auto px-4 pt-12 pb-24">
         <Link href="/" className="inline-flex items-center text-primary font-medium hover:underline gap-2 mb-8">
-          <ArrowLeft className="h-4 w-4" /> Back to Home
+          <ArrowLeft className="h-4 w-4" /> {t('backToHome')}
         </Link>
         
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold">Secure Your <span className="text-secondary">Seat</span></h1>
-            <p className="text-muted-foreground text-lg">Be part of the reimagining. Choose your attendance path.</p>
+            <h1 className="text-4xl md:text-6xl font-bold">{t('secureSeat').split(' ')[0]} {t('secureSeat').split(' ')[1]} <span className="text-secondary">{t('secureSeat').split(' ')[2]}</span></h1>
+            <p className="text-muted-foreground text-lg">{t('secureSeatSubtitle')}</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -69,44 +72,44 @@ export default function RegisterPage() {
           </div>
 
           <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-primary/5">
-             <h3 className="text-2xl font-bold mb-8">Registration Details</h3>
+             <h3 className="text-2xl font-bold mb-8">{t('regDetails')}</h3>
              <form className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
+                    <Label htmlFor="firstName">{t('firstName')}</Label>
                     <Input id="firstName" placeholder="Jane" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
+                    <Label htmlFor="lastName">{t('lastName')}</Label>
                     <Input id="lastName" placeholder="Doe" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="email">{t('emailAddress')}</Label>
                     <Input id="email" type="email" placeholder="jane@example.com" />
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="country">Country</Label>
+                    <Label htmlFor="country">{t('country')}</Label>
                     <Input id="country" placeholder="Select Country" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="org">Organization / University</Label>
+                    <Label htmlFor="org">{t('organization')}</Label>
                     <Input id="org" placeholder="African University" />
                   </div>
                   <div className="space-y-2">
-                    <Label>Dietary Requirements (Optional)</Label>
+                    <Label>{t('dietary')}</Label>
                     <Input placeholder="E.g. Vegetarian" />
                   </div>
                 </div>
                 <div className="md:col-span-2 pt-4">
                     <Link href="/payment">
                         <Button className="w-full bg-primary text-white font-bold py-6 text-lg">
-                            Proceed to Payment
+                            {t('proceedPayment')}
                         </Button>
                     </Link>
                   <p className="text-center text-xs text-muted-foreground mt-4">
-                    Payments are securely processed. Registration implies agreement to our <Link href="/terms-of-use" className="text-primary hover:underline underline-offset-4">Terms of use</Link> and <Link href="/terms-of-use#s5" className="text-primary hover:underline underline-offset-4">Code of Conduct</Link>.
+                    {t('regAgreement').split('. ')[0]}. {t('regAgreement').split('. ')[1].split('Terms of use')[0]} <Link href="/terms-of-use" className="text-primary hover:underline underline-offset-4">{t('terms-of-use') || 'Terms of use'}</Link> {t('regAgreement').split('Terms of use')[1].split('Code of Conduct')[0]} <Link href="/terms-of-use#s5" className="text-primary hover:underline underline-offset-4">{t('codeOfConduct') || 'Code of Conduct'}</Link>.
                   </p>
                 </div>
              </form>

@@ -11,9 +11,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', 'sans-serif'],
-        body: ['Open Sans', 'sans-serif'],
-        headline: ['Montserrat', 'sans-serif'],
+        sans: ['"Open Sans"', 'sans-serif'],
+        body: ['"Open Sans"', 'sans-serif'],
+        headline: ['"Open Sans"', 'sans-serif'],
+        display: ['"Concert One"', 'cursive'],
       },
       colors: {
         background: '#FFFFFF',
