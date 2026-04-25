@@ -13,8 +13,8 @@ export default {
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
         body: ['"Open Sans"', 'sans-serif'],
-        headline: ['"Open Sans"', 'sans-serif'],
-        display: ['"Concert One"', 'cursive'],
+        headline: ['"Montserrat"', 'sans-serif'],
+        display: ['"Montserrat"', 'sans-serif'],
       },
       colors: {
         background: '#FFFFFF',
