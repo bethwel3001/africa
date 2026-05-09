@@ -111,7 +111,7 @@ export function ContactFAQSection() {
               </a>
               <div className="flex items-center gap-3 text-lg">
                 <MapPin className="h-6 w-6 text-secondary" />
-                <span className="font-medium">Nairobi, Kenya & Online</span>
+                <span className="font-medium">Central Bank of Kenya- Institute of Monetary Studies & Online</span>
               </div>
             </div>
         </div>
