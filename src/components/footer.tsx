@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-secondary" />
-                <span>Nairobi, Kenya</span>
+                <span>Central Bank of Kenya- Institute of Monetary Studies</span>
               </li>
             </ul>
           </div>

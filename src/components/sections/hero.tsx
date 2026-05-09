@@ -70,7 +70,7 @@ export function HeroSection() {
         {/* Left Content */}
         <div className="flex-1 w-full max-w-2xl animate-fade-in-up flex flex-col justify-center items-center text-center lg:items-start lg:text-left gap-4">
           <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground font-bold text-[8px] sm:text-[9px] md:text-[10px] tracking-widest uppercase backdrop-blur-sm shadow">
-            21st – 23rd October 2026 • Nairobi
+            21st – 23rd October 2026 • Central Bank of Kenya- Institute of Monetary Studies
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
             {t('reimagining')} <br />
@@ -96,7 +96,7 @@ export function HeroSection() {
         {/* Right Content - Countdown (Desktop) */}
         <div className="hidden lg:flex flex-col items-end justify-end flex-1 min-w-[340px] max-w-md">
           <div className="p-10 space-y-8 bg-white rounded-3xl shadow-2xl border border-primary/10 w-full flex flex-col items-center">
-            <h3 className="text-center font-bold uppercase tracking-[0.4em] text-[20px] text-primary mb-4 whitespace-pre-line">Countdown to Nairobi</h3>
+            <h3 className="text-center font-bold uppercase tracking-[0.4em] text-[20px] text-primary mb-4 whitespace-pre-line">Countdown to Event</h3>
             <div className="w-full flex justify-center">
               <Countdown />
             </div>

@@ -6,13 +6,13 @@
 
 @layer base {
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Commissioner', sans-serif;
     @apply bg-background text-foreground;
     line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Concert One', sans-serif;
     @apply font-semibold;
     line-height: 1.2;
   }

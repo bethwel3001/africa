@@ -75,7 +75,7 @@ export function TermsAndPrivacy() {
         </div>
         <h1 className="text-2xl md:text-3xl font-bold">Terms, Privacy & Conditions of Participation</h1>
         <p className="text-white/70 text-sm max-w-2xl mx-auto">
-          International Pan-African Youth Conference (IPAYC) 2026 · Nairobi, Kenya · October 2026
+          International Pan-African Youth Conference (IPAYC) 2026 · Central Bank of Kenya- Institute of Monetary Studies · October 2026
           <br />Issued by AUSP.Africa — African Union Students' Platform
         </p>
       </div>
@@ -121,7 +121,7 @@ export function TermsAndPrivacy() {
             <div className="space-y-6 text-sm leading-relaxed">
               <div>
                 <h3 className="font-bold text-foreground mb-1">1.1 Definitions</h3>
-                <p className="text-muted-foreground">In these T&C: "Conference" means IPAYC 2026, to be held in Nairobi, Kenya in October 2026. "Organiser" means AUSP.Africa and its authorised representatives. "Participant" means any person or entity engaging with the Conference in any capacity, including but not limited to delegates, speakers, panellists, sponsors, partners, VIPs, observers, media, volunteers, and facilitators. "Agreement" means these T&C together with any supplementary agreements, letters of intent, or Memoranda of Understanding (MoUs) entered into with the Organiser.</p>
+                <p className="text-muted-foreground">In these T&C: "Conference" means IPAYC 2026, to be held in Central Bank of Kenya- Institute of Monetary Studies in October 2026. "Organiser" means AUSP.Africa and its authorised representatives. "Participant" means any person or entity engaging with the Conference in any capacity, including but not limited to delegates, speakers, panellists, sponsors, partners, VIPs, observers, media, volunteers, and facilitators. "Agreement" means these T&C together with any supplementary agreements, letters of intent, or Memoranda of Understanding (MoUs) entered into with the Organiser.</p>
               </div>
               <div>
                 <h3 className="font-bold text-foreground mb-1">1.2 Scope</h3>
@@ -562,8 +562,13 @@ export function TermsAndPrivacy() {
               { id: 'c4', label: 'I acknowledge the Section 4: Cancellation and Refund policy.' },
               { id: 'c5', label: 'I confirm all provided registration information is accurate.' }
             ].map((check) => (
-              <div key={check.id} className="flex items-start space-x-3 p-3 hover:bg-muted/30 rounded-lg transition-colors cursor-pointer" onClick={() => setChecks(prev => ({ ...prev, [check.id]: !prev[check.id as keyof typeof checks] }))}>
-                <Checkbox id={check.id} checked={checks[check.id as keyof typeof checks]} onCheckedChange={(v) => setChecks({ ...checks, [check.id]: !!v })} />
+              <div key={check.id} className="flex items-start space-x-3 p-3 hover:bg-muted/30 rounded-lg transition-colors">
+                <Checkbox 
+                  id={check.id} 
+                  checked={checks[check.id as keyof typeof checks]} 
+                  onCheckedChange={(v) => setChecks({ ...checks, [check.id]: !!v })}
+                  className="cursor-pointer"
+                />
                 <Label htmlFor={check.id} className="text-sm font-medium leading-relaxed cursor-pointer select-none">
                   {check.label}
                 </Label>

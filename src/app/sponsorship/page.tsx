@@ -86,9 +86,9 @@ const tiers = [
 const specialSponsorships = [
   { name: "Opening Ceremony", price: "KSh 800,000", slots: "1 Slot" },
   { name: "Youth Innovation Challenge", price: "KSh 700,000", slots: "1 Slot" },
-  { name: "Media & Livestream Partner", price: "KSh 500,000", slots: "2 Slots" },
+  { name: "Media & Livestream Partner", price: "KSh 500,000", slots: "1 Slot" },
   { name: "Conference Kit Sponsor", price: "KSh 450,000", slots: "2 Slots" },
-  { name: "Cultural Night Sponsor", price: "KSh 700,000", slots: "1 Slot" }
+  { name: "Gala Dinner sponsor", price: "KSh 700,000", slots: "3 Slots" }
 ]
 
 export default function SponsorshipPage() {
@@ -117,10 +117,10 @@ export default function SponsorshipPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" variant="secondary" rounded="full" className="px-8 py-6 text-base font-bold shadow-xl transition-all hover:scale-105 active:scale-95 bg-secondary text-secondary-foreground" asChild>
-              <a href="mailto:partnerships@ausp.africa">Become a Partner</a>
+              <a href="mailto:secretariat@ausp.africa">Become a Partner</a>
             </Button>
             <Button size="lg" variant="outline" rounded="full" className="px-8 py-6 text-base font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all hover:scale-105 active:scale-95 backdrop-blur-md" asChild>
-              <a href="mailto:partnerships@ausp.africa?subject=Request for Sponsorship Package - IPAYC 2026&body=Hello Team,%0D%0A%0D%0AI am interested in partnering with you for IPAYC 2026. Please send me the sponsorship package.%0D%0A%0D%0ARegards,">Request PDF Package</a>
+              <a href="mailto:secretariat@ausp.africa?subject=Request for Sponsorship Package - IPAYC 2026&body=Hello Team,%0D%0A%0D%0AI am interested in partnering with you for IPAYC 2026. Please send me the sponsorship package.%0D%0A%0D%0ARegards,">Request PDF Package</a>
             </Button>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function SponsorshipPage() {
                   "Youth-led Pan-African gathering",
                   "Focus: Innovation, Health, Climate, Leadership",
                   "Delegates from across Africa",
-                  "Hosted in Nairobi, Kenya | 21st - 23rd Oct 2026"
+                  "Hosted at Central Bank of Kenya- Institute of Monetary Studies | 21st - 23rd Oct 2026"
                 ].map((text, i) => (
                   <li key={i} className="flex gap-3">
                     <CheckCircle2 className="text-primary w-6 h-6 flex-shrink-0" />
@@ -267,7 +267,7 @@ export default function SponsorshipPage() {
             ))}
           </div>
           <Button size="lg" variant="secondary" rounded="full" className="px-16 py-8 text-xl font-black shadow-2xl hover:scale-110 transition-transform duration-300" asChild>
-            <a href="mailto:partnerships@ausp.africa">Get In Touch Now</a>
+            <a href="mailto:secretariat@ausp.africa">Get In Touch Now</a>
           </Button>
           <p className="mt-12 text-white/40 text-[10px] font-bold tracking-widest uppercase">
             Sponsorship is governed by our <a href="/terms-of-use#s6" className="text-white hover:text-secondary underline underline-offset-4 decoration-secondary/30">Partnership Compliance Terms</a>
