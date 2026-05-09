@@ -103,7 +103,7 @@ export default function RegisterPage() {
                   </div>
                 </div>
                 <div className="md:col-span-2 pt-4">
-                    <Link href="/payment">
+                    <Link href={`/payment?ticket=${selectedTicket}`}>
                         <Button className="w-full bg-primary text-white font-bold py-6 text-lg">
                             {t('proceedPayment')}
                         </Button>
