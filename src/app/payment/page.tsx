@@ -1,8 +1,8 @@
 
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
-import { ArrowLeft, CreditCard, Landmark } from "lucide-react"
+import { useEffect, useMemo, useState, Suspense } from "react"
+import { ArrowLeft, CreditCard, Landmark, User } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
@@ -17,24 +17,27 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/context/LanguageContext"
 
 type PaymentMethod = "card" | "mpesa" | "bank" | "paypal"
-type TicketType = "student" | "general" | "virtual"
+type TicketType = "student" | "adult" | "general" | "virtual"
 
 const ticketPrices: Record<TicketType, string> = {
   student: "50.00",
+  adult: "70.00",
   general: "150.00",
   virtual: "25.00",
 }
 
-export default function PaymentPage() {
+function PaymentPageContent() {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
   const ticketFromQuery = searchParams.get("ticket")
   const paypalState = searchParams.get("paypal")
   const paypalOrderId = searchParams.get("token")
+  
   const initialTicket: TicketType =
-    ticketFromQuery === "student" || ticketFromQuery === "general" || ticketFromQuery === "virtual"
-      ? ticketFromQuery
+    (ticketFromQuery === "student" || ticketFromQuery === "adult" || ticketFromQuery === "general" || ticketFromQuery === "virtual")
+      ? ticketFromQuery as TicketType
       : "general"
+
   const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>("paypal")
   const [selectedTicket, setSelectedTicket] = useState<TicketType>(initialTicket)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
@@ -43,6 +46,7 @@ export default function PaymentPage() {
   const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID
 
   const amountToPay = useMemo(() => ticketPrices[selectedTicket], [selectedTicket])
+  
   const paypalScriptOptions: ReactPayPalScriptOptions | null = paypalClientId
     ? {
         clientId: paypalClientId,
@@ -166,11 +170,16 @@ export default function PaymentPage() {
           </p>
 
           <div className="grid gap-4">
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <TicketButton
                 label={`${t("studentDelegate")} ($${ticketPrices.student})`}
                 isActive={selectedTicket === "student"}
                 onClick={() => setSelectedTicket("student")}
+              />
+              <TicketButton
+                label={`${t("adultAdmission")} ($${ticketPrices.adult})`}
+                isActive={selectedTicket === "adult"}
+                onClick={() => setSelectedTicket("adult")}
               />
               <TicketButton
                 label={`${t("generalAdmission")} ($${ticketPrices.general})`}
@@ -276,6 +285,18 @@ export default function PaymentPage() {
       </div>
        <p className="text-xs text-center text-gray-500 mt-4">{t("allTransactionsSecure")}</p>
     </div>
+  )
+}
+
+export default function PaymentPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    }>
+      <PaymentPageContent />
+    </Suspense>
   )
 }
 
