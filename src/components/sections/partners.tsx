@@ -183,9 +183,16 @@ export function PartnersSection() {
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-border hover:border-primary/20 transition-colors">
               <h4 className="text-xl font-bold text-primary mb-3">Partnerships Team</h4>
               <p className="text-sm text-muted-foreground mb-6">For general partnership inquiries, institutional collaborations, and strategic alliances.</p>
-              <Button variant="link" className="p-0 h-auto text-primary font-bold text-lg" asChild>
-                <a href="mailto:partnerships@ausp.africa">partnerships@ausp.africa</a>
-              </Button>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-muted-foreground w-12">Call:</span>
+                  <a href="tel:+254117215772" className="text-foreground font-bold hover:text-primary transition-colors">+254 117 215 772</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-muted-foreground w-12">Email:</span>
+                  <a href="mailto:partnerships@ausp.africa" className="text-foreground font-bold hover:text-primary transition-colors">partnerships@ausp.africa</a>
+                </div>
+              </div>
             </div>
             
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-border hover:border-primary/20 transition-colors">
@@ -194,7 +201,7 @@ export function PartnersSection() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-semibold text-muted-foreground w-12">Call:</span>
-                  <a href="tel:+254793971426" className="text-foreground font-bold hover:text-primary transition-colors">+254 793 971 426</a>
+                  <a href="tel:+254740963628" className="text-foreground font-bold hover:text-primary transition-colors">+254 740 963 628</a>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-semibold text-muted-foreground w-12">Email:</span>

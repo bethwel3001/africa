@@ -69,7 +69,7 @@ export function HeroSection() {
       <div className="container relative z-10 px-2 sm:px-4 mx-auto pt-24 pb-12 lg:py-2 flex flex-col lg:flex-row items-center justify-between min-h-[60vh] gap-8 lg:gap-0">
         {/* Left Content */}
         <div className="flex-1 w-full max-w-2xl animate-fade-in-up flex flex-col justify-center items-center text-center lg:items-start lg:text-left gap-4">
-          <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground font-bold text-[8px] sm:text-[9px] md:text-[10px] tracking-widest uppercase backdrop-blur-sm shadow">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-bold text-[10px] sm:text-[12px] md:text-[14px] tracking-widest uppercase backdrop-blur-sm shadow whitespace-nowrap">
             21st – 23rd October 2026 • Central Bank of Kenya- Institute of Monetary Studies
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">

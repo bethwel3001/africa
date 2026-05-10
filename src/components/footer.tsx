@@ -3,7 +3,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Facebook, Instagram, Send, Mail, MapPin } from "lucide-react"
+import { Facebook, Instagram, Send, Mail, MapPin, Youtube, Linkedin, Music2, Phone, MessageSquare } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 
 const socialLinks = [
@@ -14,6 +14,18 @@ const socialLinks = [
   {
     Icon: Facebook,
     href: "https://www.facebook.com/profile.php?id=61587713274082"
+  },
+  {
+    Icon: Linkedin,
+    href: "https://www.linkedin.com/posts/panafricanyouthconference-youthvoices-africadevelopment-share-7458775209697820672-8mVg?utm_source=share&utm_medium=member_android&rcm=ACoAAE9R6-ABgOwcPJUvPQpN1wg-vU29nHWCwzE"
+  },
+  {
+    Icon: Youtube,
+    href: "http://youtube.com/post/UgkxMJPlKg1eVUh5qxTdv7dq9oGENBknbIwG?si=FiG1KzrshpIwVB2D"
+  },
+  {
+    Icon: Music2,
+    href: "https://vt.tiktok.com/ZS9W2sWjo/"
   }
 ]
 
@@ -60,6 +72,18 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-secondary" />
                 <span>events@ausp.africa</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-secondary" />
+                <div className="flex flex-col">
+                  <a href="tel:+254793975426" className="hover:text-secondary transition-colors">+254 793 975 426 (Calls)</a>
+                  <a href="tel:+254740963628" className="hover:text-secondary transition-colors">+254 740 963 628 (Mobilization)</a>
+                  <a href="tel:+254117215772" className="hover:text-secondary transition-colors">+254 117 215 772 (Partnership)</a>
+                </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <MessageSquare className="h-4 w-4 text-secondary" />
+                <a href="https://wa.me/message/R6T5PJFNADD7A1" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">WhatsApp Support</a>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-secondary" />

@@ -100,16 +100,26 @@ export function ContactFAQSection() {
 
         <div className="text-center mt-24 pt-16 border-t border-primary/10">
            <h3 className="font-bold text-2xl mb-8">Our Contact Details</h3>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 text-muted-foreground">
+            <div className="flex flex-wrap justify-center items-start gap-x-12 gap-y-8 text-muted-foreground">
               <a href="mailto:events@ausp.africa" className="flex items-center gap-3 hover:text-primary transition-colors text-lg">
                 <Mail className="h-6 w-6 text-secondary" />
                 <span className="font-medium">events@ausp.africa</span>
               </a>
-              <a href="tel:+254728762971" className="flex items-center gap-3 hover:text-primary transition-colors text-lg">
-                <Phone className="h-6 w-6 text-secondary" />
-                <span className="font-medium">+254 728 762 971</span>
-              </a>
-              <div className="flex items-center gap-3 text-lg">
+              <div className="flex flex-col items-start gap-4">
+                <div className="flex items-center gap-3 text-lg">
+                  <Phone className="h-6 w-6 text-secondary" />
+                  <div className="flex flex-col items-start">
+                    <a href="tel:+254793975426" className="font-medium hover:text-primary transition-colors">+254 793 975 426 (General Calls)</a>
+                    <a href="tel:+254740963628" className="font-medium hover:text-primary transition-colors">+254 740 963 628 (Resource Mobilization)</a>
+                    <a href="tel:+254117215772" className="font-medium hover:text-primary transition-colors">+254 117 215 772 (Partnership)</a>
+                  </div>
+                </div>
+                <a href="https://wa.me/message/R6T5PJFNADD7A1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors text-lg">
+                  <Send className="h-6 w-6 text-secondary" />
+                  <span className="font-medium">WhatsApp Support</span>
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-lg max-w-md text-left">
                 <MapPin className="h-6 w-6 text-secondary" />
                 <span className="font-medium">Central Bank of Kenya- Institute of Monetary Studies & Online</span>
               </div>

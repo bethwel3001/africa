@@ -255,7 +255,7 @@ export default function SponsorshipPage() {
           <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto mb-16">
             {[
               { icon: Mail, text: "partnerships@ausp.africa", href: "mailto:partnerships@ausp.africa" },
-              { icon: MessageSquare, text: "+254 728 762 971", href: "https://wa.me/254728762971" },
+              { icon: MessageSquare, text: "+254 793 975 426", href: "https://wa.me/message/R6T5PJFNADD7A1" },
               { icon: Globe, text: "ausp.africa", href: "https://ausp.africa" }
             ].map((item, i) => (
               <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group">
