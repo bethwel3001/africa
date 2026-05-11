@@ -166,7 +166,7 @@ export function TermsAndPrivacy() {
                 <div className="space-y-4 text-sm leading-relaxed">
                   <div className="p-4 bg-muted/20 rounded-xl">
                     <p className="font-bold text-foreground mb-1">Registration confirmation</p>
-                    <p className="text-muted-foreground">A delegate's place is confirmed only upon receipt of full payment of the applicable registration fee ($50 standard / $70 for delegates aged 36+) and written confirmation from the Organiser. Submission of a registration form does not constitute a guaranteed place.</p>
+                    <p className="text-muted-foreground">A delegate's place is confirmed only upon receipt of full payment of the applicable registration fee (Virtual: $25, Student: $50, Adult: $75, General: $100) and written confirmation from the Organiser. Submission of a registration form does not constitute a guaranteed place.</p>
                   </div>
                   <div className="p-4 bg-muted/20 rounded-xl">
                     <p className="font-bold text-foreground mb-1">Age bracket & fee accuracy</p>
@@ -355,7 +355,7 @@ export function TermsAndPrivacy() {
               <Badge variant="secondary" className="ml-auto bg-green-100 text-green-800 hover:bg-green-200 border-none">All participants</Badge>
             </div>
             <div className="space-y-4 text-sm leading-relaxed">
-              <p><span className="font-bold text-foreground">3.1 Fee structure:</span> Registration fees are as follows: Standard delegate (ages 15–35): $50 USD. Senior delegate (age 36+): $70 USD, inclusive of position paper and UN-model plenary debate seat. VIPs, accredited media, and invited speakers may attend at no registration cost as determined by the Organiser.</p>
+              <p><span className="font-bold text-foreground">3.1 Fee structure:</span> Registration fees are as follows: Virtual Delegate ($25 USD), Student Delegate ($50 USD), Adult Admission ($75 USD), and General Admission ($100 USD). VIPs, accredited media, and invited speakers may attend at no registration cost as determined by the Organiser.</p>
               <p><span className="font-bold text-foreground">3.2 Payment methods:</span> Accepted payment methods will be communicated via confirmation email. The Organiser accepts mobile money (M-Pesa), bank transfer, and approved digital payment platforms. All fees are stated in USD. Bank charges or conversion fees are the responsibility of the payer.</p>
               <p><span className="font-bold text-foreground">3.3 Payment deadline:</span> Full payment must be received no later than 30 days before the Conference. Registrations unpaid by this date will be automatically cancelled.</p>
             </div>
