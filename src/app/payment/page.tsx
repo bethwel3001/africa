@@ -45,7 +45,9 @@ function PaymentPageContent() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [isCapturing, setIsCapturing] = useState(false)
-  const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID
+  const [paypalClientId, setPaypalClientId] = useState<string | null>(
+    process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || null,
+  )
 
   const amountToPay = useMemo(() => ticketPrices[selectedTicket], [selectedTicket])
   const amountInKes = useMemo(() => (Number(amountToPay) * 130).toLocaleString(), [amountToPay])
@@ -57,6 +59,27 @@ function PaymentPageContent() {
         intent: "capture",
       }
     : null
+
+  useEffect(() => {
+    if (paypalClientId) {
+      return
+    }
+
+    async function loadPaypalClientId() {
+      try {
+        const response = await fetch("/api/paypal/client-id", { cache: "no-store" })
+        const data = (await response.json()) as { clientId?: string }
+
+        if (response.ok && data.clientId) {
+          setPaypalClientId(data.clientId)
+        }
+      } catch {
+        // Keep fallback UI when client ID cannot be loaded.
+      }
+    }
+
+    void loadPaypalClientId()
+  }, [paypalClientId])
 
   async function createPaypalOrder(_data: CreateOrderData, _actions: CreateOrderActions) {
     setErrorMessage(null)
