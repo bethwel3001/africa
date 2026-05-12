@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { CalendarDays, Mic } from "lucide-react"
+import Image from "next/image"
 
 export function SpeakersProgramSection() {
   return (
@@ -15,7 +16,7 @@ export function SpeakersProgramSection() {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative mb-16">
           <div className="grid lg:grid-cols-2 gap-8 blur-sm pointer-events-none select-none">
             <div className="h-[400px] bg-muted/50 rounded-[2rem] flex flex-col items-center justify-center text-center p-8">
               <Mic className="h-12 w-12 text-primary/30 mb-4" />
@@ -32,6 +33,17 @@ export function SpeakersProgramSection() {
                 <p className="text-muted-foreground mt-4 font-medium">Full details will be announced shortly. Stay tuned!</p>
               </div>
           </div>
+        </div>
+      </div>
+
+      <div className="w-full mt-12 bg-white border-y border-muted overflow-hidden">
+        <div className="relative w-full aspect-[21/9] md:aspect-[25/5] lg:aspect-[32/6]">
+          <Image
+            src="/LOGO/pay.png"
+            alt="Payment Information"
+            fill
+            className="object-contain px-4 md:px-0"
+          />
         </div>
       </div>
     </section>

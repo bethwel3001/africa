@@ -1,81 +1,97 @@
-
 "use client"
 
 import * as React from "react"
-import { Rocket, BarChart3, Users, Lightbulb } from "lucide-react"
+import Link from "next/link"
+import { Calendar, MapPin, Hourglass, CheckCircle2, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export function InitiativesSection() {
-  return (
-    <section className="py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* AUSP Youth Solutions Challenge */}
-          <div className="space-y-8 animate-fade-in-up flex flex-col">
-            
-            <h2 className="text-3xl md:text-5xl font-bold">AUSP Youth Solutions <span className="text-primary">Challenge</span></h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              A flagship competition aimed at surfacing and scaling high-impact, youth-led solutions to Africa's most pressing challenges.
-            </p>
-            
-            <div className="grid sm:grid-cols-2 gap-4 flex-grow">
-              <div className="bg-white p-6 rounded-2xl border border-green-500 shadow-sm h-full">
-                <h4 className="font-bold mb-2">Categories</h4>
-                <p className="text-sm text-muted-foreground">Environment, Education, Health, Agriculture, and Digital Economy.</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl border border-green-500 shadow-sm h-full">
-                <h4 className="font-bold mb-2">Seed Funding</h4>
-                <p className="text-sm text-muted-foreground">$2,500 seed funding per winner to kickstart implementation.</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl border border-green-500 shadow-sm h-full">
-                <h4 className="font-bold mb-2">Incubation</h4>
-                <p className="text-sm text-muted-foreground">6 months of mentorship and technical support for winners.</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl border border-green-500 shadow-sm h-full">
-                <h4 className="font-bold mb-2">Networking</h4>
-                <p className="text-sm text-muted-foreground">Direct access to partners and venture capital groups.</p>
-              </div>
-            </div>
-          </div>
+  const details = [
+    { 
+      icon: MapPin, 
+      label: "Location", 
+      value: "Central Bank of Kenya - Institute of Monetary Studies - Nairobi, Kenya",
+      color: "text-blue-500"
+    },
+    { 
+      icon: Calendar, 
+      label: "Date", 
+      value: "21st – 23rd October 2026",
+      color: "text-green-500"
+    },
+    { 
+      icon: Hourglass, 
+      label: "Deadline", 
+      value: "15th September 2026",
+      color: "text-red-500"
+    },
+  ]
 
-          {/* Accountability Mechanisms */}
-          <div className="space-y-8 bg-primary/5 p-8 md:p-12 rounded-3xl border border-primary/10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            <div className="p-3 bg-primary/10 w-fit rounded-xl">
-              <BarChart3 className="h-8 w-8 text-primary" />
+  const audiences = [
+    "Students", "Young Professionals", "Entrepreneurs", "Youth Leaders", 
+    "Innovators", "Activists", "Researchers", "Policymakers", 
+    "Creatives", "Community Organizers", "Changemakers"
+  ]
+
+  return (
+    <section id="initiatives" className="py-24 overflow-hidden scroll-mt-20">
+      <div className="container mx-auto px-4">
+        {/* Registration Open Section */}
+        <div className="max-w-4xl mx-auto text-center mb-16 space-y-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-sm tracking-wider uppercase">
+            Registration is officially OPEN
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+            The wait is over — join the <span className="text-primary">3rd Annual</span> International Pan-African Youth Conference 2026.
+          </h2>
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            We are calling on young minds from across Africa and beyond to be part of this transformative gathering.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {details.map((detail, i) => (
+            <div key={i} className="flex items-start gap-4 p-8 bg-background rounded-3xl shadow-sm border border-muted hover:border-primary/20 transition-all">
+              <div className={`p-3 rounded-2xl bg-muted/50 ${detail.color}`}>
+                <detail.icon className="h-6 w-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">{detail.label}</div>
+                <div className="text-lg font-bold text-foreground">{detail.value}</div>
+              </div>
             </div>
-            <h2 className="text-3xl font-bold text-primary">Implementation & Accountability</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              We move beyond dialogue. The conference ensures long-term impact through robust mechanisms:
-            </p>
-            
-            <ul className="space-y-6">
-              <li className="flex gap-4">
-                <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm border border-primary/20 text-primary">
-                   <Lightbulb className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground">Digital Progress Dashboard</h4>
-                  <p className="text-sm text-muted-foreground">A real-time platform to track the implementation of conference outcomes and resolutions.</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm border border-primary/20 text-primary">
-                   <Users className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground">Annual Virtual Impact Forum</h4>
-                  <p className="text-sm text-muted-foreground">Connecting delegates yearly to review progress and recalibrate strategies for the next summit.</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm border border-primary/20 text-primary">
-                   <Users className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground">Mentorship Calendar</h4>
-                  <p className="text-sm text-muted-foreground">A structured peer-to-peer and expert mentorship program spanning the entire year.</p>
-                </div>
-              </li>
-            </ul>
+          ))}
+        </div>
+
+        <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-muted relative overflow-hidden mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold">Who should attend?</h3>
+              <p className="text-muted-foreground">
+                Whether you are passionate about leadership, governance, climate action, innovation, entrepreneurship, education, media, health, advocacy, or sustainable development — this platform is designed for you.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {audiences.map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                    <span className="text-sm font-semibold">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-center lg:text-right space-y-8">
+              <div className="space-y-4">
+                <p className="text-2xl font-bold leading-relaxed">
+                  Join a growing movement of African youth shaping conversations, influencing change, and creating impact.
+                </p>
+                <p className="text-primary font-bold">Seats are limited. Secure your spot today!</p>
+              </div>
+              <Button asChild size="lg" className="rounded-full px-12 py-7 text-lg bg-primary text-white hover:bg-secondary hover:text-secondary-foreground font-bold uppercase tracking-widest transition-all shadow-lg hover:shadow-primary/25">
+                <Link href="https://lnkd.in/eMTQcaNV" target="_blank" className="flex items-center gap-2">
+                  Register Now <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

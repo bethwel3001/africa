@@ -3,6 +3,7 @@
 
 import { usePathname } from 'next/navigation';
 import { Navigation } from "@/components/navigation";
+import { SplashPopup } from "@/components/splash-popup";
 
 export function LayoutClient({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -10,6 +11,7 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <SplashPopup />
       {!hideNavigation && <Navigation />}
       {children}
     </>

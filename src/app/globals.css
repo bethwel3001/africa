@@ -11,7 +11,9 @@
   }
   body {
     font-family: 'Commissioner', sans-serif;
-    @apply bg-background text-foreground;
+    /* Updated background color to match the registration section theme (5% of #FFD700) */
+    background-color: rgba(255, 215, 0, 0.05);
+    @apply text-foreground;
     line-height: 1.6;
   }
 
