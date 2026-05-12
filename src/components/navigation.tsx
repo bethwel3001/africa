@@ -41,12 +41,14 @@ export function Navigation() {
   }, []);
 
   React.useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
     if (isOpen) {
-      document.body.classList.add("menu-open");
+      document.body.classList.add("no-scroll");
     } else {
-      document.body.classList.remove("menu-open");
+      document.body.classList.remove("no-scroll");
     }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
   }, [isOpen]);
 
   if (shouldHideNav) {
@@ -63,14 +65,14 @@ export function Navigation() {
         isOpen && "bg-white"
       )}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 flex items-center justify-between h-16 sm:h-20">
         <Link href="/" className="flex items-center group">
-          <div className="relative h-16 w-40 transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-10 w-28 sm:h-16 sm:w-40 transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/logo.png"
               alt="Conference Logo"
               fill
-              sizes="(max-width: 768px) 160px, 160px"
+              sizes="(max-width: 640px) 112px, 160px"
               className="object-contain"
               priority
             />
@@ -110,7 +112,7 @@ export function Navigation() {
         </nav>
 
         {/* Mobile Menu Trigger */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           {!isOpen && <LanguageSwitcher light={showLightNav} />}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -120,7 +122,7 @@ export function Navigation() {
             )}
             aria-label="Toggle Menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -133,13 +135,13 @@ export function Navigation() {
         )}
       >
         <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center">
-          <nav className="flex flex-col items-center justify-center text-center space-y-8">
+          <nav className="flex flex-col items-center justify-center text-center space-y-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-3xl font-bold text-foreground hover:text-primary transition-colors"
+                className="text-2xl font-bold text-foreground hover:text-primary transition-colors uppercase tracking-tight"
               >
                 {link.name}
               </Link>

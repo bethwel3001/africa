@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    @apply overflow-x-hidden w-full max-w-full;
+    position: relative;
+  }
   body {
     font-family: 'Commissioner', sans-serif;
     @apply bg-background text-foreground;
@@ -25,5 +29,11 @@
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+  
+  /* Critical fix for mobile horizontal scroll */
+  .no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
   }
 }

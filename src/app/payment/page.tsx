@@ -299,8 +299,8 @@ function PaymentPageContent() {
                       <div className="space-y-3">
                         <InstructionStep number="1" text="Go to M-PESA menu and select 'Lipa na M-PESA'" />
                         <InstructionStep number="2" text="Select 'Paybill' option" />
-                        <InstructionStep number="3" text="Enter Business No: 4124991" />
-                        <InstructionStep number="4" text="Enter Account Name: IPAYC" />
+                        <InstructionStep number="3" text="Enter Business No: 891300" />
+                        <InstructionStep number="4" text="Enter Account Number: 137200" />
                         <InstructionStep number="5" text={`Enter Amount: ${amountToPay} USD (~KES ${amountInKes})`} />
                         <InstructionStep number="6" text="Enter your M-PESA PIN and Send" />
                       </div>
