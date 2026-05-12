@@ -12,6 +12,24 @@ type CreateOrderRequest = {
   currency?: string;
 };
 
+function resolveAppUrl(request: Request) {
+  const configured = process.env.NEXT_PUBLIC_APP_URL?.trim();
+  if (configured) {
+    return configured.replace(/\/+$/, "");
+  }
+
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const host = forwardedHost || request.headers.get("host");
+
+  if (!host) {
+    throw new Error("Missing app URL configuration. Set NEXT_PUBLIC_APP_URL.");
+  }
+
+  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const protocol = forwardedProto || "https";
+  return `${protocol}://${host}`.replace(/\/+$/, "");
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as CreateOrderRequest;
@@ -28,8 +46,7 @@ export async function POST(request: Request) {
     const accessToken = await getPaypalAccessToken();
     const amount = TICKET_PRICES[ticketType];
     const baseUrl = getPaypalApiBase();
-    const origin = request.headers.get("origin");
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || origin || "http://localhost:3000";
+    const appUrl = resolveAppUrl(request);
 
     const response = await fetch(`${baseUrl}/v2/checkout/orders`, {
       method: "POST",
