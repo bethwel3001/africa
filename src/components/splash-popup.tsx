@@ -32,19 +32,13 @@ export function SplashPopup() {
           </DialogPrimitive.Description>
 
           <div className="relative w-full flex flex-col items-center justify-center">
-            {/* Using standard img to rule out Next.js Image issues */}
-            <div className="relative w-full bg-white/5 rounded-lg overflow-hidden flex items-center justify-center min-h-[300px]">
-              <img
-                src="/LOGO/splash.png"
-                alt="IPAYC 2026 Splash"
-                className="max-w-full max-h-[85vh] object-contain block"
-                onLoad={() => console.log("Splash image loaded successfully")}
-                onError={(e) => {
-                  console.error("Splash image failed to load", e);
-                  // Add visual feedback for error
-                }}
-              />
-            </div>
+            <img
+              src="/LOGO/splash.png"
+              alt="IPAYC 2026 Splash"
+              className="w-full h-auto block"
+              onLoad={() => console.log("Splash image loaded successfully")}
+              onError={(e) => console.error("Splash image failed to load", e)}
+            />
             
             <DialogPrimitive.Close className="absolute -top-4 -right-4 md:-top-8 md:-right-8 rounded-full bg-white p-2 text-black shadow-xl hover:bg-gray-200 transition-all hover:scale-110 focus:outline-none z-[10000]">
               <X className="h-6 w-6" />

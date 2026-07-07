@@ -166,7 +166,7 @@ export function TeamSection() {
                         </DialogHeader>
                         <div className="relative max-w-3xl mx-auto">
                           <div className="absolute -left-6 top-0 bottom-0 w-1.5 bg-primary/10 rounded-full" />
-                          <DialogDescription className="text-muted-foreground text-base md:text-lg lg:text-xl leading-relaxed whitespace-pre-wrap font-medium">
+                          <DialogDescription className="text-muted-foreground text-[11px] md:text-xs lg:text-sm leading-relaxed whitespace-pre-wrap font-medium">
                             {member.description}
                           </DialogDescription>
                         </div>

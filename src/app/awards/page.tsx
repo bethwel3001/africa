@@ -26,10 +26,10 @@ export default function AwardsPage() {
           </div>
           
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight uppercase">
               Coming Soon
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-muted-foreground font-medium max-w-xl mx-auto">
               We are finalizing the details for the IPAYC 2026 Awards. Stay tuned for more information on how to nominate and participate!
             </p>
           </div>

@@ -69,10 +69,10 @@ export function HeroSection() {
       <div className="container relative z-10 px-4 mx-auto pt-24 pb-12 lg:py-2 flex flex-col lg:flex-row items-center justify-between min-h-[60vh] gap-8 lg:gap-0">
         {/* Left Content */}
         <div className="flex-1 w-full max-w-2xl animate-fade-in-up flex flex-col justify-center items-center text-center lg:items-start lg:text-left gap-4">
-          <div className="inline-block px-4 py-2 rounded-2xl bg-secondary text-secondary-foreground font-bold text-[10px] sm:text-[12px] md:text-[14px] tracking-wider uppercase backdrop-blur-sm shadow-lg animate-float text-center max-w-full">
+          <div className="inline-block px-4 py-2 rounded-2xl bg-secondary text-secondary-foreground font-bold text-[9px] sm:text-[10px] md:text-[11px] tracking-wider uppercase backdrop-blur-sm shadow-lg text-center max-w-full">
             21st – 23rd October 2026 • Central Bank of Kenya- Institute of Monetary Studies
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
+          <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
             {t('reimagining')} <br />
             <span className="text-secondary">{t('africas')}</span> {t('future')}
           </h1>

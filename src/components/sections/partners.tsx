@@ -133,7 +133,7 @@ export function PartnersSection() {
         <div className="space-y-24">
           {partnerCategories.map((category, idx) => (
             <div key={idx} className="space-y-10">
-              <div className="text-center md:text-left border-l-4 border-primary pl-6">
+              <div className="text-center md:text-left">
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground">
                   {category.title}
                 </h3>
@@ -142,28 +142,30 @@ export function PartnersSection() {
                 )}
               </div>
               
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-x-4 gap-y-8 justify-items-center">
                 {category.partners.map((partner, pIdx) => (
                   <div 
                     key={pIdx} 
-                    className="group relative bg-white p-6 rounded-2xl border border-border hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[160px]"
+                    className="group flex flex-col items-center justify-start text-center transition-all duration-300 w-full"
                   >
-                    <div className="relative w-20 h-20 mb-4 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <div className="mb-3">
                       {partner.logo ? (
-                        <Image
-                          src={partner.logo}
-                          alt={`${partner.name} logo`}
-                          fill
-                          sizes="80px"
-                          className="object-contain"
-                        />
+                        <div className="relative w-20 h-20 flex items-center justify-center rounded-full border border-muted bg-white p-2.5 overflow-hidden shadow-sm transition-all duration-300 hover:scale-105">
+                          <Image
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            fill
+                            sizes="80px"
+                            className="object-contain p-2"
+                          />
+                        </div>
                       ) : (
-                        <div className={`w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold ${getColorClass(partner.name)}`}>
+                        <div className={`w-20 h-20 rounded-full flex items-center justify-center text-sm font-extrabold border border-muted shadow-sm transition-all duration-300 hover:scale-105 ${getColorClass(partner.name)}`}>
                           {getInitials(partner.name)}
                         </div>
                       )}
                     </div>
-                    <span className="text-xs md:text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors leading-tight line-clamp-2">
+                    <span className="text-[10px] md:text-xs font-semibold text-muted-foreground group-hover:text-primary transition-colors leading-tight line-clamp-2 max-w-[96px]">
                       {partner.name}
                     </span>
                   </div>

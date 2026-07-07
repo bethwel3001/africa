@@ -34,18 +34,42 @@ export function SpeakersProgramSection() {
               </div>
           </div>
         </div>
-      </div>
 
-      <div className="w-full mt-12 bg-white border-y border-muted overflow-hidden">
-        <div className="relative w-full aspect-[21/9] md:aspect-[25/5] lg:aspect-[32/6]">
-          <Image
-            src="/LOGO/pay.png"
-            alt="Payment Information"
-            fill
-            className="object-contain px-4 md:px-0"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 items-start max-w-6xl mx-auto">
+          <div className="bg-white dark:bg-card p-3 rounded-2xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="relative overflow-hidden rounded-xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
+              <img
+                src="/etc/exhibit.png"
+                alt="Exhibit Opportunities"
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+            <p className="text-center text-sm font-bold mt-3 text-foreground">Exhibit Opportunities</p>
+          </div>
+
+          <div className="bg-white dark:bg-card p-3 rounded-2xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="relative overflow-hidden rounded-xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
+              <img
+                src="/etc/payment.png"
+                alt="Payment Guide"
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+            <p className="text-center text-sm font-bold mt-3 text-foreground">Payment Guide</p>
+          </div>
+
+          <div className="bg-white dark:bg-card p-3 rounded-2xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="relative overflow-hidden rounded-xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
+              <img
+                src="/etc/sponser.png"
+                alt="Sponsorship Details"
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+            <p className="text-center text-sm font-bold mt-3 text-foreground">Sponsorship Details</p>
+          </div>
         </div>
       </div>
-    </section>
+  </section>
   )
 }

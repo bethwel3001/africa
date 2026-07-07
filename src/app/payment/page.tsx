@@ -288,7 +288,7 @@ function PaymentPageContent() {
                   <div className="w-full grid md:grid-cols-2 gap-6 items-center">
                     <div className="relative w-full aspect-square md:aspect-[4/5] rounded-xl overflow-hidden border-2 border-white shadow-md bg-white">
                       <Image
-                        src="/payment/paybill.png"
+                        src="/payment/paybill.jpg"
                         alt="M-Pesa Paybill Details"
                         fill
                         className="object-contain p-2"
@@ -299,10 +299,10 @@ function PaymentPageContent() {
                       <div className="space-y-3">
                         <InstructionStep number="1" text="Go to M-PESA menu and select 'Lipa na M-PESA'" />
                         <InstructionStep number="2" text="Select 'Paybill' option" />
-                        <InstructionStep number="3" text="Enter Business No: 891300" />
-                        <InstructionStep number="4" text="Enter Account Number: 137200" />
+                        <InstructionStep number="3" text="Enter Business No: 880100" />
+                        <InstructionStep number="4" text="Enter Account Number (A/C NO): 728148" />
                         <InstructionStep number="5" text={`Enter Amount: ${amountToPay} USD (~KES ${amountInKes})`} />
-                        <InstructionStep number="6" text="Enter your M-PESA PIN and Send" />
+                        <InstructionStep number="6" text="Confirm A/C Name is SCHOLAR MEDIA GROUP AFRICA LTD, enter your M-PESA PIN and Send" />
                       </div>
                     </div>
                   </div>

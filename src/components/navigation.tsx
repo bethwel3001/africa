@@ -87,7 +87,7 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-bold tracking-tight transition-colors hover:text-primary uppercase relative group/link",
+                  "text-xs font-bold tracking-tight transition-colors hover:text-primary uppercase relative group/link",
                   showLightNav ? "text-white" : "text-foreground"
                 )}
               >

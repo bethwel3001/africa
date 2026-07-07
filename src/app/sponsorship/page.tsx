@@ -133,7 +133,7 @@ export default function SponsorshipPage() {
       {/* About Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">About the Conference</h2>
               <ul className="space-y-4">
@@ -150,12 +150,11 @@ export default function SponsorshipPage() {
                 ))}
               </ul>
             </div>
-            <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
-              <Image 
-                src="/gallery/32.jpeg" 
-                alt="Conference Crowd" 
-                fill 
-                className="object-cover hover:scale-110 transition-transform duration-700"
+            <div>
+              <img 
+                src="/etc/sponser.png" 
+                alt="Sponsorship Details" 
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -184,6 +183,8 @@ export default function SponsorshipPage() {
           </div>
         </div>
       </section>
+
+
 
       {/* Tiers Section */}
       <section className="py-20 bg-background">
