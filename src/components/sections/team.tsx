@@ -24,7 +24,7 @@ const team = [
     email: "kevinandere_payc@ausp.africa",
     description: "Kevin Andere is a distinguished African youth leader, communications strategist, and Pan-African advocate, serving as the President of the International Pan African Youth Conference (IPAYC) and Chair of its International Organizing Committee. In this capacity, he provides visionary leadership to a premier continental platform that convenes young leaders, policymakers, innovators, and development partners to shape Africa’s future through dialogue, policy influence, and strategic collaboration.\n\nWith a strong foundation in strategic communications and development practice, Kevin serves as the Communications and Campaign Manager at Scholar Media Group Africa, where he leads transformative campaigns that elevate youth voices and drive action across governance, public health, and sustainable development landscapes.\n\nHis leadership footprint spans across Africa and the global stage. He actively contributes to Pan-African youth diplomacy through engagement with the African Union Students’ Platform (AUSP). Internationally, he is a Partner at Lead Equator (India), advancing global youth leadership and collaboration, and the incoming Continental Head for Africa (Signal Architecture) at Right Signal (India), where he will oversee a network of Signal Directors across African nations—strengthening coordinated communication systems and continental representation.\n\nKevin’s global engagement further includes serving as a Scholarship Selection Committee Member with Wichita Foundation (USA) and as a Judge with the Solutions Journalism Network (New York City & California, USA), where he contributes to advancing excellence in storytelling, media integrity, and impact-driven journalism. He also serves as a Public Relations Associate with Thalith Voices, supporting strategic communication efforts that amplify transformative narratives.\n\nAt the intersection of global influence and community impact, Kevin is a Newsletter Manager at the Rosemond Amah Yeboah Foundation (New York City, USA & Ghana), shaping thought leadership and editorial direction, and a Communications Strategist with Kabila La Vijana – Kisumu County Chapter, where he drives grassroots engagement and youth-centered advocacy.\n\nPreviously, he served as a Project Coordinator at Club17, leading initiatives under SDG 3: Good Health and Well-being, including the development of an innovative, sustainable menstrual health solution addressing period poverty—an award-winning intervention recognized for its scalability and social impact.\n\nKevin Andere’s leadership is defined by a commitment to advancing youth empowerment, health equity, climate resilience, and inclusive development. He is widely recognized for his ability to convene stakeholders, mobilize resources, and translate bold ideas into transformative, scalable initiatives.\n\nWith a clear vision for Africa’s future, he continues to champion a generation of young leaders equipped to influence policy, drive innovation, and position Africa as a global force in sustainable development and inclusive growth.",
     socials: {
-      linkedin: "https://www.linkedin.com/in/kevin-andere-1b56b1260?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+      linkedin: "https://www.linkedin.com/in/kevin-andere-1b56b1260"
     }
   },
   {
@@ -34,7 +34,7 @@ const team = [
     email: "programs_payc@ausp.africa",
     description: "Carlos Paul Nidza serves as the Vice Chair for the International Pan African Youth Conference, where he plays a pivotal role in shaping the strategic direction and fostering continental collaboration among youth. His leadership is focused on empowering the next generation of African visionaries to drive sustainable change and unity across the continent.",
     socials: {
-      linkedin: "#"
+      linkedin: ""
     }
   },
   {
@@ -44,12 +44,22 @@ const team = [
     email: "secretariat@ausp.africa",
     description: "Felix Odhiambo is a third-year Architecture student at JKUAT with a strong passion for designing spaces that are both functional and socially impactful. He is deeply committed to creating architecture that is culturally grounded, translating concepts into meaningful environments through refined design thinking, spatial planning, and visualization skills.\n\nIn his role as Secretary General of the AUSP Pan African Youth Conference, Felix oversees coordination, communication, and organizational strategy, ensuring seamless collaboration and the successful execution of conference initiatives. This experience has strengthened his leadership capacity, attention to structure, and ability to work effectively within diverse, multidisciplinary teams.\n\nFelix is particularly interested in sustainable, community-driven, and culturally responsive architecture. He remains open to opportunities that allow him to contribute to projects with tangible social impact while continuing to grow as a thoughtful and innovative designer.",
     socials: {
-      linkedin: "https://www.linkedin.com/in/felix-odhiambo-b78799356?trk=contact-info"
+      linkedin: "https://www.linkedin.com/in/felix-odhiambo-b78799356"
+    }
+  },
+  {
+    name: "Elvis Washingtone",
+    role: "Programs and Speakers Committee Lead, International Organizing Committee",
+    image: "/team/Elvis Washingtone.jpeg",
+    email: "",
+    description: "Elvis Washingtone is a Pan-African youth leader and development practitioner, currently serving as Programs and Speakers Committee Lead of the International Organizing Committee. He is the Director of Continental Programs & Strategic Implementation at Pan African Integrated Solution and a Sustainable Development Goals Ambassador for Kenya. With experience in youth advocacy, research, and capacity building, he leads impactful SDG-focused initiatives and mentors emerging change makers. Elvis has contributed to international research on insecurity and sustainable development and is trained in peace missions and gender advisory by UNITAR. His work advances youth inclusion, ethical leadership, and sustainable development across Africa and beyond.",
+    socials: {
+      linkedin: ""
     }
   },
   {
     name: "Reagan Anyango Odhiambo",
-    role: "Communications and Media Committee Lead for the International Pan African Youth Conference (IPAYC)",
+    role: "Communications and Media Committee Lead, IPAYC",
     image: "/team/5.png",
     email: "media@ausp.africa",
     description: "I am the Communications and Media Committee Lead for the International Pan African Youth Conference (IPAYC), where I lead a team of graphic designers, PR, social media, and content creators. I coordinate communications before, during, and after the conference, driving awareness campaigns, managing live event coverage, and shaping post-event storytelling and reporting. I am a marketing, public relations, and communications professional with over 9 years’ experience across healthcare, public sector, media, and social impact.\n\nCurrently, I serve as the Marketing, Business Development, and Communications Executive at AAR Healthcare Kenya, delivering campaigns that grow visibility, uptake, and stakeholder engagement. I also serve at AWR Radio Nairobi as Radio Host/Producer.\n\nPreviously, I served at Equity Afia, MMUST FM as a Radio Host/Presenter, and the Head of Marketing and Public Relations at Optex Opticians Ltd.",
@@ -64,7 +74,7 @@ const team = [
     email: "fundraising_payc@ausp.africa",
     description: "With over seven years of experience in fundraising and resource mobilization, I support NGOs and community-based organizations in securing funding, strengthening donor relationships, and developing sustainable financing strategies. I currently serve as an Outreach and Partnerships Manager in an Agri-Tech company, where I build strategic collaborations and expand networks to drive impact. Previously, I worked as a Project Manager at the National Council of Churches of Kenya, overseeing program implementation and stakeholder coordination. I have also contributed to resource mobilization efforts with Upcoming Africa Youth Organization, the Children and Youth Major Group to UNEP, and Humanitarian Global. I serve as Fundraising Lead for IPAYC, where I lead resource mobilization for the conference, and as Director for Languages at the African Union Students Platform.",
     socials: {
-      linkedin: "https://www.linkedin.com/in/leon-ambale-380940336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+      linkedin: "https://www.linkedin.com/in/leon-ambale-380940336"
     }
   },
   {
@@ -84,7 +94,7 @@ const team = [
     email: "impact_payc@ausp.africa",
     description: "A member of the Finance Committee, he leverages his expertise in technical cost management to oversee the conference budget, sponsorship packages, and impact evaluation.",
     socials: {
-      linkedin: "https://www.linkedin.com/in/samuel-ndungu-4b168819b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+      linkedin: "https://www.linkedin.com/in/samuel-ndungu-4b168819b"
     }
   },
   {
@@ -95,6 +105,16 @@ const team = [
     description: "Noella Gaunya is a Fundraising and partnerships specialist with over five years of experience securing funding and building strategic collaborations for social Impact organisations in Africa and beyond. Her expertise includes institutional fundraising, donor relations, partnership development and program coordination across sectors such as Tech and innovation, economic empowerment, gender justice, youth and women's empowerment, climate, health, and community development. Based in Nairobi, Kenya, Noella is committed to equitable resource mobilisation that centres community voices and drives sustainable change and long-term impact.",
     socials: {
       linkedin: "https://www.linkedin.com/in/noella-gaunya/"
+    }
+  },
+  {
+    name: "Bethwel Kiplagat",
+    role: "Software Engineer",
+    image: "/team/betu.png",
+    email: "kiplagatbethwelk@gmail.com",
+    description: "Bethwel Kiplagat is a Software Engineer passionate about building with AI, Cloud technologies, and creating great Developer Experiences (DX). He has spoken on several events and served as a jury member for tech events, bringing a well-rounded perspective on what makes technology accessible and impactful.\n\nHe is a universal mentor at the GeeKulcha Student Society (GKSS), helping new developers navigate the tech ecosystem, and actively contributes to open-source projects—often focusing on improving documentation and contributor guides. He believes great code alone isn't enough; users need clear, kind, and useful documentation to truly benefit from any product.\n\nThis belief in clarity and empowerment drives everything he does.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/iambethwelkiplagat"
     }
   }
 ]
@@ -109,7 +129,7 @@ export function TeamSection() {
           <span className="text-primary font-bold tracking-widest uppercase text-xs">
             {t('teamTitle') || "Our Team"}
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground">
             {t('teamHeadline') || "Meet the Visionaries"}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
@@ -172,7 +192,7 @@ export function TeamSection() {
                         </div>
                         <div className="mt-14 flex justify-center items-center gap-8">
                           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-                          {member.socials.linkedin && (
+                          {member.socials.linkedin && member.socials.linkedin !== "" && member.socials.linkedin !== "#" && (
                             <Link 
                               href={member.socials.linkedin}
                               target="_blank"
@@ -182,7 +202,7 @@ export function TeamSection() {
                               <Linkedin size={28} />
                             </Link>
                           )}
-                          {member.email && (
+                          {member.email && member.email !== "" && (
                             <Link 
                               href={`mailto:${member.email}`}
                               className="h-16 w-16 rounded-[2rem] bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-110 active:scale-95 shadow-sm"
@@ -196,7 +216,7 @@ export function TeamSection() {
                     </DialogContent>
                   </Dialog>
 
-                  {member.socials.linkedin && (
+                  {member.socials.linkedin && member.socials.linkedin !== "" && member.socials.linkedin !== "#" && (
                     <Link 
                       href={member.socials.linkedin}
                       target="_blank"
@@ -207,7 +227,7 @@ export function TeamSection() {
                     </Link>
                   )}
 
-                  {member.email && (
+                  {member.email && member.email !== "" && (
                     <Link 
                       href={`mailto:${member.email}`}
                       className="h-8 w-8 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm"

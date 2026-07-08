@@ -24,7 +24,7 @@ export function AboutSection() {
           <div className="space-y-8">
             <div className="space-y-2">
               <span className="text-primary font-bold tracking-widest uppercase text-xs">{t('visionTitle')}</span>
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground">
                 {t('visionHeadline')}
               </h2>
             </div>
@@ -72,7 +72,7 @@ export function AboutSection() {
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-2">
               <span className="text-primary font-bold tracking-widest uppercase text-xs">{t('roleTitle')}</span>
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground uppercase">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground">
                 {t('roleHeadline')}
               </h2>
             </div>

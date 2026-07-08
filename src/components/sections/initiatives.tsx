@@ -86,9 +86,9 @@ export function InitiativesSection() {
                 </p>
                 <p className="text-primary font-bold">Seats are limited. Secure your spot today!</p>
               </div>
-              <Button asChild size="lg" className="rounded-full px-12 py-7 text-lg bg-primary text-white hover:bg-secondary hover:text-secondary-foreground font-bold uppercase tracking-widest transition-all shadow-lg hover:shadow-primary/25">
+              <Button asChild size="lg" className="rounded-full px-6 py-3 text-xs md:text-sm bg-primary text-white hover:bg-secondary hover:text-secondary-foreground font-bold uppercase tracking-widest transition-all shadow-lg hover:shadow-primary/25">
                 <Link href="https://lnkd.in/eMTQcaNV" target="_blank" className="flex items-center gap-2">
-                  Register Now <ArrowRight className="h-5 w-5" />
+                  Register Now <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </div>

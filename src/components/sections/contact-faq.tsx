@@ -48,16 +48,16 @@ export function ContactFAQSection() {
           {/* FAQ Section */}
           <div className="space-y-12">
             <div className="space-y-4">
-              <h2 className="text-primary font-bold tracking-wider uppercase text-sm">Support</h2>
-              <h3 className="text-3xl md:text-5xl font-bold">Frequently Asked <span className="text-secondary">Questions</span></h3>
+              <span className="text-primary font-bold tracking-widest uppercase text-xs block">Support</span>
+              <h2 className="text-3xl md:text-5xl font-bold">Frequently Asked <span className="text-secondary">Questions</span></h2>
             </div>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`item-${i}`} className="border-b border-primary/10">
-                  <AccordionTrigger className="text-left font-bold text-lg py-6 hover:text-primary transition-colors">
+                  <AccordionTrigger className="text-left font-bold text-xs md:text-sm py-4 hover:text-primary transition-colors">
                     {faq.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                  <AccordionContent className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                     {faq.a}
                   </AccordionContent>
                 </AccordionItem>
@@ -91,7 +91,7 @@ export function ContactFAQSection() {
                 <label className="text-sm font-medium">Message</label>
                 <Textarea placeholder="Tell us more..." className="flex-grow" />
               </div>
-              <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold py-6 rounded-full">
+              <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold py-3 rounded-full text-xs md:text-sm transition-all">
                 <Send className="h-4 w-4 mr-2" /> Send Message
               </Button>
             </form>
@@ -99,28 +99,28 @@ export function ContactFAQSection() {
         </div>
 
         <div className="text-center mt-24 pt-16 border-t border-primary/10">
-           <h3 className="font-bold text-2xl mb-8">Our Contact Details</h3>
+           <h2 className="font-bold text-xl md:text-2xl mb-8">Our Contact Details</h2>
             <div className="flex flex-wrap justify-center items-start gap-x-12 gap-y-8 text-muted-foreground">
-              <a href="mailto:events@ausp.africa" className="flex items-center gap-3 hover:text-primary transition-colors text-lg">
-                <Mail className="h-6 w-6 text-secondary" />
+              <a href="mailto:events@ausp.africa" className="flex items-center gap-3 hover:text-primary transition-colors text-xs md:text-sm">
+                <Mail className="h-4 w-4 text-secondary" />
                 <span className="font-medium">events@ausp.africa</span>
               </a>
               <div className="flex flex-col items-start gap-4">
-                <div className="flex items-center gap-3 text-lg">
-                  <Phone className="h-6 w-6 text-secondary" />
+                <div className="flex items-start gap-3 text-xs md:text-sm">
+                  <Phone className="h-4 w-4 text-secondary mt-0.5" />
                   <div className="flex flex-col items-start">
                     <a href="tel:+254793975426" className="font-medium hover:text-primary transition-colors">+254 793 975 426 (General Calls)</a>
                     <a href="tel:+254740963628" className="font-medium hover:text-primary transition-colors">+254 740 963 628 (Resource Mobilization)</a>
                     <a href="tel:+254117215772" className="font-medium hover:text-primary transition-colors">+254 117 215 772 (Partnership)</a>
                   </div>
                 </div>
-                <a href="https://wa.me/message/R6T5PJFNADD7A1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors text-lg">
-                  <Send className="h-6 w-6 text-secondary" />
+                <a href="https://wa.me/message/R6T5PJFNADD7A1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors text-xs md:text-sm">
+                  <Send className="h-4 w-4 text-secondary" />
                   <span className="font-medium">WhatsApp Support</span>
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-lg max-w-md text-left">
-                <MapPin className="h-6 w-6 text-secondary" />
+              <div className="flex items-start gap-3 text-xs md:text-sm max-w-md text-left">
+                <MapPin className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
                 <span className="font-medium">Central Bank of Kenya- Institute of Monetary Studies & Online</span>
               </div>
             </div>

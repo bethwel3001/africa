@@ -9,7 +9,7 @@ import { useLanguage } from "@/context/LanguageContext"
 const socialLinks = [
   {
     Icon: Instagram,
-    href: "https://www.instagram.com/ipayc2026?igsh=dml3dHFqa21ndzM2"
+    href: "https://www.instagram.com/ipayc2026"
   },
   {
     Icon: Facebook,
@@ -17,11 +17,11 @@ const socialLinks = [
   },
   {
     Icon: Linkedin,
-    href: "https://www.linkedin.com/posts/panafricanyouthconference-youthvoices-africadevelopment-share-7458775209697820672-8mVg?utm_source=share&utm_medium=member_android&rcm=ACoAAE9R6-ABgOwcPJUvPQpN1wg-vU29nHWCwzE"
+    href: "https://www.linkedin.com/posts/panafricanyouthconference-youthvoices-africadevelopment-share-7458775209697820672-8mVg"
   },
   {
     Icon: Youtube,
-    href: "http://youtube.com/post/UgkxMJPlKg1eVUh5qxTdv7dq9oGENBknbIwG?si=FiG1KzrshpIwVB2D"
+    href: "https://youtube.com/post/UgkxMJPlKg1eVUh5qxTdv7dq9oGENBknbIwG"
   },
   {
     Icon: Music2,

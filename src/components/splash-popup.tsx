@@ -3,6 +3,7 @@
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
+import Image from "next/image"
 
 export function SplashPopup() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -32,12 +33,13 @@ export function SplashPopup() {
           </DialogPrimitive.Description>
 
           <div className="relative w-full aspect-square overflow-hidden rounded-2xl bg-white shadow-2xl border border-muted">
-            <img
+            <Image
               src="/LOGO/splash.png"
               alt="IPAYC 2026 Splash"
-              className="w-full h-full object-cover block"
-              onLoad={() => console.log("Splash image loaded successfully")}
-              onError={(e) => console.error("Splash image failed to load", e)}
+              fill
+              sizes="(max-width: 768px) 100vw, 360px"
+              priority
+              className="object-cover"
             />
             
             <DialogPrimitive.Close className="absolute top-3 right-3 rounded-full bg-black/60 hover:bg-black/80 p-1.5 text-white shadow-md transition-colors focus:outline-none z-[10000]">

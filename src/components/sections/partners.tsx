@@ -122,7 +122,7 @@ export function PartnersSection() {
               />
             </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground uppercase">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
             {t('partnersTitle') || "Our Trusted Partners & Sponsors"}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
@@ -214,7 +214,7 @@ export function PartnersSection() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <Button size="lg" rounded="full" className="px-10 py-7 text-lg shadow-xl" asChild>
+            <Button size="lg" rounded="full" className="px-6 py-3 text-xs md:text-sm font-bold shadow-xl" asChild>
               <Link href="/sponsorship">View Sponsorship Packages</Link>
             </Button>
           </div>

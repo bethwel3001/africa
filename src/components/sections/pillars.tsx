@@ -54,7 +54,7 @@ export function PillarsSection() {
     <section id="pillars" className="py-24 bg-muted/5 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-bold tracking-widest uppercase text-sm">Focus Areas</span>
+          <span className="text-primary font-bold tracking-widest uppercase text-xs">Focus Areas</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2">Pillars of Transformation</h2>
           <p className="text-lg text-muted-foreground mt-4">
             Critical sectors defining the trajectory of Africa toward 2063, fostering a unified, prosperous, and globally influential continent.
@@ -75,7 +75,7 @@ export function PillarsSection() {
         </div>
 
         <div className="text-center mt-20">
-          <Button asChild size="lg" className="font-bold text-lg py-8 px-10 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-600/30 transition-all">
+          <Button asChild size="lg" className="font-bold text-xs md:text-sm py-3 px-6 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-600/30 transition-all">
             <Link href="/register">Register Your Interest</Link>
           </Button>
         </div>

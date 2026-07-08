@@ -81,12 +81,12 @@ export function HeroSection() {
           </p>
           {/* Buttons row for small screens, centered */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 w-full justify-center lg:justify-start items-center">
-            <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-8 h-12 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-sm uppercase tracking-wider w-full sm:w-auto" asChild>
+            <Button size="lg" className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground px-6 h-10 md:h-11 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs md:text-sm uppercase tracking-wider w-full sm:w-auto" asChild>
               <Link href="/register">
                 {t('registerNow')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-8 h-12 sm:h-14 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-sm border-none uppercase tracking-wider w-full sm:w-auto" asChild>
+            <Button size="lg" className="bg-accent text-white hover:bg-accent/90 px-6 h-10 md:h-11 rounded-full font-bold shadow-lg transition-all hover:scale-105 whitespace-nowrap text-xs md:text-sm border-none uppercase tracking-wider w-full sm:w-auto" asChild>
               <Link href="/NOTE/concept_note.pdf" target="_blank">
                 Concept Note
               </Link>

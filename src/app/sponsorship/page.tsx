@@ -116,10 +116,10 @@ export default function SponsorshipPage() {
             <span className="text-secondary font-bold underline decoration-secondary/30 ml-2">Action</span>.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" variant="secondary" rounded="full" className="px-8 py-6 text-base font-bold shadow-xl transition-all hover:scale-105 active:scale-95 bg-secondary text-secondary-foreground" asChild>
+            <Button size="lg" variant="secondary" rounded="full" className="px-6 py-3 text-xs md:text-sm font-bold shadow-xl transition-all hover:scale-105 active:scale-95 bg-secondary text-secondary-foreground" asChild>
               <a href="mailto:secretariat@ausp.africa">Become a Partner</a>
             </Button>
-            <Button size="lg" variant="outline" rounded="full" className="px-8 py-6 text-base font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all hover:scale-105 active:scale-95 backdrop-blur-md" asChild>
+            <Button size="lg" variant="outline" rounded="full" className="px-6 py-3 text-xs md:text-sm font-bold bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all hover:scale-105 active:scale-95 backdrop-blur-md" asChild>
               <a href="mailto:secretariat@ausp.africa?subject=Request for Sponsorship Package - IPAYC 2026&body=Hello Team,%0D%0A%0D%0AI am interested in partnering with you for IPAYC 2026. Please send me the sponsorship package.%0D%0A%0D%0ARegards,">Request PDF Package</a>
             </Button>
           </div>
@@ -150,11 +150,14 @@ export default function SponsorshipPage() {
                 ))}
               </ul>
             </div>
-            <div>
-              <img 
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl min-h-[300px]">
+              <Image 
                 src="/etc/sponser.png" 
                 alt="Sponsorship Details" 
-                className="w-full h-auto"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain bg-white"
+                loading="lazy"
               />
             </div>
           </div>
@@ -267,7 +270,7 @@ export default function SponsorshipPage() {
               </a>
             ))}
           </div>
-          <Button size="lg" variant="secondary" rounded="full" className="px-16 py-8 text-xl font-black shadow-2xl hover:scale-110 transition-transform duration-300" asChild>
+          <Button size="lg" variant="secondary" rounded="full" className="px-8 py-3 text-xs md:text-sm font-bold shadow-2xl hover:scale-110 transition-transform duration-300" asChild>
             <a href="mailto:secretariat@ausp.africa">Get In Touch Now</a>
           </Button>
           <p className="mt-12 text-white/40 text-[10px] font-bold tracking-widest uppercase">
