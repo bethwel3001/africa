@@ -36,7 +36,7 @@ export function LanguageSwitcher({ light }: { light?: boolean }) {
         size="sm" 
         className={cn(
           "flex items-center gap-2 font-bold px-3 opacity-0",
-          light ? "text-white" : "text-foreground"
+          light ? "text-white group-hover:text-foreground" : "text-foreground"
         )}
       >
         <Globe className="h-4 w-4" />
@@ -55,7 +55,9 @@ export function LanguageSwitcher({ light }: { light?: boolean }) {
           size="sm" 
           className={cn(
             "flex items-center gap-2 font-bold px-3 rounded-full transition-all",
-            light ? "text-white hover:bg-white/10" : "text-foreground hover:bg-black/5"
+            light 
+              ? "text-white hover:bg-white/10 group-hover:text-foreground group-hover:hover:bg-black/5" 
+              : "text-foreground hover:bg-black/5"
           )}
         >
           <Globe className="h-4 w-4" />

@@ -60,14 +60,16 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        showLightNav ? "bg-transparent" : "bg-white shadow-md",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 group",
+        showLightNav 
+          ? "bg-black/15 backdrop-blur-sm hover:bg-white hover:shadow-md" 
+          : "bg-white shadow-md",
         isOpen && "bg-white"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 sm:h-20">
-        <Link href="/" className="flex items-center group">
-          <div className="relative h-10 w-28 sm:h-16 sm:w-40 transition-transform duration-300 group-hover:scale-105">
+        <Link href="/" className="flex items-center group/logo">
+          <div className="relative h-10 w-28 sm:h-16 sm:w-40 transition-transform duration-300 group-hover/logo:scale-105">
             <Image
               src="/logo.png"
               alt="Conference Logo"
@@ -88,13 +90,13 @@ export function Navigation() {
                 href={link.href}
                 className={cn(
                   "text-xs font-bold tracking-tight transition-colors hover:text-primary uppercase relative group/link",
-                  showLightNav ? "text-white" : "text-foreground"
+                  showLightNav ? "text-white group-hover:text-foreground" : "text-foreground"
                 )}
               >
                 {link.name}
                 <span className={cn(
                   "absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover/link:w-full",
-                  showLightNav ? "bg-white" : "bg-primary"
+                  showLightNav ? "bg-white group-hover:bg-primary" : "bg-primary"
                 )} />
               </Link>
             ))}
@@ -118,7 +120,7 @@ export function Navigation() {
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
               "p-2 rounded-md transition-colors z-[60]",
-              showLightNav ? "text-white" : "text-primary"
+              showLightNav ? "text-white group-hover:text-primary" : "text-primary"
             )}
             aria-label="Toggle Menu"
           >

@@ -28,13 +28,23 @@ const team = [
     }
   },
   {
-    name: "Carlos Paul Nidza",
-    role: "Vice Chair, International Pan African Youth Conference",
-    image: "/team/3.png",
-    email: "programs_payc@ausp.africa",
-    description: "Carlos Paul Nidza serves as the Vice Chair for the International Pan African Youth Conference, where he plays a pivotal role in shaping the strategic direction and fostering continental collaboration among youth. His leadership is focused on empowering the next generation of African visionaries to drive sustainable change and unity across the continent.",
+    name: "Alvie Quill Omondi",
+    role: "Acting. Vice Chairperson & Finance Lead, IPAYC–AUSP",
+    image: "/team/Elvis.png",
+    email: "finance_payc@ausp.africa",
+    description: "Alvie Quill Omondi is a clinical officer by profession and a driven entrepreneur, youth leader, and visionary changemaker. Self-motivated and performance-driven, he approaches every initiative with the same relentless energy that has made him a consistent achiever across the spaces he leads. His personal philosophy captures this outlook: \"Impossible is nonsense — unless you put some nonsense in the possibility.\"\n\nWithin IPAYC-AUSP, Alvie serves as Acting Vice Chairperson and Finance Lead, where he brings together his clinical discipline and financial acumen to provide sound strategic direction and drive the platform's mission of empowering African youth.",
     socials: {
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/quill-omondi-685534360"
+    }
+  },
+  {
+    name: "Naomi Moraa",
+    role: "Secretary General of the IPAYC & Climate Lead, Great Ladies Organization",
+    image: "/team/naomi.png",
+    email: "secretariat@ausp.africa",
+    description: "Naomi Moraa is an award-winning educator, environmentalist, and youth champion who seamlessly bridges the gap between classroom instruction and global climate advocacy. As a dedicated teacher of Biology and Agriculture, she transforms scientific concepts into actionable grassroots solutions, a commitment that earned her the prestigious Voice of Influence Award at the Scholar Media Africa Awards and the Rising Root Award at the Sustainable Future Awards. Beyond the classroom, Naomi drives impactful environmental policy and empowers young leaders across the continent, serving as the Climate Lead for the Great Ladies Organization and the Secretary General of the IPAYC.",
+    socials: {
+      linkedin: "https://www.linkedin.com/posts/naomi-moraa-07b122343_lnspiredbynatureforourfutureforourplanet-activity-7469048787546763264-wi14"
     }
   },
   {
@@ -48,26 +58,6 @@ const team = [
     }
   },
   {
-    name: "Elvis Washingtone",
-    role: "Programs and Speakers Committee Lead, International Organizing Committee",
-    image: "/team/Elvis Washingtone.jpeg",
-    email: "",
-    description: "Elvis Washingtone is a Pan-African youth leader and development practitioner, currently serving as Programs and Speakers Committee Lead of the International Organizing Committee. He is the Director of Continental Programs & Strategic Implementation at Pan African Integrated Solution and a Sustainable Development Goals Ambassador for Kenya. With experience in youth advocacy, research, and capacity building, he leads impactful SDG-focused initiatives and mentors emerging change makers. Elvis has contributed to international research on insecurity and sustainable development and is trained in peace missions and gender advisory by UNITAR. His work advances youth inclusion, ethical leadership, and sustainable development across Africa and beyond.",
-    socials: {
-      linkedin: ""
-    }
-  },
-  {
-    name: "Reagan Anyango Odhiambo",
-    role: "Communications and Media Committee Lead, IPAYC",
-    image: "/team/5.png",
-    email: "media@ausp.africa",
-    description: "I am the Communications and Media Committee Lead for the International Pan African Youth Conference (IPAYC), where I lead a team of graphic designers, PR, social media, and content creators. I coordinate communications before, during, and after the conference, driving awareness campaigns, managing live event coverage, and shaping post-event storytelling and reporting. I am a marketing, public relations, and communications professional with over 9 years’ experience across healthcare, public sector, media, and social impact.\n\nCurrently, I serve as the Marketing, Business Development, and Communications Executive at AAR Healthcare Kenya, delivering campaigns that grow visibility, uptake, and stakeholder engagement. I also serve at AWR Radio Nairobi as Radio Host/Producer.\n\nPreviously, I served at Equity Afia, MMUST FM as a Radio Host/Presenter, and the Head of Marketing and Public Relations at Optex Opticians Ltd.",
-    socials: {
-      linkedin: ""
-    }
-  },
-  {
     name: "Leon Ambale",
     role: "Fundraising Lead for IPAYC & Director for Languages at African Union Students Platform",
     image: "/team/4.png",
@@ -75,26 +65,6 @@ const team = [
     description: "With over seven years of experience in fundraising and resource mobilization, I support NGOs and community-based organizations in securing funding, strengthening donor relationships, and developing sustainable financing strategies. I currently serve as an Outreach and Partnerships Manager in an Agri-Tech company, where I build strategic collaborations and expand networks to drive impact. Previously, I worked as a Project Manager at the National Council of Churches of Kenya, overseeing program implementation and stakeholder coordination. I have also contributed to resource mobilization efforts with Upcoming Africa Youth Organization, the Children and Youth Major Group to UNEP, and Humanitarian Global. I serve as Fundraising Lead for IPAYC, where I lead resource mobilization for the conference, and as Director for Languages at the African Union Students Platform.",
     socials: {
       linkedin: "https://www.linkedin.com/in/leon-ambale-380940336"
-    }
-  },
-  {
-    name: "Ronney Ochieng",
-    role: "Logistics and Operations Team Lead at IPAYC",
-    image: "/team/2.png",
-    email: "logistics_payc@ausp.africa",
-    description: "Ronney Ochieng is a Geospatial Engineering student and student leader at the Technical University of Kenya, and Chairperson of the KUZA-TUK Chapter, where he leads strategy, coordinates initiatives, and represents student interests. With a growing professional focus on geospatial technology, Space science data-driven solutions, and innovation, he is also a member of the space Generation advisory council (SGAC) under the united Nations Office for outer space Affairs (UNOOSA) applying technical skills to real-world challenges. He also serves as the Logistics and Operations Team Lead at IPAYC, overseeing planning, coordination and execution of activities to ensure efficient and impactful program delivery.",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/ronney-ochieng-a7b312270"
-    }
-  },
-  {
-    name: "Qs. Ndung’u",
-    role: "Registered Quantity Surveyor and Project Manager serving as the ME&I Committee Lead for AUSP Kenya 2026.",
-    image: "/team/6.png",
-    email: "impact_payc@ausp.africa",
-    description: "A member of the Finance Committee, he leverages his expertise in technical cost management to oversee the conference budget, sponsorship packages, and impact evaluation.",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/samuel-ndungu-4b168819b"
     }
   },
   {
@@ -108,11 +78,64 @@ const team = [
     }
   },
   {
+    name: "Carlos Paul Nidza",
+    role: "Vice Chair, International Pan African Youth Conference",
+    image: "/team/3.png",
+    email: "programs_payc@ausp.africa",
+    description: "Carlos Paul Nidza serves as the Vice Chair for the International Pan African Youth Conference, where he plays a pivotal role in shaping the strategic direction and fostering continental collaboration among youth. His leadership is focused on empowering the next generation of African visionaries to drive sustainable change and unity across the continent.",
+    socials: {
+      linkedin: ""
+    },
+    blur: true
+  },
+  {
+    name: "Elvis Washingtone",
+    role: "Programs and Speakers Committee Lead, International Organizing Committee",
+    image: "/team/Elvis Washingtone.jpeg",
+    email: "auspprogramcommittee@gmail.com",
+    description: "Elvis Washingtone is a Pan-African youth leader and development practitioner, currently serving as Programs and Speakers Committee Lead of the International Organizing Committee. He is the Director of Continental Programs & Strategic Implementation at Pan African Integrated Solution and a Sustainable Development Goals Ambassador for Kenya. With experience in youth advocacy, research, and capacity building, he leads impactful SDG-focused initiatives and mentors emerging change makers. Elvis has contributed to international research on insecurity and sustainable development and is trained in peace missions and gender advisory by UNITAR. His work advances youth inclusion, ethical leadership, and sustainable development across Africa and beyond.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/elvis-washingtone-a78953305"
+    }
+  },
+  {
+    name: "Reagan Anyango Odhiambo",
+    role: "Communications and Media Committee Lead, IPAYC",
+    image: "/team/5.png",
+    email: "media@ausp.africa",
+    description: "I am the Communications and Media Committee Lead for the International Pan African Youth Conference (IPAYC), where I lead a team of graphic designers, PR, social media, and content creators. I coordinate communications before, during, and after the conference, driving awareness campaigns, managing live event coverage, and shaping post-event storytelling and reporting. I am a marketing, public relations, and communications professional with over 9 years’ experience across healthcare, public sector, media, and social impact.\n\nCurrently, I serve as the Marketing, Business Development, and Communications Executive at AAR Healthcare Kenya, delivering campaigns that grow visibility, uptake, and stakeholder engagement. I also serve at AWR Radio Nairobi as Radio Host/Producer.\n\nPreviously, I served at Equity Afia, MMUST FM as a Radio Host/Presenter, and the Head of Marketing and Public Relations at Optex Opticians Ltd.",
+    socials: {
+      linkedin: ""
+    },
+    blur: true
+  },
+  {
+    name: "Ronney Ochieng",
+    role: "Logistics and Operations Team Lead at IPAYC",
+    image: "/team/2.png",
+    email: "logistics_payc@ausp.africa",
+    description: "Ronney Ochieng is a Geospatial Engineering student and student leader at the Technical University of Kenya, and Chairperson of the KUZA-TUK Chapter, where he leads strategy, coordinates initiatives, and represents student interests. With a growing professional focus on geospatial technology, Space science data-driven solutions, and innovation, he is also a member of the space Generation advisory council (SGAC) under the united Nations Office for outer space Affairs (UNOOSA) applying technical skills to real-world challenges. He also serves as the Logistics and Operations Team Lead at IPAYC, overseeing planning, coordination and execution of activities to ensure efficient and impactful program delivery.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/ronney-ochieng-a7b312270"
+    },
+    blur: true
+  },
+  {
+    name: "Qs. Ndung’u",
+    role: "Registered Quantity Surveyor and Project Manager serving as the ME&I Committee Lead for AUSP Kenya 2026.",
+    image: "/team/6.png",
+    email: "impact_payc@ausp.africa",
+    description: "A member of the Finance Committee, he leverages his expertise in technical cost management to oversee the conference budget, sponsorship packages, and impact evaluation.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/samuel-ndungu-4b168819b"
+    }
+  },
+  {
     name: "Bethwel Kiplagat",
-    role: "Software Engineer",
+    role: "Website Developer & Maintainer, IPAYC",
     image: "/team/betu.png",
     email: "kiplagatbethwelk@gmail.com",
-    description: "Bethwel Kiplagat is a Software Engineer passionate about building with AI, Cloud technologies, and creating great Developer Experiences (DX). He has spoken on several events and served as a jury member for tech events, bringing a well-rounded perspective on what makes technology accessible and impactful.\n\nHe is a universal mentor at the GeeKulcha Student Society (GKSS), helping new developers navigate the tech ecosystem, and actively contributes to open-source projects—often focusing on improving documentation and contributor guides. He believes great code alone isn't enough; users need clear, kind, and useful documentation to truly benefit from any product.\n\nThis belief in clarity and empowerment drives everything he does.",
+    description: "Bethwel Kiplagat is the Website Developer and Maintainer for the International Pan African Youth Conference (IPAYC). He is a Software Engineer passionate about building with AI, Cloud technologies, and creating great Developer Experiences (DX). He has spoken at several events and served as a jury member for tech events, bringing a well-rounded perspective on what makes technology accessible and impactful.\n\nHe is a universal mentor at the GeeKulcha Student Society (GKSS), helping new developers navigate the tech ecosystem, and actively contributes to open-source projects—often focusing on improving documentation and contributor guides. He believes great code alone isn't enough; users need clear, kind, and useful documentation to truly benefit from any product.\n\nThis belief in clarity and empowerment drives everything he does.",
     socials: {
       linkedin: "https://www.linkedin.com/in/iambethwelkiplagat"
     }
@@ -138,8 +161,8 @@ export function TeamSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12">
-          {team.map((member, i) => (
-            <div key={i} className="group space-y-6 flex flex-col items-center text-center bg-white p-6 rounded-3xl shadow-sm border border-primary/5 hover:shadow-md transition-all">
+          {team.filter(member => !member.blur).map((member, i) => (
+            <div key={i} className="group space-y-6 flex flex-col items-center text-center bg-white p-6 rounded-3xl shadow-sm border border-primary/5 hover:shadow-md transition-all h-full">
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/10 transition-colors duration-300">
                 <Image
                   src={member.image}
@@ -150,8 +173,8 @@ export function TeamSection() {
                 />
               </div>
               
-              <div className="space-y-4 flex-1 flex flex-col items-center">
-                <div>
+              <div className="space-y-4 flex-1 flex flex-col items-center w-full justify-between">
+                <div className="space-y-2 min-h-[5rem] flex flex-col justify-center">
                   <h3 className="text-xl font-bold text-foreground leading-tight">{member.name}</h3>
                   <p className="text-primary font-semibold text-[10px] md:text-xs uppercase tracking-wider mt-1">{member.role}</p>
                 </div>
@@ -163,7 +186,7 @@ export function TeamSection() {
                 <div className="flex items-center gap-3 mt-auto pt-4">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" size="sm" className="rounded-full text-[10px] uppercase font-bold tracking-wider hover:bg-primary hover:text-white transition-colors">
+                      <Button variant="outline" size="sm" className="rounded-full text-[10px] uppercase font-bold tracking-wider hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
                         Read Bio
                       </Button>
                     </DialogTrigger>

@@ -35,50 +35,84 @@ export function SpeakersProgramSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 items-start max-w-6xl mx-auto">
-          <div className="bg-white dark:bg-card p-3 rounded-2xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div className="relative overflow-hidden rounded-xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
-              <Image
-                src="/etc/exhibit.png"
-                alt="Exhibit Opportunities"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-contain p-2"
-                loading="lazy"
-              />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 items-stretch max-w-6xl mx-auto">
+          <div className="bg-white dark:bg-card p-4 rounded-3xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full">
+            <div className="space-y-4">
+              <div className="relative overflow-hidden rounded-2xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
+                <Image
+                  src="/etc/exhibit.png"
+                  alt="Exhibit Opportunities"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-contain p-2"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-center text-sm font-bold text-foreground">Exhibit Opportunities</p>
             </div>
-            <p className="text-center text-sm font-bold mt-3 text-foreground">Exhibit Opportunities</p>
+            <div className="mt-6">
+              <a
+                href="https://forms.gle/vZ4UXn437Ch23mfY8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold h-11 px-6 rounded-xl shadow transition-all text-xs uppercase tracking-wider"
+              >
+                Apply for Exhibition
+              </a>
+            </div>
           </div>
 
-          <div className="bg-white dark:bg-card p-3 rounded-2xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div className="relative overflow-hidden rounded-xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
-              <Image
-                src="/etc/payment.png"
-                alt="Payment Guide"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-contain p-2"
-                loading="lazy"
-              />
+          <div className="bg-white dark:bg-card p-4 rounded-3xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full">
+            <div className="space-y-4">
+              <div className="relative overflow-hidden rounded-2xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
+                <Image
+                  src="/etc/payment.png"
+                  alt="Payment Guide"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-contain p-2"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-center text-sm font-bold text-foreground">Payment Guide</p>
             </div>
-            <p className="text-center text-sm font-bold mt-3 text-foreground">Payment Guide</p>
+            <div className="mt-6">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSegVepG6rWH8rPo2dz5t4W1-070AJ4xq-m4GVcQK1oiyR-NWA/viewform?usp=dialog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold h-11 px-6 rounded-xl shadow transition-all text-xs uppercase tracking-wider"
+              >
+                Register as Delegate
+              </a>
+            </div>
           </div>
 
-          <div className="bg-white dark:bg-card p-3 rounded-2xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div className="relative overflow-hidden rounded-xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
-              <Image
-                src="/etc/sponser.png"
-                alt="Sponsorship Details"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-contain p-2"
-                loading="lazy"
-              />
+          <div className="bg-white dark:bg-card p-4 rounded-3xl border border-muted shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full">
+            <div className="space-y-4">
+              <div className="relative overflow-hidden rounded-2xl bg-slate-50/50 dark:bg-muted/10 h-[360px] flex items-center justify-center p-2">
+                <Image
+                  src="/etc/sponser.png"
+                  alt="Sponsorship Details"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-contain p-2"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-center text-sm font-bold text-foreground">Sponsorship Details</p>
             </div>
-            <p className="text-center text-sm font-bold mt-3 text-foreground">Sponsorship Details</p>
+            <div className="mt-6">
+              <a
+                href="/sponsorship"
+                className="w-full inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold h-11 px-6 rounded-xl shadow transition-all text-xs uppercase tracking-wider"
+              >
+                Become a Partner / Sponsor
+              </a>
+            </div>
           </div>
         </div>
       </div>
-  </section>
+    </section>
   )
 }
