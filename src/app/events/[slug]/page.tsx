@@ -18,8 +18,9 @@ const getAlbumData = (slug: string): Album | undefined => {
   return eventsData.find((album) => album.slug === slug);
 };
 
-export default function AlbumPage({ params }: { params: { slug: string } }) {
-  const album = getAlbumData(params.slug);
+export default async function AlbumPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const album = getAlbumData(slug);
 
   if (!album) {
     notFound();
