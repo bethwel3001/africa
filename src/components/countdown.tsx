@@ -3,7 +3,7 @@
 
 import * as React from "react"
 
-const TARGET_DATE = new Date("2026-10-21T09:00:00")
+const TARGET_DATE = new Date("2026-11-19T09:00:00")
 
 export function Countdown() {
   const [mounted, setMounted] = React.useState(false)
