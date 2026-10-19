@@ -20,7 +20,7 @@ const GenerateConferenceContentInputSchema = z.object({
     .describe('The full name of the conference.'),
   conferenceDates: z
     .string()
-    .default('21st – 23rd October 2026')
+    .default('19th – 21st November 2026')
     .describe('The dates of the conference.'),
   conferenceTheme: z
     .string()
