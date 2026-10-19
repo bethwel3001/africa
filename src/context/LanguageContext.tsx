@@ -23,7 +23,7 @@ const translations: Record<Language, Record<string, string>> = {
     conferenceName: "International Pan African Youth Conference 2026",
     heroSubtitle: "Pan African Youth for a Just, Inclusive and Sustainable Africa",
     reimagining: "REIMAGINING",
-    africas: "AFRICA\\'S",
+    africas: "AFRICA'S",
     future: "FUTURE",
     visionTitle: "The Vision",
     visionHeadline: "Translating Potential Into Actionable Power",
