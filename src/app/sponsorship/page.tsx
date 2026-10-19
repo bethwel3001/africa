@@ -141,7 +141,7 @@ export default function SponsorshipPage() {
                   "Youth-led Pan-African gathering",
                   "Focus: Innovation, Health, Climate, Leadership",
                   "Delegates from across Africa",
-                  "Hosted at Central Bank of Kenya- Institute of Monetary Studies | 21st - 23rd Oct 2026"
+                  "Hosted at Kantaria Agricultural Innovation Technology Center, Nairobi Kenya | 19th - 21st Nov 2026"
                 ].map((text, i) => (
                   <li key={i} className="flex gap-3">
                     <CheckCircle2 className="text-primary w-6 h-6 flex-shrink-0" />
