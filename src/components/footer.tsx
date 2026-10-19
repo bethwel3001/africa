@@ -17,11 +17,11 @@ const socialLinks = [
   },
   {
     Icon: Linkedin,
-    href: "https://www.linkedin.com/posts/panafricanyouthconference-youthvoices-africadevelopment-share-7458775209697820672-8mVg"
+    href: "https://www.linkedin.com/company/international-pan-african-youth-conference/home/"
   },
   {
     Icon: Youtube,
-    href: "https://youtube.com/post/UgkxMJPlKg1eVUh5qxTdv7dq9oGENBknbIwG"
+    href: "https://www.youtube.com/@InternationalPanAfricanYouthCo"
   },
   {
     Icon: Music2,
@@ -87,7 +87,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-3.5 w-3.5 text-secondary mt-0.5" />
-                <span>Central Bank of Kenya- Institute of Monetary Studies</span>
+                <span>Kantaria Agricultural Innovation Technology Center, Nairobi Kenya</span>
               </li>
             </ul>
           </div>
