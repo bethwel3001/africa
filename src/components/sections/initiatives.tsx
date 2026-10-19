@@ -10,19 +10,19 @@ export function InitiativesSection() {
     { 
       icon: MapPin, 
       label: "Location", 
-      value: "Central Bank of Kenya - Institute of Monetary Studies - Nairobi, Kenya",
+      value: "Kantaria Agricultural Innovation Technology Center - Nairobi, Kenya",
       color: "text-blue-500"
     },
     { 
       icon: Calendar, 
       label: "Date", 
-      value: "21st – 23rd October 2026",
+      value: "19th – 21st November 2026",
       color: "text-green-500"
     },
     { 
       icon: Hourglass, 
       label: "Deadline", 
-      value: "15th September 2026",
+      value: "15th November 2026",
       color: "text-red-500"
     },
   ]
