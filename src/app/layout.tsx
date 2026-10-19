@@ -25,13 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Concert+One&family=Elms+Sans:ital,wght@100..900;1,100..900&display=swap" rel="stylesheet" />
       </head>
-      <body className="antialiased selection:bg-secondary selection:text-secondary-foreground">
+      <body className="antialiased selection:bg-secondary selection:text-secondary-foreground" suppressHydrationWarning>
         <LanguageProvider>
           <LayoutClient>
             {children}
