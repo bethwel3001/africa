@@ -4,7 +4,7 @@
 import * as React from "react"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -17,7 +17,7 @@ export default function ContentGeneratorPage() {
   const [result, setResult] = React.useState("")
   const [formData, setFormData] = React.useState<GenerateConferenceContentInput>({
     conferenceName: 'INTERNATIONAL PAN AFRICAN YOUTH CONFERENCE',
-    conferenceDates: '21st – 23rd October 2026',
+    conferenceDates: '19th – 21st November 2026',
     conferenceTheme: 'Pan-African Youth for a Just, Inclusive & Sustainable Africa',
     targetAudience: 'Students',
     contentType: 'Social Media Post',
