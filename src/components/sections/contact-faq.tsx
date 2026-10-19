@@ -121,7 +121,7 @@ export function ContactFAQSection() {
               </div>
               <div className="flex items-start gap-3 text-xs md:text-sm max-w-md text-left">
                 <MapPin className="h-4 w-4 text-secondary mt-0.5 shrink-0" />
-                <span className="font-medium">Central Bank of Kenya- Institute of Monetary Studies & Online</span>
+                <span className="font-medium">Kantaria Agricultural Innovation Technology Center, Nairobi Kenya & Online</span>
               </div>
             </div>
         </div>
