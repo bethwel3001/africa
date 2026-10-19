@@ -68,9 +68,9 @@ export function HeroSection() {
 
       <div className="container relative z-10 px-4 mx-auto pt-24 pb-12 lg:py-2 flex flex-col lg:flex-row items-center justify-between min-h-[60vh] gap-8 lg:gap-0">
         {/* Left Content */}
-        <div className="flex-1 w-full max-w-2xl animate-fade-in-up flex flex-col justify-center items-center text-center lg:items-start lg:text-left gap-4">
-          <div className="inline-block px-4 py-2 rounded-2xl bg-secondary text-secondary-foreground font-bold text-[9px] sm:text-[10px] md:text-[11px] tracking-wider uppercase backdrop-blur-sm shadow-lg text-center max-w-full">
-            21st – 23rd October 2026 • Central Bank of Kenya- Institute of Monetary Studies
+        <div className="flex-1 w-full max-w-3xl animate-fade-in-up flex flex-col justify-center items-center text-center lg:items-start lg:text-left gap-4">
+          <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl bg-secondary text-secondary-foreground font-bold text-[7.5px] min-[390px]:text-[8.5px] sm:text-[10px] md:text-[11px] tracking-tight sm:tracking-wider uppercase backdrop-blur-sm shadow-lg text-center whitespace-nowrap max-w-full">
+            19th – 21st November 2026 • Kantaria Agricultural Innovation Technology Center, Nairobi Kenya
           </div>
           <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight uppercase drop-shadow-lg">
             {t('reimagining')} <br />
