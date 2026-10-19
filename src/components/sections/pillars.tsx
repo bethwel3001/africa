@@ -34,7 +34,7 @@ const pillars = [
   }
 ]
 
-const PillarCard = ({ pillar }) => (
+const PillarCard = ({ pillar }: { pillar: (typeof pillars)[number] }) => (
   <div
     className="group p-8 rounded-2xl bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 border-green-600 h-full"
   >
